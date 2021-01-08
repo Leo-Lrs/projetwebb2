@@ -28,7 +28,14 @@
             <!-- partial:partials/_sidebar.html -->
             @include('include.navbar2')
             <!-- partial -->
-            @yield('contenu')
+            <div class="main-panel">
+                <div class="content-wrapper">
+                    <!-- CONTENU -->
+                    @yield('contenu')
+                </div>
+                <!-- FOOTER -->
+                @include('include.adminfooter')
+            </div>
         </div>
         <!-- page-body-wrapper ends -->
     </div>

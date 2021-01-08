@@ -1,24 +1,27 @@
 <nav class="sidebar sidebar-offcanvas" id="sidebar">
     <ul class="nav">
         <li class="nav-item">
-            <a class="nav-link" href="index.html">
+            <a class="nav-link" href="{{ URL::to('/admin') }}">
                 <i class="ti-home menu-icon"></i>
-                <span class="menu-title">@yield('title')</span>
+                <span class="menu-title">Dashboard</span>
             </a>
         </li>
         <li class="nav-item">
             <a class="nav-link" data-toggle="collapse" href="#form-elements" aria-expanded="false"
                 aria-controls="form-elements">
                 <i class="ti-clipboard menu-icon"></i>
-                <span class="menu-title">Form elements</span>
+                <span class="menu-title">Création</span>
                 <i class="menu-arrow"></i>
             </a>
             <div class="collapse" id="form-elements">
                 <ul class="nav flex-column sub-menu">
-                    <li class="nav-item"><a class="nav-link" href="basic_elements.html">Ajouter catégories</a>
+                    <li class="nav-item"><a class="nav-link" href="{{ URL::to('/ajoutercategorie') }}">Ajouter
+                            catégories</a>
                     </li>
-                    <li class="nav-item"><a class="nav-link" href="advanced_elements.html">Ajouter produits</a></li>
-                    <li class="nav-item"><a class="nav-link" href="validation.html">Ajouter slider</a></li>
+                    <li class="nav-item"><a class="nav-link" href="{{ URL::to('/ajouterproduit') }}">Ajouter
+                            produits</a></li>
+                    <li class="nav-item"><a class="nav-link" href="{{ URL::to('/ajouterslider') }}">Ajouter slider</a>
+                    </li>
                 </ul>
             </div>
         </li>
@@ -30,10 +33,10 @@
             </a>
             <div class="collapse" id="tables">
                 <ul class="nav flex-column sub-menu">
-                    <li class="nav-item"> <a class="nav-link" href="basic-table.html">Catégorie</a></li>
-                    <li class="nav-item"> <a class="nav-link" href="data-table.html">Produits</a></li>
-                    <li class="nav-item"> <a class="nav-link" href="js-grid.html">Sliders</a></li>
-                    <li class="nav-item"> <a class="nav-link" href="sortable-table.html">Commandes</a>
+                    <li class="nav-item"> <a class="nav-link" href="{{ URL::to('/categories') }}">Catégorie</a></li>
+                    <li class="nav-item"> <a class="nav-link" href="{{ URL::to('/produits') }}">Produits</a></li>
+                    <li class="nav-item"> <a class="nav-link" href="{{ URL::to('/sliders') }}">Sliders</a></li>
+                    <li class="nav-item"> <a class="nav-link" href="{{ URL::to('/commandes') }}">Commandes</a>
                     </li>
                 </ul>
             </div>
