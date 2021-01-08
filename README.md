@@ -145,13 +145,9 @@ Vous avez la possibilité de choisir entre un projet personnel ou un projet prop
 
 ### BONUS POUR TOUS LES PROJETS :
 
-Vous pouvez implémenter une architecture de type API REST. Celle-ci constitue un bonus et
+Vous pouvez implémenter une architecture de type API REST. Celle-ci constitue un bonus et n’est donc pas obligatoire.
 
-### n’est donc pas obligatoire.
-
-### LISTE DES PROJETS AU CHOIX :
-
-### 1 er PROJET : ECOMMERCE
+### PROJET : ECOMMERCE
 
 **Présentation**
 
