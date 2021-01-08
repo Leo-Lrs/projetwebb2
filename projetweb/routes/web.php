@@ -20,3 +20,10 @@ Route::get('/', function () {
 */
 
 Route::get('/', 'ClientController@home');
+Route::get('/shop', 'ClientController@shop');
+Route::get('/panier', 'ClientController@panier');
+Route::get('/client_login', 'ClientController@client_login');
+Route::get('/signup', 'ClientController@signup');
+Route::get('/paiement', 'ClientController@paiement');
+
+Route::get('/admin', 'AdminController@dashboard');
