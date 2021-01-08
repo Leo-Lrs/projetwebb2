@@ -5,7 +5,7 @@
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <title>Dashboard</title>
+    <title>@yield('title')</title>
     <!-- plugins:css -->
     <link rel="stylesheet" href="backend/css/themify-icons.css">
     <link rel="stylesheet" href="backend/css/vendor.bundle.base.css">
@@ -47,7 +47,7 @@
     <script src="backend/js/todolist.js"></script>
     <!-- endinject -->
     <!-- Custom js for this page-->
-    <script src="backend/js/dashboard.js"></script>
+    @yield('scripts')
     <!-- End custom js for this page-->
 </body>
 

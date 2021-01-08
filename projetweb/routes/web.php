@@ -1,5 +1,6 @@
 <?php
 
+use Illuminate\Routing\RouteUri;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -27,3 +28,9 @@ Route::get('/signup', 'ClientController@signup');
 Route::get('/paiement', 'ClientController@paiement');
 
 Route::get('/admin', 'AdminController@dashboard');
+
+Route::get('/ajoutercategorie', 'CategoryController@ajoutercategorie');
+Route::post('sauvercategorie', 'CategoryController@sauvercategorie');
+
+Route::get('/ajouterproduit', 'ProductController@ajouterproduit');
+Route::post('/sauverproduit', 'ProductController@sauverproduit');

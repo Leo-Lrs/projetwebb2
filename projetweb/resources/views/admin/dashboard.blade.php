@@ -296,3 +296,6 @@ Dashboard
 </div>
 <!-- main-panel ends -->
 @endsection
+@section('scripts')
+<script src="backend/js/dashboard.js"></script>
+@endsection

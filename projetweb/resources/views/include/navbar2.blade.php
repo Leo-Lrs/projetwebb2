@@ -3,7 +3,7 @@
         <li class="nav-item">
             <a class="nav-link" href="index.html">
                 <i class="ti-home menu-icon"></i>
-                <span class="menu-title">Dashboard</span>
+                <span class="menu-title">@yield('title')</span>
             </a>
         </li>
         <li class="nav-item">
@@ -15,27 +15,25 @@
             </a>
             <div class="collapse" id="form-elements">
                 <ul class="nav flex-column sub-menu">
-                    <li class="nav-item"><a class="nav-link" href="basic_elements.html">Basic Elements</a>
+                    <li class="nav-item"><a class="nav-link" href="basic_elements.html">Ajouter catégories</a>
                     </li>
-                    <li class="nav-item"><a class="nav-link" href="advanced_elements.html">Advanced
-                            Elements</a></li>
-                    <li class="nav-item"><a class="nav-link" href="validation.html">Validation</a></li>
-                    <li class="nav-item"><a class="nav-link" href="wizard.html">Wizard</a></li>
+                    <li class="nav-item"><a class="nav-link" href="advanced_elements.html">Ajouter produits</a></li>
+                    <li class="nav-item"><a class="nav-link" href="validation.html">Ajouter slider</a></li>
                 </ul>
             </div>
         </li>
         <li class="nav-item">
             <a class="nav-link" data-toggle="collapse" href="#tables" aria-expanded="false" aria-controls="tables">
                 <i class="ti-layout menu-icon"></i>
-                <span class="menu-title">Tables</span>
+                <span class="menu-title">Affichages</span>
                 <i class="menu-arrow"></i>
             </a>
             <div class="collapse" id="tables">
                 <ul class="nav flex-column sub-menu">
-                    <li class="nav-item"> <a class="nav-link" href="basic-table.html">Basic table</a></li>
-                    <li class="nav-item"> <a class="nav-link" href="data-table.html">Data table</a></li>
-                    <li class="nav-item"> <a class="nav-link" href="js-grid.html">Js-grid</a></li>
-                    <li class="nav-item"> <a class="nav-link" href="sortable-table.html">Sortable table</a>
+                    <li class="nav-item"> <a class="nav-link" href="basic-table.html">Catégorie</a></li>
+                    <li class="nav-item"> <a class="nav-link" href="data-table.html">Produits</a></li>
+                    <li class="nav-item"> <a class="nav-link" href="js-grid.html">Sliders</a></li>
+                    <li class="nav-item"> <a class="nav-link" href="sortable-table.html">Commandes</a>
                     </li>
                 </ul>
             </div>
