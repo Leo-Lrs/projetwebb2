@@ -30,4 +30,24 @@ class CategoryController extends Controller
         $categories = Category::get();
         return view('admin.categories')->with('categories', $categories);
     }
+
+    public function edit_categorie($id)
+    {
+        $categorie = Category::find($id);
+
+        return view('admin.editcategorie')->with('categorie', $categorie);
+    }
+
+    public function modifiercategorie(Request $request)
+    {
+        $this->validate($request, ['category_name' => 'required']);
+
+        $categorie = Category::find($request->input('id'));
+
+        $categorie->category_name = $request->input('category_name');
+
+        $categorie->update();
+
+        return redirect('/categories')->with('status', 'La catégorie '.$categorie->category_name.' a été modifié avec succès');
+    }
 }
