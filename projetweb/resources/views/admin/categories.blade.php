@@ -34,7 +34,9 @@ Catégories
                                 <td>
                                     <button class="btn btn-outline-primary"
                                         onclick="window.location ='{{url('/edit_categorie/'.$category->id)}}'">Edit</button>
-                                    <button class="btn btn-outline-danger">Delete</button>
+                                    <a class="btn btn-outline-danger"
+                                        href="{{url('/supprimercategorie/'.$category->id)}}"
+                                        id="delete">Delete</a></button>
                                 </td>
                             </tr>
                             {{Form::hidden('', $increment=$increment+1)}}

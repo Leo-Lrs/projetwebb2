@@ -50,4 +50,13 @@ class CategoryController extends Controller
 
         return redirect('/categories')->with('status', 'La catégorie '.$categorie->category_name.' a été modifié avec succès');
     }
+
+    public function supprimercategorie($id)
+    {
+        $categorie = Category::find($id);
+
+        $categorie->delete();
+
+        return redirect('/categories')->with('status', 'La catégorie '.$categorie->category_name.' a été supprimé avec succès');
+    }
 }
