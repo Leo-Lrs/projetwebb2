@@ -116,4 +116,26 @@ class ProductController extends Controller
 
         return redirect('/produits')->with('status', 'Le produit '.$product->product_name.' a été supprimé avec succès');
     }
+
+    public function activer_produit($id)
+    {
+        $product = Product::find($id);
+
+        $product->status = 1;
+
+        $product->update();
+
+        return redirect('/produits')->with('status', 'Le produit '.$product->product_name.' a été activé avec succès');
+    }
+
+    public function desactiver_produit($id)
+    {
+        $product = Product::find($id);
+
+        $product->status = 0;
+
+        $product->update();
+
+        return redirect('/produits')->with('status', 'Le produit '.$product->product_name.' a été désactivé avec succès');
+    }
 }
