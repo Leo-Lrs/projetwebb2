@@ -8,8 +8,20 @@ Ajouter produit
         <div class="card">
             <div class="card-body">
                 <h4 class="card-title">Ajouter produit</h4>
+                @if(Session::has('status'))
+                <div class="alert alert-success">
+                    {{Session::get('status')}}
+                </div>
+                @endif
+                @if (count($errors)> 0)
+                <div class="alert alert-danger">
+                    @foreach ($errors->all() as $error)
+                    {{$error}}
+                    @endforeach
+                </div>
+                @endif
                 {!!Form::open(['action' => 'ProductController@sauverproduit', 'method' => 'POST', 'class' =>
-                'cmxform', 'id' => 'commentForm'])!!}
+                'cmxform', 'id' => 'commentForm', 'enctype' => 'multipart/form-data'])!!}
                 {{ csrf_field() }}
                 <div class="form-group">
                     {{Form::label('', 'Nom du produit', ['for' => 'cname'])}}
@@ -20,8 +32,13 @@ Ajouter produit
                     {{Form::number('product_price', '', ['class' => 'form-control', 'id' => 'cname'])}}
                 </div>
                 <div class="form-group">
-                    {{Form::label('', 'Catégorie du produit')}}
-                    {{--Form::number('product_category', $categories, null, ['placeholder' => 'Select category', 'class' => 'form-control'])--}}
+                    {{Form::label('', 'Plateforme')}}
+                    @foreach ($categories as $categorie)
+                    <label class="form-control" style="display:block">
+                        <input type="checkbox" value="{{ $categorie->id }}" name="categories[]" />
+                        <span>{{ $categorie->category_name }}</span>
+                    </label>
+                    @endforeach
                 </div>
                 <div class="form-group">
                     {{Form::label('', 'Image du produit', ['for' => 'cname'])}}

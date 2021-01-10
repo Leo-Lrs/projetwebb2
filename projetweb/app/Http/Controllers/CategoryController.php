@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Category;
+use App\Product;
 
 class CategoryController extends Controller
 {
@@ -14,7 +15,7 @@ class CategoryController extends Controller
 
     public function sauvercategorie(Request $request)
     {
-        $this->validate($request, ['category_name' => 'required']);
+        $this->validate($request, ['category_name' => 'required|unique:categories']);
 
         $categorie = new Category();
 
@@ -40,7 +41,7 @@ class CategoryController extends Controller
 
     public function modifiercategorie(Request $request)
     {
-        $this->validate($request, ['category_name' => 'required']);
+        $this->validate($request, ['category_name' => 'required|unique:categories']);
 
         $categorie = Category::find($request->input('id'));
 
@@ -55,6 +56,7 @@ class CategoryController extends Controller
     {
         $categorie = Category::find($id);
 
+        $categorie->products()->detach();
         $categorie->delete();
 
         return redirect('/categories')->with('status', 'La catégorie '.$categorie->category_name.' a été supprimé avec succès');
