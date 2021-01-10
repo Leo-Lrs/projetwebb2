@@ -7,6 +7,11 @@ Produits
 <div class="card">
     <div class="card-body">
         <h4 class="card-title">Produits</h4>
+        @if(Session::has('status'))
+        <div class="alert alert-success">
+            {{Session::get('status')}}
+        </div>
+        @endif
         <div class="row">
             <div class="col-12">
                 <div class="table-responsive">
@@ -51,7 +56,8 @@ Produits
 
                                 </td>
                                 <td>
-                                    <button class="btn btn-outline-primary">View</button>
+                                    <button class="btn btn-outline-primary"
+                                        onclick="window.location ='{{url('/edit_produit/'.$produit->id)}}'">Edit</button>
                                     <button class="btn btn-outline-danger">Delete</button>
                                 </td>
                             </tr>
