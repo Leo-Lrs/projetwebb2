@@ -46,6 +46,7 @@ Route::post('/sauverproduit', 'ProductController@sauverproduit');
 Route::get('/produits', 'ProductController@produits');
 Route::get('/edit_produit/{id}', 'ProductController@edit_produit');
 Route::post('/modifierproduit', 'ProductController@modifierproduit');
+Route::get('/supprimerproduit/{id}', 'ProductController@supprimerproduit');
 
 // Slider
 Route::get('/ajouterslider', 'SliderController@ajouterslider');

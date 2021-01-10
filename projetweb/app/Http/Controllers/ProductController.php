@@ -87,7 +87,7 @@ class ProductController extends Controller
 
             if($product->product_image != 'noimage.jpg')
             {
-                Storage::delete('public/product_images/'.$product->image);
+                Storage::delete('public/product_images/'.$product->product_image);
             }
 
             $product->product_image = $fileNameToStore;
@@ -100,5 +100,20 @@ class ProductController extends Controller
         $product->update();
 
         return redirect('/produits')->with('status', 'Le produit '.$product->product_name.' a été modifié avec succès');
+    }
+
+    public function supprimerproduit($id)
+    {
+        $product = Product::find($id);
+
+        if($product->product_image != 'noimage.jpg')
+        {
+            Storage::delete('public/product_images/'.$product->product_image);
+        }
+
+        $product->categories()->detach();
+        $product->delete();
+
+        return redirect('/produits')->with('status', 'Le produit '.$product->product_name.' a été supprimé avec succès');
     }
 }
