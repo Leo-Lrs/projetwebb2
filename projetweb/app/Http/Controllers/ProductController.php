@@ -16,7 +16,7 @@ class ProductController extends Controller
 
     public function sauverproduit(Request $request)
     {
-        $this->validate($request, ['product_name' => 'required|unique:products','product_price' =>'required', 'product_image' => 'image|nullable|max:1999']);
+        $this->validate($request, ['product_name' => 'required|unique:products', 'product_price' => 'required', 'product_code' => 'required', 'product_quantite' => 'required', 'product_image' => 'image|nullable|max:1999']);
         if($request->hasFile('product_image')){
             // 1 : get file name with ext
             $fileNameWithExt = $request->file('product_image')->getClientOriginalName();
@@ -34,7 +34,10 @@ class ProductController extends Controller
         }
         $product = new Product();
         $product->product_name=$request->input('product_name');
+        $product->product_description=$request->input('product_description');
         $product->product_price = $request->input('product_price');
+        $product->product_code = $request->input('product_code');
+        $product->product_quantite = $request->input('product_quantite');
         $product->product_image = $fileNameToStore;
         $product->status = 1;
 
@@ -47,6 +50,7 @@ class ProductController extends Controller
 
     public function produits()
     {
-        return view('admin.produits');
+        $produits= Product::get();
+        return view('admin.produits')->with('produits', $produits);
     }
 }

@@ -28,8 +28,20 @@ Ajouter produit
                     {{Form::text('product_name', '', ['class' => 'form-control', 'id' => 'cname'])}}
                 </div>
                 <div class="form-group">
+                    {{Form::label('', 'Description du produit', ['for' => 'cname'])}}
+                    {{Form::textarea('product_description', '', ['class' => 'form-control', 'id' => 'cname'])}}
+                </div>
+                <div class="form-group">
                     {{Form::label('', 'Prix du produit', ['for' => 'cname'])}}
                     {{Form::number('product_price', '', ['class' => 'form-control', 'id' => 'cname'])}}
+                </div>
+                <div class="form-group">
+                    {{Form::label('', "Code d'activation du produit", ['for' => 'cname'])}}
+                    {{Form::text('product_code', '', ['class' => 'form-control', 'id' => 'cname'])}}
+                </div>
+                <div class="form-group">
+                    {{Form::label('', 'Quantité du produit', ['for' => 'cname'])}}
+                    {{Form::number('product_quantite', '', ['class' => 'form-control', 'id' => 'cname'])}}
                 </div>
                 <div class="form-group">
                     {{Form::label('', 'Plateforme')}}
