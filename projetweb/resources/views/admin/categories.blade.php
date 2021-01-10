@@ -1,12 +1,12 @@
 @extends('layouts.appadmin')
 @section('title')
-Catégories
+Plateformes
 @endsection
 {{Form::hidden('', $increment=1)}}
 @section('contenu')
 <div class="card">
     <div class="card-body">
-        <h4 class="card-title">Catégories</h4>
+        <h4 class="card-title">Plateformes</h4>
         @if(Session::has('status'))
         <div class="alert alert-success">
             {{Session::get('status')}}
@@ -18,8 +18,8 @@ Catégories
                     <table id="order-listing" class="table">
                         <thead>
                             <tr>
-                                <th>Order #</th>
-                                <th>Nom de la catégorie</th>
+                                <th>Ordre #</th>
+                                <th>Nom de la plateforme</th>
                                 <th>Actions</th>
                             </tr>
                         </thead>
@@ -33,9 +33,9 @@ Catégories
                                         </td>--}}
                                 <td>
                                     <button class="btn btn-outline-primary"
-                                        onclick="window.location ='{{url('/edit_categorie/'.$category->id)}}'">Edit</button>
+                                        onclick="window.location ='{{url('/edit_categorie/'.$category->id)}}'">Modifier</button>
                                     <a class="btn btn-outline-danger"
-                                        href="{{url('/supprimercategorie/'.$category->id)}}" id="delete">Delete</a>
+                                        href="{{url('/supprimercategorie/'.$category->id)}}" id="delete">Supprimer</a>
                                 </td>
                             </tr>
                             {{Form::hidden('', $increment=$increment+1)}}

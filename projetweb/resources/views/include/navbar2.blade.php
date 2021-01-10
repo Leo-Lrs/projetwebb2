@@ -16,11 +16,9 @@
             <div class="collapse" id="form-elements">
                 <ul class="nav flex-column sub-menu">
                     <li class="nav-item"><a class="nav-link" href="{{ URL::to('/ajoutercategorie') }}">Ajouter
-                            catégories</a>
+                            plateforme</a>
                     </li>
-                    <li class="nav-item"><a class="nav-link" href="{{ URL::to('/ajouterproduit') }}">Ajouter
-                            produits</a></li>
-                    <li class="nav-item"><a class="nav-link" href="{{ URL::to('/ajouterslider') }}">Ajouter slider</a>
+                    <li class="nav-item"><a class="nav-link" href="{{ URL::to('/ajouterproduit') }}">Ajouter jeu</a>
                     </li>
                 </ul>
             </div>
@@ -33,9 +31,8 @@
             </a>
             <div class="collapse" id="tables">
                 <ul class="nav flex-column sub-menu">
-                    <li class="nav-item"> <a class="nav-link" href="{{ URL::to('/categories') }}">Catégorie</a></li>
-                    <li class="nav-item"> <a class="nav-link" href="{{ URL::to('/produits') }}">Produits</a></li>
-                    <li class="nav-item"> <a class="nav-link" href="{{ URL::to('/sliders') }}">Sliders</a></li>
+                    <li class="nav-item"> <a class="nav-link" href="{{ URL::to('/categories') }}">Plateformes</a></li>
+                    <li class="nav-item"> <a class="nav-link" href="{{ URL::to('/produits') }}">Jeux</a></li>
                     <li class="nav-item"> <a class="nav-link" href="{{ URL::to('/commandes') }}">Commandes</a>
                     </li>
                 </ul>

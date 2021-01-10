@@ -1,13 +1,13 @@
 @extends('layouts.appadmin')
 @section('title')
-Ajouter Catégories
+Ajouter plateforme
 @endsection
 @section('contenu')
 <div class="row grid-margin">
     <div class="col-lg-12">
         <div class="card">
             <div class="card-body">
-                <h4 class="card-title">Ajouter Catégorie</h4>
+                <h4 class="card-title">Ajouter plateforme</h4>
                 @if(Session::has('status'))
                 <div class="alert alert-success">
                     {{Session::get('status')}}
@@ -24,7 +24,7 @@ Ajouter Catégories
                 'cmxform', 'id' => 'commentForm'])!!}
                 {{ csrf_field() }}
                 <div class="form-group">
-                    {{Form::label('', 'Nom de la catégorie', ['for' => 'cname'])}}
+                    {{Form::label('', 'Nom de la plateforme', ['for' => 'cname'])}}
                     {{Form::text('category_name', '', ['class' => 'form-control', 'id' => 'cname'])}}
                 </div>
                 {{Form::submit('Ajouter', ['class' => 'btn btn-primary'])}}

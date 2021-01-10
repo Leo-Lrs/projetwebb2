@@ -1,12 +1,12 @@
 @extends('layouts.appadmin')
 @section('title')
-Produits
+Jeux
 @endsection
 {{Form::hidden('', $increment=1)}}
 @section('contenu')
 <div class="card">
     <div class="card-body">
-        <h4 class="card-title">Produits</h4>
+        <h4 class="card-title">Jeux</h4>
         @if(Session::has('status'))
         <div class="alert alert-success">
             {{Session::get('status')}}
@@ -18,15 +18,15 @@ Produits
                     <table id="order-listing" class="table">
                         <thead>
                             <tr>
-                                <th>Order #</th>
+                                <th>Ordre #</th>
                                 <th>Image</th>
-                                <th>Nom des produits</th>
-                                <th>Catégorie du produit</th>
+                                <th>Nom du jeu</th>
+                                <th>Plateforme du jeu</th>
                                 <th>Description</th>
                                 <th>Prix</th>
-                                <th>Code</th>
+                                <th>Code d'activation</th>
                                 <th>Quantité</th>
-                                <th>Status</th>
+                                <th>Statut</th>
                                 <th scope="col" colspan="2">Actions</th>
                             </tr>
                         </thead>
@@ -57,9 +57,9 @@ Produits
                                 </td>
                                 <td>
                                     <button class="btn btn-outline-primary"
-                                        onclick="window.location ='{{url('/edit_produit/'.$produit->id)}}'">Edit</button>
+                                        onclick="window.location ='{{url('/edit_produit/'.$produit->id)}}'">Modifier</button>
                                     <a class="btn btn-outline-danger" href="{{url('/supprimerproduit/'.$produit->id)}}"
-                                        id="delete">Delete</a>
+                                        id="delete">Supprimer</a>
                                     @if ($produit->status == 1)
                                     <button class="btn btn-outline-warning"
                                         onclick="window.location ='{{url('/desactiver_produit/'.$produit->id)}}'">Desactiver</button>

@@ -1,13 +1,13 @@
 @extends('layouts.appadmin')
 @section('title')
-Edit Catégories
+Modifier plateforme
 @endsection
 @section('contenu')
 <div class="row grid-margin">
     <div class="col-lg-12">
         <div class="card">
             <div class="card-body">
-                <h4 class="card-title">Edit Catégorie</h4>
+                <h4 class="card-title">Modifier plateforme</h4>
                 @if(Session::has('status'))
                 <div class="alert alert-success">
                     {{Session::get('status')}}
@@ -25,7 +25,7 @@ Edit Catégories
                 {{ csrf_field() }}
                 <div class="form-group">
                     {{Form::hidden('id', $categorie->id)}}
-                    {{Form::label('', 'Nom de la catégorie', ['for' => 'cname'])}}
+                    {{Form::label('', 'Nom de la plateforme', ['for' => 'cname'])}}
                     {{Form::text('category_name', $categorie->category_name, ['class' => 'form-control', 'id' => 'cname'])}}
                 </div>
                 {{Form::submit('Modifier', ['class' => 'btn btn-primary'])}}

@@ -3,12 +3,15 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Product;
 
 class ClientController extends Controller
 {
     public function home()
     {
-        return view('client.home');
+        $produits = Product::where('status',1)->get();
+        
+        return view('client.home')->with('produits', $produits);
     }
 
     public function shop()

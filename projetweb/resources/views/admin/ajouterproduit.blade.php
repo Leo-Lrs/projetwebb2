@@ -1,13 +1,13 @@
 @extends('layouts.appadmin')
 @section('title')
-Ajouter produit
+Ajouter jeu
 @endsection
 @section('contenu')
 <div class="row grid-margin">
     <div class="col-lg-12">
         <div class="card">
             <div class="card-body">
-                <h4 class="card-title">Ajouter produit</h4>
+                <h4 class="card-title">Ajouter jeu</h4>
                 @if(Session::has('status'))
                 <div class="alert alert-success">
                     {{Session::get('status')}}
@@ -24,23 +24,23 @@ Ajouter produit
                 'cmxform', 'id' => 'commentForm', 'enctype' => 'multipart/form-data'])!!}
                 {{ csrf_field() }}
                 <div class="form-group">
-                    {{Form::label('', 'Nom du produit', ['for' => 'cname'])}}
+                    {{Form::label('', 'Nom du jeu', ['for' => 'cname'])}}
                     {{Form::text('product_name', '', ['class' => 'form-control', 'id' => 'cname'])}}
                 </div>
                 <div class="form-group">
-                    {{Form::label('', 'Description du produit', ['for' => 'cname'])}}
+                    {{Form::label('', 'Description du jeu', ['for' => 'cname'])}}
                     {{Form::textarea('product_description', '', ['class' => 'form-control', 'id' => 'cname'])}}
                 </div>
                 <div class="form-group">
-                    {{Form::label('', 'Prix du produit', ['for' => 'cname'])}}
+                    {{Form::label('', 'Prix du jeu', ['for' => 'cname'])}}
                     {{Form::number('product_price', '', ['class' => 'form-control', 'id' => 'cname'])}}
                 </div>
                 <div class="form-group">
-                    {{Form::label('', "Code d'activation du produit", ['for' => 'cname'])}}
+                    {{Form::label('', "Code d'activation du jeu", ['for' => 'cname'])}}
                     {{Form::text('product_code', '', ['class' => 'form-control', 'id' => 'cname'])}}
                 </div>
                 <div class="form-group">
-                    {{Form::label('', 'Quantité du produit', ['for' => 'cname'])}}
+                    {{Form::label('', 'Quantité du jeu', ['for' => 'cname'])}}
                     {{Form::number('product_quantite', '', ['class' => 'form-control', 'id' => 'cname'])}}
                 </div>
                 <div class="form-group">
@@ -53,7 +53,7 @@ Ajouter produit
                     @endforeach
                 </div>
                 <div class="form-group">
-                    {{Form::label('', 'Image du produit', ['for' => 'cname'])}}
+                    {{Form::label('', 'Image du jeu', ['for' => 'cname'])}}
                     {{Form::file('product_image', ['class' => 'form-control', 'id' => 'cname'])}}
                 </div>
                 {{Form::submit('Ajouter', ['class' => 'btn btn-primary'])}}
