@@ -13080,8 +13080,8 @@ var $jscomp$this = this;
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(/*! C:\git\kopachic-laravel-shoponline\resources\js\app.js */"./resources/js/app.js");
-module.exports = __webpack_require__(/*! C:\git\kopachic-laravel-shoponline\resources\sass\app.scss */"./resources/sass/app.scss");
+__webpack_require__(/*! C:\Users\pierre\Documents\Gitlab\projetwebb2\kopachic-laravel-online-shop-master\resources\js\app.js */"./resources/js/app.js");
+module.exports = __webpack_require__(/*! C:\Users\pierre\Documents\Gitlab\projetwebb2\kopachic-laravel-online-shop-master\resources\sass\app.scss */"./resources/sass/app.scss");
 
 
 /***/ })

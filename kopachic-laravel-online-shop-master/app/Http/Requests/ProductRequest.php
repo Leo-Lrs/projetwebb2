@@ -25,7 +25,6 @@ class ProductRequest extends FormRequest
             'image' => 'sometimes|required|image|mimes:jpeg,png,jpg,gif',
             'description' => 'required|string',
             'price' => 'required|numeric|regex:/^(\d+(?:[\.\,]\d{1,2})?)$/',
-            'weight' => 'required|numeric|regex:/^(\d+(?:[\.\,]\d{1,3})?)$/',
             'quantity' => 'required|numeric',
             'quantity_alert' => 'required|numeric',
         ];
