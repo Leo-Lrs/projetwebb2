@@ -18,7 +18,7 @@
 		<div class="row justify-content-center">
 			<div class="col-md-10 mb-5 text-center">
 				<ul class="product-category">
-					<li><a href="{{URL::to('/shop')}}" class="{{(request()->is('shop')?'active':'')}}">All</a></li>
+					<li><a href="{{URL::to('/shop')}}" class="{{(request()->is('shop')?'active':'')}}">Tout</a></li>
 					@foreach ($categories as $categorie)
 					<li><a href="/select_par_cat/{{$categorie->id}}"
 							class="{{(request()->is('select_par_cat/'.$categorie->id)?'active':'')}}">{{$categorie->category_name}}</a>

@@ -7,6 +7,7 @@ use App\Product;
 use App\Category;
 use App\Cart;
 use Session;
+use Illuminate\Support\Facades\Redirect;
 
 class ClientController extends Controller
 {
@@ -53,7 +54,42 @@ class ClientController extends Controller
 
     public function panier()
     {
-        return view('client.cart');
+        if(!Session::has('cart')){
+            return view('client.cart');
+        }
+
+        $oldCart = Session::has('cart')? Session::get('cart'):null;
+        $cart = new Cart($oldCart);
+
+        return view('client.cart', ['products' => $cart->items]);
+    }
+
+    public function modifier_panier(Request $request, $id)
+    {
+        $oldCart = Session::has('cart')? Session::get('cart'):null;
+        $cart = new Cart($oldCart);
+        $cart->updateQty($id, $request->quantity);
+        Session::put('cart', $cart);
+
+        //dd(Session::get('cart'));
+        return redirect::to('/panier');
+    }
+
+    public function retirer_produit($id)
+    {
+        $oldCart = Session::has('cart')? Session::get('cart'):null;
+        $cart = new Cart($oldCart);
+        $cart->removeItem($id);
+       
+        if(count($cart->items) > 0){
+            Session::put('cart', $cart);
+        }
+        else{
+            Session::forget('cart');
+        }
+
+        //dd(Session::get('cart'));
+        return redirect('/panier');
     }
 
     public function client_login()

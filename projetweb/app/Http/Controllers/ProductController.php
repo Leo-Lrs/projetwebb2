@@ -79,7 +79,7 @@ class ProductController extends Controller
             $fileNameWithExt = $request->file('product_image')->getClientOriginalName();
             // 2 : get just file name
             $fileName = pathinfo($fileNameWithExt, PATHINFO_FILENAME);
-            // 3 : get just file ext
+            // 3 : get just file ext aa
             $extension = $request->file('product_image')->getClientOriginalExtension();
             // 4 : file name to store
             $fileNameToStore = $fileName.'_'.time().'.'.$extension;
