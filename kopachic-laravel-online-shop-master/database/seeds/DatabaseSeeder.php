@@ -1,7 +1,7 @@
 <?php
 
 use Illuminate\Database\Seeder;
-use App\Models\ { User, Address, Category, Country, Product, Colissimo, Range, Shop, State, Page, Order };
+use App\Models\ { User, Address, Country, Product, Colissimo, Range, Shop, State, Page, Order };
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Str;
 class DatabaseSeeder extends Seeder
@@ -98,14 +98,6 @@ class DatabaseSeeder extends Seeder
             }
         }
 
-        // factory(Product::class, 6)->create();
-        factory(Category::class, 5)->create()->each(function ($category) {
-            $i = rand(2, 7);
-            while (--$i) {
-                $category->products()->save(factory(Product::class)->make());
-            }
-        });
-
         $items = [
             ['livraisons', 'Livraisons'],
             ['mentions-legales', 'Mentions légales'],
@@ -120,48 +112,5 @@ class DatabaseSeeder extends Seeder
                 'title' => $item[1],
             ]);
         }
-        factory(Order::class, 30)
-          ->create()
-          ->each(function ($order) {
-              $address = $order->user->addresses()->take(1)->get()->makeHidden(['id', 'user_id'])->toArray();
-              $order->adresses()->create($address[0]);
-              if(mt_rand(0, 1)) {
-                  $address = $order->user->addresses()->skip(1)->take(1)->get()->makeHidden(['id', 'user_id'])->toArray();
-                  $address[0]['facturation'] = false;
-                  $order->adresses()->create($address[0]);
-              }
-              $countryId = $address[0]['country_id'];
-              $total = 0;
-              $product = Product::find(mt_rand(1, 3));
-              $quantity = mt_rand(1, 3);
-              $price = $product->price * $quantity;
-              $total = $price;
-              $order->products()->create(
-                  [
-                      'name' => $product->name,
-                      'total_price_gross' => $price,
-                      'quantity' => $quantity,
-                  ]
-              );
-              if(mt_rand(0, 1)) {
-                  $product = Product::find(mt_rand(4, 6));
-                  $quantity = mt_rand(1, 3);
-                  $price = $product->price * $quantity;
-                  $total += $price;
-                  $order->products()->create(
-                      [
-                          'name' => $product->name,
-                          'total_price_gross' => $price,
-                          'quantity' => $quantity,
-                      ]
-                  );
-              }
-              if($order->payment === 'carte' && $order->state_id === 8) {
-                  $order->payment_infos()->create(['payment_id' => (string) Str::uuid()]);
-              }
-              $order->tax = $countryId > 2 ? 0 : .2;
-              $order->total = $total;
-              $order->save();
-        });
     }
 }

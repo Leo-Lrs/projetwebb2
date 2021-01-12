@@ -1,7 +1,7 @@
 <?php
 namespace App\DataTables;
-use App\Models\{ Product, Category };
 use Yajra\DataTables\Html\Column;
+use App\Models\Product;
 use Yajra\DataTables\Services\DataTable;
 use Illuminate\Support\Facades\DB;
 class ProductsDataTable extends DataTable
@@ -28,11 +28,7 @@ class ProductsDataTable extends DataTable
             ->editColumn('active', function ($product) {
                 return $product->active ? '<i class="fas fa-check text-success"></i>' : ''; 
             })
-            ->editColumn('category_id', function ($product) {
-                $category = DB::table('categories')->find($product->category_id);
-                $nameCategorie = $category->name;
-                return $nameCategorie; 
-            })
+
             ->rawColumns(['show', 'edit', 'destroy', 'active']);
     }
     /**
@@ -73,9 +69,7 @@ class ProductsDataTable extends DataTable
         return [
             Column::make('id'),
             Column::make('name')->title('Nom'),
-            Column::make('category_id')->title('Catégorie'),
             Column::make('price')->title('Prix TTC'),
-            Column::make('name')->title('Plateforme'),
             Column::make('quantity')->title('Quantité'),
             Column::make('active')
               ->title('Actif')              

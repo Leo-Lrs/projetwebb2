@@ -22,7 +22,6 @@ class CreateProductsTable extends Migration
             $table->integer('quantity_alert')->default(10);
             $table->string('image')->nullable();
             $table->text('description');
-            $table->foreignId('category_id')->constrained()->onDelete('cascade');
             $table->timestamps();
         });
     }

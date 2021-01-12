@@ -16,7 +16,6 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', 'HomeController@index')->name('home');
-Route::name('home.category')->get('/categorie/{category}', 'HomeController@category');
 
 Route::get('page/{page:slug}', 'HomeController@page')->name('page');
 
@@ -119,8 +118,6 @@ Route::prefix('admin')->middleware('admin')->namespace('Back')->group(function (
     Route::name('etats.destroy.alert')->get('etats/{etat}', 'StateController@alert');
     Route::resource('pages', 'PageController')->except('show');
     Route::name('pages.destroy.alert')->get('pages/{page}', 'PageController@alert');
-    Route::resource('categories', 'CategoryController')->except('show');
-    Route::name('categories.destroy.alert')->get('categories/{category}', 'CategoryController@alert');
     Route::resource('produits', 'ProductController')->except('show');
     Route::name('produits.destroy.alert')->get('produits/{produit}', 'ProductController@alert');
 

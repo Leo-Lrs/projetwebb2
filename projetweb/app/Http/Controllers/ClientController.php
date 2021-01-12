@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Product;
 use App\Category;
+use App\Cart;
+use Session;
 
 class ClientController extends Controller
 {
@@ -26,7 +28,6 @@ class ClientController extends Controller
     public function select_par_cat(Product $produits, Category $categories, $name)
     {
         $categories = Category::get();
-        //$produits = Product::whereid('category_id', $id)->where('status', 1)->get();
         $produits = Product::select('product_name', 'product_image', 'product_price')
         ->join('category_product', 'products.id', '=', 'category_product.product_id')
         ->where('category_product.category_id', $name)
@@ -34,6 +35,20 @@ class ClientController extends Controller
         ->get();
 
         return view('client.shop', ['produits' => $produits], ['categories' => $categories]);
+    }
+
+    public function ajouter_panier($id)
+    {
+        $produit = Product::find($id);
+
+        $oldCart = Session::has('cart')? Session::get('cart'):null;
+        $cart = new Cart($oldCart);
+        $cart->add($produit, $id);
+        Session::put('cart', $cart);
+
+        //dd(Session::get('cart'));
+        return redirect('/shop');
+
     }
 
     public function panier()

@@ -28,6 +28,7 @@ Route::get('/client_login', 'ClientController@client_login');
 Route::get('/signup', 'ClientController@signup');
 Route::get('/paiement', 'ClientController@paiement');
 Route::get('/select_par_cat/{id}', 'ClientController@select_par_cat');
+Route::get('/ajouter_panier/{id}', 'ClientController@ajouter_panier');
 
 // Admin
 Route::get('/admin', 'AdminController@dashboard');

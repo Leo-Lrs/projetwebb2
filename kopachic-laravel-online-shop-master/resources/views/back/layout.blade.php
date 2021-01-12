@@ -18,42 +18,41 @@
   <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700" rel="stylesheet">
 
   <style>
-      
     @font-face {
-        font-family: 'roboto_condensedbold';
-        src: url('../fonts/robotocondensed-bold-webfont.woff2') format('woff2'),
-            url('../fonts/robotocondensed-bold-webfont.woff') format('woff'),
-            url('../fonts/robotocondensed-bold-webfont.ttf') format('truetype'),
-            url('../fonts/robotocondensed-bold-webfont.svg#roboto_condensedbold') format('svg');
-        font-weight: normal;
-        font-style: normal;
+      font-family: 'roboto_condensedbold';
+      src: url('../fonts/robotocondensed-bold-webfont.woff2') format('woff2'),
+        url('../fonts/robotocondensed-bold-webfont.woff') format('woff'),
+        url('../fonts/robotocondensed-bold-webfont.ttf') format('truetype'),
+        url('../fonts/robotocondensed-bold-webfont.svg#roboto_condensedbold') format('svg');
+      font-weight: normal;
+      font-style: normal;
     }
 
     @font-face {
-        font-family: 'robotobold';
-        src: url('../fonts/roboto-bold-webfont.woff2') format('woff2'),
-            url('../fonts/roboto-bold-webfont.woff') format('woff'),
-            url('../fonts/roboto-bold-webfont.ttf') format('truetype'),
-            url('../fonts/roboto-bold-webfont.svg#robotobold') format('svg');
-        font-weight: normal;
-        font-style: normal;
+      font-family: 'robotobold';
+      src: url('../fonts/roboto-bold-webfont.woff2') format('woff2'),
+        url('../fonts/roboto-bold-webfont.woff') format('woff'),
+        url('../fonts/roboto-bold-webfont.ttf') format('truetype'),
+        url('../fonts/roboto-bold-webfont.svg#robotobold') format('svg');
+      font-weight: normal;
+      font-style: normal;
     }
 
-    .h1{
+    .h1 {
       font-size: 1rem !important;
     }
 
     .content-header h1 .fz-title {
-        font-size: 2.5rem !important;
-        margin: 0;
+      font-size: 2.5rem !important;
+      margin: 0;
     }
 
-    .style-card{
+    .style-card {
       background-color: #34495e;
       color: #ecf0f1;
     }
 
-    .ptest{
+    .ptest {
       padding-top: .1rem;
     }
 
@@ -65,11 +64,11 @@
       font-size: 110% !important;
     }
 
-    .text-darky{
+    .text-darky {
       color: #535c68;
     }
 
-    .bg-menu{
+    .bg-menu {
       margin-bottom: .5rem !important;
       margin-top: .5rem !important;
       color: #fff !important;
@@ -90,10 +89,11 @@
       border-bottom: 1px solid #4b545c;
     }
 
-    .dash{
+    .dash {
       padding: 0 .25rem !important;
     }
-    .dashboard{
+
+    .dashboard {
       font-size: 1.1rem;
       font-weight: 600;
     }
@@ -125,8 +125,8 @@
       background-color: #fff !important;
       border-color: #dee2e6 !important;
     }
-        
-    .btn-menu{
+
+    .btn-menu {
       padding: 0.075rem 0.15rem !important;
       font-size: .9rem !important;
     }
@@ -135,87 +135,103 @@
       vertical-align: middle !important;
     }
 
-    @media (min-width: 768px){
-      .btn-menu{
+    @media (min-width: 768px) {
+      .btn-menu {
         padding: .25rem .5rem !important;
         font-size: 1rem !important;
       }
     }
 
-    div.dataTables_wrapper div.dataTables_length, div.dataTables_wrapper div.dataTables_filter {
+    div.dataTables_wrapper div.dataTables_length,
+    div.dataTables_wrapper div.dataTables_filter {
       width: 95% !important;
       display: block !important;
       text-align: start !important;
       margin-right: auto;
       margin-left: auto;
     }
-    div.dataTables_wrapper div.dataTables_length{
+
+    div.dataTables_wrapper div.dataTables_length {
       margin-bottom: 1rem;
     }
+
     /* div.dataTables_wrapper div.dataTables_filter{
 
     } */
 
-    @media(min-width: 768px){
-      div.dataTables_wrapper div.dataTables_length, div.dataTables_wrapper div.dataTables_filter {
+    @media(min-width: 768px) {
+
+      div.dataTables_wrapper div.dataTables_length,
+      div.dataTables_wrapper div.dataTables_filter {
         width: 50% !important;
         display: inline-block !important;
         margin-bottom: .5rem;
       }
-      div.dataTables_wrapper div.dataTables_length{
+
+      div.dataTables_wrapper div.dataTables_length {
         text-align: left !important;
       }
-      div.dataTables_wrapper div.dataTables_filter{
+
+      div.dataTables_wrapper div.dataTables_filter {
         text-align: right !important;
       }
     }
 
-    div.dataTables_wrapper div.dataTables_info, div.dataTables_wrapper div.dataTables_paginate {
+    div.dataTables_wrapper div.dataTables_info,
+    div.dataTables_wrapper div.dataTables_paginate {
       width: 95% !important;
       display: block !important;
       text-align: left !important;
       margin-right: auto;
       margin-left: auto;
     }
-    div.dataTables_wrapper div.dataTables_info{
+
+    div.dataTables_wrapper div.dataTables_info {
       margin-top: -.1rem !important;
       margin-bottom: 1rem;
     }
-    div.dataTables_wrapper div.dataTables_paginate{
+
+    div.dataTables_wrapper div.dataTables_paginate {
       margin-top: .5rem;
       padding-bottom: 1rem;
     }
-    div.dataTables_wrapper div.dataTables_paginate ul.pagination{
+
+    div.dataTables_wrapper div.dataTables_paginate ul.pagination {
       justify-content: flex-start !important;
     }
 
-    @media(min-width: 768px){
-      div.dataTables_wrapper div.dataTables_info, div.dataTables_wrapper div.dataTables_paginate {
+    @media(min-width: 768px) {
+
+      div.dataTables_wrapper div.dataTables_info,
+      div.dataTables_wrapper div.dataTables_paginate {
         width: 50% !important;
         display: inline-block !important;
       }
-      div.dataTables_wrapper div.dataTables_info{
+
+      div.dataTables_wrapper div.dataTables_info {
         text-align: left !important;
       }
-      div.dataTables_wrapper div.dataTables_paginate{
+
+      div.dataTables_wrapper div.dataTables_paginate {
         text-align: right !important;
         margin-top: .5rem;
       }
-      div.dataTables_wrapper div.dataTables_paginate ul.pagination{
-      justify-content: flex-end !important;
+
+      div.dataTables_wrapper div.dataTables_paginate ul.pagination {
+        justify-content: flex-end !important;
       }
     }
 
-    @media(min-width: 768px){
-      .dash{
+    @media(min-width: 768px) {
+      .dash {
         padding: 0 .35rem !important;
       }
-      .dashboard{
+
+      .dashboard {
         font-size: 1.5rem;
         font-weight: 700;
       }
     }
-
   </style>
 
 </head>
@@ -250,7 +266,7 @@
           <span class="text-white brand-link">
             <p class="text-uppercase bg-menu">
               <a href="{{ route('admin') }}">Tableau de bord&nbsp;&nbsp;
-              <i class="right fas fa-tachometer-alt"></i></a>
+                <i class="right fas fa-tachometer-alt"></i></a>
             </p>
           </span>
           <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
@@ -276,48 +292,42 @@
                 </p>
               </a>
               <ul class="nav nav-treeview ml-3">
-                <x-menu-item :href="route('clients.index')" :sub=true :active="currentRouteActive('clients.index', 'clients.show')">
+                <x-menu-item :href="route('clients.index')" :sub=true
+                  :active="currentRouteActive('clients.index', 'clients.show')">
                   Clients
                 </x-menu-item>
-                <x-menu-item :href="route('back.adresses.index')" :sub=true :active="currentRouteActive('back.adresses.index', 'back.adresses.show')">
+                <x-menu-item :href="route('back.adresses.index')" :sub=true
+                  :active="currentRouteActive('back.adresses.index', 'back.adresses.show')">
                   Adresses
                 </x-menu-item>
               </ul>
             </li>
 
 
-          <li class="nav-item">
-            <a href="{{ route('orders.index') }}" class="nav-link {{ currentRouteActive(
+            <li class="nav-item">
+              <a href="{{ route('orders.index') }}" class="nav-link {{ currentRouteActive(
               'orders.index', 
               'orders.show',
             )}}">
-              <i class="nav-icon fas fa-shopping-basket"></i>
-              <p>
-                Commandes
-              </p>
-            </a>
-          </li>
+                <i class="nav-icon fas fa-shopping-basket"></i>
+                <p>
+                  Commandes
+                </p>
+              </a>
+            </li>
 
 
             <li class="nav-item has-treeview {{ menuOpen(
                 'produits.index',
                 'produits.edit', 
                 'produits.create',
-                'produits.destroy.alert',
-                'categories.index',
-                'categories.edit',
-                'categories.create',
-                'categories.destroy.alert'
+                'produits.destroy.alert'
             ) }}">
               <a href="#" class="nav-link {{ currentRouteActive(
                 'produits.index',
                 'produits.edit',
                 'produits.create',
-                'produits.destroy.alert',
-                'categories.index',
-                'categories.edit',
-                'categories.create',
-                'categories.destroy.alert'
+                'produits.destroy.alert'
               ) }}">
                 <i class="nav-icon fas fa-store"></i>
                 <p>
@@ -326,15 +336,8 @@
                 </p>
               </a>
               <ul class="nav nav-treeview ml-3">
-                <x-menu-item :href="route('categories.index')" :sub=true :active="currentRouteActive(
-                  'categories.index', 
-                  'categories.edit', 
-                  'categories.create', 
-                  'categories.destroy.alert'
-                )">
-                  Catégories
-                </x-menu-item>
-                <x-menu-item :href="route('produits.index')" :sub=true :active="currentRouteActive('produits.index', 'produits.edit' , 'produits.destroy.alert')">
+                <x-menu-item :href="route('produits.index')" :sub=true
+                  :active="currentRouteActive('produits.index', 'produits.edit' , 'produits.destroy.alert')">
                   Produits
                 </x-menu-item>
                 <x-menu-item :href="route('produits.create')" :sub=true :active="currentRouteActive('produits.create')">
@@ -437,13 +440,14 @@
                     </x-menu-item>
 
                   </ul>
-                </li> 
+                </li>
 
-                <x-menu-item :href="route('maintenance.edit')" :sub=true :active="currentRouteActive('maintenance.edit')">
+                <x-menu-item :href="route('maintenance.edit')" :sub=true
+                  :active="currentRouteActive('maintenance.edit')">
                   Maintenance
                 </x-menu-item>
 
-                
+
               </ul>
             </li>
             <li class="nav-item">
@@ -472,7 +476,7 @@
 
 
 
-          
+
         </nav>
         <!-- /.sidebar-menu -->
       </div>

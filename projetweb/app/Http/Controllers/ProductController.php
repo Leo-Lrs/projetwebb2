@@ -33,6 +33,7 @@ class ProductController extends Controller
         else{
             $fileNameToStore = 'noimage.jpg';
         }
+        
         $product = new Product();
         $product->product_name=$request->input('product_name');
         $product->product_description=$request->input('product_description');

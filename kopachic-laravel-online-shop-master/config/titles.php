@@ -55,12 +55,6 @@ return [
         'create' => 'Création d\'une page',
     ],
 
-    'categories' => [
-        'index' => 'Gestion des catégories de produits',
-        'edit' => 'Modification d\'une catégorie de produits',
-        'create' => 'Création d\'une catégorie de produits',
-    ],
-
     'produits' => [
         'index' => 'Catalogue des produits',
         'create' => 'Création d\'un produit',

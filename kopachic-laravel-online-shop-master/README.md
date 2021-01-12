@@ -21,7 +21,6 @@ pwd: 12345678
 
 **Front-end** :
 
-* display of products by categories
 * Integrated purchasing system with payment possible by credit card (via STRIPE) or by paypal (Paypal Checkout)
 * RGPD included
 

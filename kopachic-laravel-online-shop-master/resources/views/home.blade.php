@@ -3,49 +3,50 @@
 
 
 @if($shop->home_infos && (!isset($_COOKIE['notif'])))
-  <div class="annonce-container right w-notif m-r-2 m-t-n1-5">     
-    <div class="card">
-      <ul class="collapsible">
-        <li classe="px-1">
-          <div class="annonce">
-            <div class="collapsible-header head-annonce red-text text-darken-1"><i class="material-icons">info</i>Informations importantes</div>
-          </div>
-          <div class="collapsible-body informations">
-            <ul>
-              @php 
-                $info=explode("\r\n\r\n", $shop->home_infos);
-              @endphp
-              @foreach($info as $li)
-                <li>{{ ' '.$li }}<br></li>
-              @endforeach
-            </ul>
-          </div>
-        </li>
-      </ul>
-    </div>
+<div class="annonce-container right w-notif m-r-2 m-t-n1-5">
+  <div class="card">
+    <ul class="collapsible">
+      <li classe="px-1">
+        <div class="annonce">
+          <div class="collapsible-header head-annonce red-text text-darken-1"><i
+              class="material-icons">info</i>Informations importantes</div>
+        </div>
+        <div class="collapsible-body informations">
+          <ul>
+            @php
+            $info=explode("\r\n\r\n", $shop->home_infos);
+            @endphp
+            @foreach($info as $li)
+            <li>{{ ' '.$li }}<br></li>
+            @endforeach
+          </ul>
+        </div>
+      </li>
+    </ul>
   </div>
+</div>
 @endif
 
-@guest 
-  @if(!isset($_COOKIE['bienvenue']))
-    <div id="guest" class="container fade">
-      <div class="row">
-        <div class="col s12 offset-m2 m8">
-          <div class="card blue-grey darken-1 z-depth-3">
-            <div class="card-content white-text">
-              <span class="card-title center-align">Bienvenue !!</span>
-              <p>Touvez votre bonheur sur <span class="bold">KoPaChic</span>, la boutique chic mais pas classe.<br>
-              L'inscription est nécessaire pour passer une commande.</p>
-              <p>Bonne visite ^^</p>
-            </div>
-            <div class="card-action right-align">
-              <a id="close" class="" href="#">Fermez la fenêtre</a>
-            </div>
-          </div>
+@guest
+@if(!isset($_COOKIE['bienvenue']))
+<div id="guest" class="container fade">
+  <div class="row">
+    <div class="col s12 offset-m2 m8">
+      <div class="card blue-grey darken-1 z-depth-3">
+        <div class="card-content white-text">
+          <span class="card-title center-align">Bienvenue !!</span>
+          <p>Touvez votre bonheur sur <span class="bold">KoPaChic</span>, la boutique chic mais pas classe.<br>
+            L'inscription est nécessaire pour passer une commande.</p>
+          <p>Bonne visite ^^</p>
+        </div>
+        <div class="card-action right-align">
+          <a id="close" class="" href="#">Fermez la fenêtre</a>
         </div>
       </div>
     </div>
-  @endif
+  </div>
+</div>
+@endif
 @endguest
 
 
@@ -53,26 +54,23 @@
   <div class="row">
     <div class="col s12 cards-container">
       @foreach($products as $product)
-        <div class="card">
-          <div class="card-image">
-            @if($product->quantity)
-              <a href="{{ route('produits.show', $product->id) }}">
+      <div class="card">
+        <div class="card-image">
+          @if($product->quantity)
+          <a href="{{ route('produits.show', $product->id) }}">
             @endif
-              <img src="/images/thumbs/{{ $product->image }}">
+            <img src="/images/thumbs/{{ $product->image }}">
             @if($product->quantity) </a> @endif
-            </div>          
-            <div class="right card-category">Catégorie :
-              {{ $product->category->name }}
-            </div>
-            <div class="card-content center-align">
-            <p>{{ $product->name }}</p>
-            @if($product->quantity)
-              <p class="fz-85"><strong>{{ number_format($product->price, 2, ',', ' ') }} € TTC</strong></p>
-            @else
-              <p class="red-text"><strong>Produit en rupture de stock</strong></p>
-            @endif
-          </div>
         </div>
+        <div class="card-content center-align">
+          <p>{{ $product->name }}</p>
+          @if($product->quantity)
+          <p class="fz-85"><strong>{{ number_format($product->price, 2, ',', ' ') }} € TTC</strong></p>
+          @else
+          <p class="red-text"><strong>Produit en rupture de stock</strong></p>
+          @endif
+        </div>
+      </div>
       @endforeach
     </div>
   </div>
@@ -81,7 +79,7 @@
 
 @section('javascript')
 
-  <script>
+<script>
   function removeFadeOut( el, speed ) {
       var seconds = speed/1000;
       el.style.transition = "opacity "+seconds+"s ease";
@@ -180,6 +178,6 @@ if(guest && close){
       }
     });
 
-  </script>
-    
+</script>
+
 @endsection

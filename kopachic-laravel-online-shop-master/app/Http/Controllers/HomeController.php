@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\{ Product, Page, Category };
+use App\Models\{ Product, Page };
 
 class HomeController extends Controller
 {
@@ -13,19 +13,8 @@ class HomeController extends Controller
      */
     public function index()
     {
-        $products = Product::whereActive(true)->get();
-        $categories = Category::all(); 
-        return view('home', compact('products', 'categories'));
-    }
-
-    public function category($id)
-    {
-        $products = Product::whereActive(true)->get();
-        $categories = Category::find($id);
-        $category = $categories->slug;
-        // dd($category);
-        $products = Product::where('category_id', $id)->get();
-        return view('home', compact('products', 'category'));
+        $products = Product::whereActive(true)->get(); 
+        return view('home', compact('products'));
     }
 
     public function page(Page $page)

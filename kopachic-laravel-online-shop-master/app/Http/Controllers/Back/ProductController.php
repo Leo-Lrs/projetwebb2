@@ -3,7 +3,7 @@
 namespace App\Http\Controllers\Back;
 
 use App\Http\Controllers\Controller;
-use App\Models\{ Product, Category };
+use App\Models\Product;
 use Illuminate\Http\Request;
 use App\DataTables\ProductsDataTable;
 use App\Http\Requests\ProductRequest;
@@ -28,8 +28,7 @@ class ProductController extends Controller
      */
     public function create()
     {
-        $categories = Category::all();
-        return view('back.products.form', compact('categories'));
+        return view('back.products.form');
     }
 
     /**
@@ -40,8 +39,18 @@ class ProductController extends Controller
      */
     public function store(ProductRequest $request)
     {
-        $inputs = $this->getInputs($request);
-        Product::create($inputs);
+        $product = new Product();
+        $product->name=$request->input('name');
+        $product->description=$request->input('description');
+        $product->price=$request->input('price');
+        $product->quantity=$request->input('quantity');
+        $product->quantity_alert=$request->input('quantity_alert');
+        $product->active = 1;
+
+        $product->save();
+
+        $product->categories()->attach($request->input('plateforme'));
+        
         return back()->with('alert', config('messages.productcreated'));
     }
     protected function saveImages($request)
@@ -82,8 +91,7 @@ class ProductController extends Controller
      */
     public function edit(Product $produit)
     {
-        $categories = Category::all();
-        return view('back.products.form', ['product' => $produit], ['categories' => $categories]);
+        return view('back.products.form', ['product' => $produit]);
     }
 
     /**

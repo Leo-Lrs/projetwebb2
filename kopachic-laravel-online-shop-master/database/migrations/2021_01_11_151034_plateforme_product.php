@@ -13,9 +13,9 @@ class PlateformeProduct extends Migration
      */
     public function up()
     {
-        Schema::create('plateforme_product', function (Blueprint $table) {
+        Schema::create('category_product', function (Blueprint $table) {
             $table->id();
-            $table->string("plateforme_id");
+            $table->string("category_id");
             $table->string("product_id");
             $table->timestamps();
         });

@@ -29,28 +29,15 @@
 
             <x-inputbs4 name="name" type="text" label="Nom" :value="isset($product) ? $product->name : ''"></x-inputbs4>
 
-            <label>Categorie</label>
-            <select id="category_id" name="category_id" class="custom-select custom-select-md mb-3">
-              <option value="#" selected>--- Choisir une catégorie ---</option>
-              @foreach($categories as $category)
-              <option value=" {{ $category->id }}" @if(old('category_id', isset($product) ? $product->category_id : '')
-                == $category->id) selected @endif>{{ $category->name }}
-              </option>
-              {{-- <option value="{{ $category->id }}" @isset($product)
-              <?= $product->category_id == $category->id ? "selected" : ""; ?> @endisset >{{ $category->name }}</option>
-              --}}
-              @endforeach
-            </select>
             <div class="form-group">
               {{Form::label('', 'Plateforme')}}
-              @foreach ($categories as $categorie)
+              @foreach ($plateformes as $plateforme)
               <label class="form-control" style="display:block">
-                <input type="checkbox" value="{{ $categorie->id }}" name="categories[]" />
-                <span>{{ $categorie->category_name }}</span>
+                <input type="checkbox" value="{{ $plateforme->id }}" name="plateforme[]" />
+                <span>{{ $plateforme->name }}</span>
               </label>
               @endforeach
             </div>
-
             <x-textareabs4 name="description" label="Description"
               :value="isset($product) ? trim($product->description) : ''"></x-textareabs4>
             <x-inputbs4 name="price" type="text" label="Prix TTC" :value="isset($product) ? $product->price : ''"
