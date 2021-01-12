@@ -33,7 +33,6 @@
 				<div class="product">
 					<a href="#" class="img-prod"><img class="img-fluid"
 							src="/storage/product_images/{{$produit->product_image}}" alt="Colorlib Template">
-						<span class="status">30%</span>
 						<div class="overlay"></div>
 					</a>
 					<div class="text py-3 pb-4 px-3 text-center">
@@ -52,9 +51,6 @@
 								<a href="/ajouter_panier/{{$produit->id}}"
 									class="buy-now d-flex justify-content-center align-items-center mx-1">
 									<span><i class="ion-ios-cart"></i></span>
-								</a>
-								<a href="#" class="heart d-flex justify-content-center align-items-center ">
-									<span><i class="ion-ios-heart"></i></span>
 								</a>
 							</div>
 						</div>
