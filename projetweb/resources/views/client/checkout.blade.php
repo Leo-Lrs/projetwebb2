@@ -11,12 +11,13 @@
 		</div>
 	</div>
 </div>
-
+@if(Session::has('cart'))
 <section class="ftco-section">
 	<div class="container">
 		<div class="row justify-content-center">
 			<div class="col-xl-7 ftco-animate">
-				<form action="#" class="billing-form">
+				<form action="{{url('/payer')}}" class="billing-form" method="POST" id="checkout-form">
+					{{ csrf_field() }}
 					<h3 class="mb-4 billing-heading">Billing Details</h3>
 					<div class="row align-items-end">
 						<div class="col-md-6">
@@ -87,6 +88,41 @@
 								<input type="text" class="form-control" placeholder="">
 							</div>
 						</div>
+						<div class="col-md-12">
+							<div class="form-group">
+								<label for="emailaddress">Nom de la carte</label>
+								<input type="text" class="form-control" id="card-name" name="card_name">
+							</div>
+						</div>
+						<div class="col-md-12">
+							<div class="form-group">
+								<label for="emailaddress">Numéro de carte</label>
+								<input type="text" class="form-control" id="card-number">
+							</div>
+						</div>
+						<div class="col-md-6">
+							<div class="form-group">
+								<label for="emailaddress">Mois d'expiration</label>
+								<input type="text" class="form-control" id="card-expiry-month">
+							</div>
+						</div>
+						<div class="col-md-6">
+							<div class="form-group">
+								<label for="emailaddress">Année d'expiration</label>
+								<input type="text" class="form-control" id="card-expiry-year">
+							</div>
+						</div>
+						<div class="col-md-6">
+							<div class="form-group">
+								<label for="emailaddress">Cryptogramme</label>
+								<input type="text" class="form-control" id="card-cvc">
+							</div>
+						</div>
+						<div class="col-md-12">
+							<div class="form-group">
+								<input type="submit" class="btn btn-primary" value="Payer">
+							</div>
+						</div>
 						<div class="w-100"></div>
 						<div class="col-md-12">
 							<div class="form-group mt-4">
@@ -120,13 +156,20 @@
 							<hr>
 							<p class="d-flex total-price">
 								<span>Total</span>
-								<span>$17.60</span>
+								<span>{{Session::get('cart')->totalPrice}} €</span>
 							</p>
 						</div>
 					</div>
 					<div class="col-md-12">
 						<div class="cart-detail p-3 p-md-4">
 							<h3 class="billing-heading mb-4">Payment Method</h3>
+							<div class="form-group">
+								<div class="col-md-12">
+									<div class="radio">
+										<label><input type="radio" name="optradio" class="mr-2"> Carte bancaire</label>
+									</div>
+								</div>
+							</div>
 							<div class="form-group">
 								<div class="col-md-12">
 									<div class="radio">
@@ -158,7 +201,7 @@
 									</div>
 								</div>
 							</div>
-							<p><a href="#" class="btn btn-primary py-3 px-4">Place an order</a></p>
+							<p><a href="#" class="btn btn-primary py-3 px-4">Payer</a></p>
 						</div>
 					</div>
 				</div>
@@ -166,9 +209,12 @@
 		</div>
 	</div>
 </section> <!-- .section -->
+@endif
 @endsection
 
 @section('scripts')
+<script src="https://js.stripe.com/v2/"></script>
+<script src="src/js/checkout.js"></script>
 <script>
 	$(document).ready(function(){
 

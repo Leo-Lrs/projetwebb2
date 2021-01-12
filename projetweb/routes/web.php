@@ -31,6 +31,7 @@ Route::get('/select_par_cat/{id}', 'ClientController@select_par_cat');
 Route::get('/ajouter_panier/{id}', 'ClientController@ajouter_panier');
 Route::post('/modifier_qty/{id}', 'ClientController@modifier_panier');
 Route::get('/retirer_produit/{id}', 'ClientController@retirer_produit');
+Route::post('/payer', 'ClientController@payer');
 
 // Admin
 Route::get('/admin', 'AdminController@dashboard');
