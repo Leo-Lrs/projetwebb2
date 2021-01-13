@@ -183,29 +183,29 @@ L'administration se composera obligatoirement des pages suivantes :
 Partie membres
 ```
 - la page d’accueil :
-    o liste de tous les jeux disponibles avec un système de pagination _difficulté :_ 3
-    o un système de recherche par le nom du jeu _difficulté :_ 2
+    - liste de tous les jeux disponibles avec un système de pagination _difficulté :_ 3
+    - un système de recherche par le nom du jeu _difficulté :_ 2
 - les utilisateurs peuvent se créer un compte et se connecter. Ils pourront compléter et
     modifier leur profil _difficulté :_ 5
-       o chaque profil utilisateur possède :
-          ▪ un prénom
-          ▪ un nom
-          ▪ une adresse email
-          ▪ une date de naissance
-          ▪ un solde (factice)
+       - chaque profil utilisateur possède :
+          - un prénom
+          - un nom
+          - une adresse email
+          - une date de naissance
+          - un solde (factice)
 
 - la page produit contient : _difficulté :_ 7
-    o l'image du jeu
-    o le nom du jeu
-    o le prix du jeu
-    o la note moyenne
-    o les avis des acheteurs
-    o un bouton d’achat
-    o un formulaire pour ajouter/modifier son avis (si le membre a déjà acheté le
+    - l'image du jeu
+    - le nom du jeu
+    - le prix du jeu
+    - la note moyenne
+    - les avis des acheteurs
+    - un bouton d’achat
+    - un formulaire pour ajouter/modifier son avis (si le membre a déjà acheté le
        jeu)
 - un email automatique est envoyé à l’acheteur après la vente avec : _difficulté :_ 5
-    o le code d’activation
-    o la facture en PDF
+    - le code d’activation
+    - la facture en PDF
 
 ```
 Partie administrateur
@@ -213,31 +213,31 @@ Partie administrateur
 - un espace administrateur est mis en place avec une authentification _difficulté :_ 3
 - un tableau de bord est présent dans l’espace administrateur avec des informations
     tels que : _difficulté :_ 2
-       o nombre de membres
-       o nombre de ventes
-       o nombre de nouvelles ventes sur les 7 derniers jours
-       o les revenus du site totaux
-       o les revenus du site sur les 7 derniers jours
+       - nombre de membres
+       - nombre de ventes
+       - nombre de nouvelles ventes sur les 7 derniers jours
+       - les revenus du site totaux
+       - les revenus du site sur les 7 derniers jours
 - les administrateurs peuvent gérer les jeux avec un CRUD : _difficulté :_ 5
-    o le CRUD permet d'ajouter/modifier/supprimer un jeu avec :
-       ▪ un nom
-       ▪ une description
-       ▪ une photo
-       ▪ une quantité
-       ▪ un prix
-       ▪ un code d’activation
-    o les administrateurs peuvent consulter :
-       ▪ la note moyenne des notes
-       ▪ les avis laissés par les acheteurs
+    - le CRUD permet d'ajouter/modifier/supprimer un jeu avec :
+       - un nom
+       - une description
+       - une photo
+       - une quantité
+       - un prix
+       - un code d’activation
+    - les administrateurs peuvent consulter :
+       - la note moyenne des notes
+       - les avis laissés par les acheteurs
 - les administrateurs peuvent gérer les membres avec un CRUD : _difficulté :_ 4
-    o le CRUD permet de modifier :
-       ▪ un prénom
-       ▪ un nom
-       ▪ une adresse email
-       ▪ une date de naissance
-    o les administrateurs peuvent consulter :
-       ▪ les achats de jeux
-       ▪ les factures en PDF
+    - le CRUD permet de modifier :
+       - un prénom
+       - un nom
+       - une adresse email
+       - une date de naissance
+    - les administrateurs peuvent consulter :
+       - les achats de jeux
+       - les factures en PDF
 
 _Degré de difficulté total : 36 points_
 

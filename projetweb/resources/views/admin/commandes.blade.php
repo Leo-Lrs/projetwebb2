@@ -2,6 +2,7 @@
 @section('title')
 Commandes
 @endsection
+{{Form::hidden('', $increment=1)}}
 @section('contenu')
 <div class="card">
     <div class="card-body">
@@ -21,16 +22,23 @@ Commandes
                             </tr>
                         </thead>
                         <tbody>
+                            @foreach($orders as $order)
                             <tr>
-                                <td>1</td>
-                                <td>2012/08/03</td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
+                                <td>{{$increment}}</td>
+                                <td>{{$order->nom}}</td>
+                                <td>{{$order->adresse}}</td>
+                                <td>
+                                    @foreach ($order->panier->items as $item)
+                                    {{$item['product_name'].". "}}
+                                    @endforeach
+                                </td>
+                                <td>{{$order->payment_id}}</td>
                                 <td>
                                     <button class="btn btn-outline-primary">View</button>
                                 </td>
                             </tr>
+                            {{Form::hidden('', $increment=$increment+1)}}
+                            @endforeach
                         </tbody>
                     </table>
                 </div>

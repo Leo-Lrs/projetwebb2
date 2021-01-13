@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Order;
 
 class AdminController extends Controller
 {
@@ -13,6 +14,15 @@ class AdminController extends Controller
 
     public function commandes()
     {
-        return view('admin.commandes');
+        $orders = Order::get();
+
+        $orders->transform(function($order, $key)
+        {
+            $order->panier = unserialize($order->panier);
+
+            return $order;
+        });
+
+        return view('admin.commandes')->with('orders', $orders);
     }
 }

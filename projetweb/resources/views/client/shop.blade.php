@@ -1,7 +1,9 @@
 @extends('layouts.app1')
+@section('title')
+MegaGaming
+@endsection
 @section('contenu')
-
-<div class="hero-wrap hero-bread" style="background-image: url('/frontend/images/bg_1.jpg');">
+<div class="hero-wrap hero-bread" style="background-image: url('/frontend/images/bg_4.jpg');">
 	<div class="container">
 		<div class="row no-gutters slider-text align-items-center justify-content-center">
 			<div class="col-md-9 ftco-animate text-center">

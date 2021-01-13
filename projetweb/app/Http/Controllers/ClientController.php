@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Product;
 use App\Category;
 use App\Cart;
+use App\Order;
 use Illuminate\Support\Facades\Session;
 use Illuminate\Support\Facades\Redirect;
 use Stripe\Charge;
@@ -122,6 +123,15 @@ class ClientController extends Controller
                 "source" => $request->input('stripeToken'), // obtainded with Stripe.js
                 "description" => "Test Charge"
             ));
+
+            $order = new Order;
+
+            $order->nom = $request->input('firstname');
+            $order->adresse = $request->input('adress');
+            $order->panier = serialize($cart);
+            $order->payment_id = $charge->id;
+
+            $order->save();
 
         } catch(\Exception $e){
             Session::put('error', $e->getMessage());

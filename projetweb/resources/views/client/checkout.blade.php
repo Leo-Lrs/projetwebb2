@@ -1,6 +1,6 @@
 @extends('layouts.app1')
 @section('contenu')
-<div class="hero-wrap hero-bread" style="background-image: url('frontend/images/bg_1.jpg');">
+<div class="hero-wrap hero-bread" style="background-image: url('frontend/images/bg_4.jpg');">
 	<div class="container">
 		<div class="row no-gutters slider-text align-items-center justify-content-center">
 			<div class="col-md-9 ftco-animate text-center">
@@ -19,17 +19,23 @@
 				<form action="{{url('/payer')}}" class="billing-form" method="POST" id="checkout-form">
 					{{ csrf_field() }}
 					<h3 class="mb-4 billing-heading">Billing Details</h3>
+					@if(Session::has('error'))
+					<div class="alert alert-danger">
+						{{Session::get('error')}}
+						{{Session::put('error', null)}}
+					</div>
+					@endif
 					<div class="row align-items-end">
 						<div class="col-md-6">
 							<div class="form-group">
 								<label for="firstname">Firt Name</label>
-								<input type="text" class="form-control" placeholder="">
+								<input type="text" name="firstname" class="form-control" placeholder="">
 							</div>
 						</div>
 						<div class="col-md-6">
 							<div class="form-group">
 								<label for="lastname">Last Name</label>
-								<input type="text" class="form-control" placeholder="">
+								<input type="text" name="lastname" class="form-control" placeholder="">
 							</div>
 						</div>
 						<div class="w-100"></div>
@@ -52,8 +58,9 @@
 						<div class="w-100"></div>
 						<div class="col-md-6">
 							<div class="form-group">
-								<label for="streetaddress">Street Address</label>
-								<input type="text" class="form-control" placeholder="House number and street name">
+								<label for="streetaddress">Addresse</label>
+								<input type="text" name="adress" class="form-control"
+									placeholder="House number and street name">
 							</div>
 						</div>
 						<div class="col-md-6">
@@ -65,20 +72,20 @@
 						<div class="w-100"></div>
 						<div class="col-md-6">
 							<div class="form-group">
-								<label for="towncity">Town / City</label>
+								<label for="towncity">Ville</label>
 								<input type="text" class="form-control" placeholder="">
 							</div>
 						</div>
 						<div class="col-md-6">
 							<div class="form-group">
-								<label for="postcodezip">Postcode / ZIP *</label>
+								<label for="postcodezip">Code postal</label>
 								<input type="text" class="form-control" placeholder="">
 							</div>
 						</div>
 						<div class="w-100"></div>
 						<div class="col-md-6">
 							<div class="form-group">
-								<label for="phone">Phone</label>
+								<label for="phone">Téléphone</label>
 								<input type="text" class="form-control" placeholder="">
 							</div>
 						</div>
@@ -100,19 +107,19 @@
 								<input type="text" class="form-control" id="card-number">
 							</div>
 						</div>
-						<div class="col-md-6">
+						<div class="col-md-4">
 							<div class="form-group">
 								<label for="emailaddress">Mois d'expiration</label>
 								<input type="text" class="form-control" id="card-expiry-month">
 							</div>
 						</div>
-						<div class="col-md-6">
+						<div class="col-md-4">
 							<div class="form-group">
 								<label for="emailaddress">Année d'expiration</label>
 								<input type="text" class="form-control" id="card-expiry-year">
 							</div>
 						</div>
-						<div class="col-md-6">
+						<div class="col-md-4">
 							<div class="form-group">
 								<label for="emailaddress">Cryptogramme</label>
 								<input type="text" class="form-control" id="card-cvc">
@@ -127,9 +134,7 @@
 						<div class="col-md-12">
 							<div class="form-group mt-4">
 								<div class="radio">
-									<label class="mr-3"><input type="radio" name="optradio"> Create an Account?
-									</label>
-									<label><input type="radio" name="optradio"> Ship to different address</label>
+									<label class="mr-3"><input type="radio" name="optradio"> Create an Account?</label>
 								</div>
 							</div>
 						</div>
@@ -140,20 +145,6 @@
 				<div class="row mt-5 pt-3">
 					<div class="col-md-12 d-flex mb-5">
 						<div class="cart-detail cart-total p-3 p-md-4">
-							<h3 class="billing-heading mb-4">Cart Total</h3>
-							<p class="d-flex">
-								<span>Subtotal</span>
-								<span>$20.60</span>
-							</p>
-							<p class="d-flex">
-								<span>Delivery</span>
-								<span>$0.00</span>
-							</p>
-							<p class="d-flex">
-								<span>Discount</span>
-								<span>$3.00</span>
-							</p>
-							<hr>
 							<p class="d-flex total-price">
 								<span>Total</span>
 								<span>{{Session::get('cart')->totalPrice}} €</span>
