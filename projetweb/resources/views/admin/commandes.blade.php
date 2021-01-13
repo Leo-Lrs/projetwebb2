@@ -7,6 +7,12 @@ Commandes
 <div class="card">
     <div class="card-body">
         <h4 class="card-title">Commandes</h4>
+        @if(Session::has('error'))
+        <div class="alert alert-danger">
+            {{Session::get('error')}}
+            {{Session::put('error', null)}}
+        </div>
+        @endif
         <div class="row">
             <div class="col-12">
                 <div class="table-responsive">
@@ -34,7 +40,8 @@ Commandes
                                 </td>
                                 <td>{{$order->payment_id}}</td>
                                 <td>
-                                    <button class="btn btn-outline-primary">View</button>
+                                    <button class="btn btn-outline-primary"
+                                        onclick="window.location ='{{url('/voir_pdf/'.$order->id)}}'">View</button>
                                 </td>
                             </tr>
                             {{Form::hidden('', $increment=$increment+1)}}

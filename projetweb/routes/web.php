@@ -33,6 +33,9 @@ Route::post('/modifier_qty/{id}', 'ClientController@modifier_panier');
 Route::get('/retirer_produit/{id}', 'ClientController@retirer_produit');
 Route::post('/payer', 'ClientController@payer');
 
+// Pdf
+Route::get('/voir_pdf/{id}', 'PdfController@voir_pdf');
+
 // Admin
 Route::get('/admin', 'AdminController@dashboard');
 Route::get('/commandes', 'AdminController@commandes');
