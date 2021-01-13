@@ -3,18 +3,12 @@
 MegaGaming
 @endsection
 @section('contenu')
-<div class="hero-wrap hero-bread" style="background-image: url('/frontend/images/bg_4.jpg');">
-	<div class="container">
-		<div class="row no-gutters slider-text align-items-center justify-content-center">
-			<div class="col-md-9 ftco-animate text-center">
-				<p class="breadcrumbs"><span class="mr-2"><a href="index.html">Home</a></span> <span>Products</span>
-				</p>
-				<h1 class="mb-0 bread">Products</h1>
-			</div>
-		</div>
+<section id="home-section" class="hero">
+	<div class="home-slider owl-carousel">
+		<div class="slider-item" style="background-image: url('/frontend/images/bg_4.jpg');"></div>
+		<div class="slider-item" style="background-image: url('/frontend/images/bg_5.jpg');"></div>
 	</div>
-</div>
-
+</section>
 <section class="ftco-section">
 	<div class="container">
 		<div class="row justify-content-center">
@@ -33,7 +27,7 @@ MegaGaming
 			@foreach ($produits as $produit)
 			<div class="col-md-6 col-lg-3 ftco-animate">
 				<div class="product">
-					<a href="#" class="img-prod"><img class="img-fluid"
+					<a href="{{URL::to('/show_product/'.$produit->id)}}" class="img-prod"><img class="img-fluid"
 							src="/storage/product_images/{{$produit->product_image}}" alt="Colorlib Template">
 						<div class="overlay"></div>
 					</a>

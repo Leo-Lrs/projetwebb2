@@ -12,3 +12,7 @@
 # Login
 - email : test@test.fr
 - password : testtest
+
+# Admin
+- email : pierre@pierre.fr
+- password : testtest

@@ -22,7 +22,7 @@ Route::get('/', function () {
 */
 
 // Client
-Route::get('/', 'ClientController@home');
+Route::get('/', 'ClientController@shop');
 Route::get('/shop', 'ClientController@shop');
 Route::get('/panier', 'ClientController@panier');
 Route::get('/client_login', 'ClientController@client_login');
@@ -36,6 +36,8 @@ Route::post('/payer', 'ClientController@payer');
 Route::post('/creer_compte', 'ClientController@creer_compte');
 Route::post('/acceder_compte', 'ClientController@acceder_compte');
 Route::get('/logout', 'ClientController@logout');
+Route::get('/show_product/{id}', 'ClientController@show_product');
+
 
 // Pdf
 Route::get('/voir_pdf/{id}', 'PdfController@voir_pdf');

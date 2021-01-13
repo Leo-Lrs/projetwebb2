@@ -212,4 +212,10 @@ class ClientController extends Controller
     {
         return view('client.signup');
     }
+
+    public function show_product($id)
+    {
+        $product = Product::find($id);
+        return view('client.show_product')->with('product', $product);
+    }
 }

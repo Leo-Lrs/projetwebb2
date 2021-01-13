@@ -3,7 +3,7 @@
         <li class="nav-item">
             <a class="nav-link" href="{{ URL::to('/admin') }}">
                 <i class="ti-home menu-icon"></i>
-                <span class="menu-title">Dashboard</span>
+                <span class="menu-title">Tableau de bord</span>
             </a>
         </li>
         <li class="nav-item">

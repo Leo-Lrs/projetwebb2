@@ -9,8 +9,7 @@
 
             <div class="collapse navbar-collapse" id="ftco-nav">
                 <ul class="navbar-nav ml-auto">
-                    <li class="nav-item active"><a href="{{ URL::to('/') }}" class="nav-link">Acceuil</a></li>
-                    <li class="nav-item active"><a href="{{ URL::to('/shop') }}" class="nav-link">Tous les jeux</a></li>
+                    <li class="nav-item active"><a href="{{ URL::to('/shop') }}" class="nav-link">Accueil</a></li>
                     <li class="nav-item cta cta-colored"><a href="{{ URL::to('/panier') }}" class="nav-link"><span
                                 class="icon-shopping_cart"></span>[{{Session::has('cart')?Session::get('cart')->totalQty:0}}]</a>
                     </li>

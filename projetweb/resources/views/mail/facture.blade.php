@@ -122,7 +122,7 @@
                 <td colspan="2">
                     <table>
                         <tr>
-                            <td>{{$order->adresse}}<br></td>
+                            <td>Adresse : {{$order->adresse}}<br></td>
                             <td>
                                 {{$order->nom}}<br>
                                 {{Session::get('client')->email}}
