@@ -9,8 +9,6 @@
 
             <div class="collapse navbar-collapse" id="ftco-nav">
                 <ul class="navbar-nav ml-auto">
-                    <li class="nav-item active"><a href="{{ URL::to('/admin') }}" class="nav-link">Administration</a>
-                    </li>
                     <li class="nav-item active"><a href="{{ URL::to('/') }}" class="nav-link">Acceuil</a></li>
                     <li class="nav-item active"><a href="{{ URL::to('/shop') }}" class="nav-link">Tous les jeux</a></li>
                     <li class="nav-item cta cta-colored"><a href="{{ URL::to('/panier') }}" class="nav-link"><span

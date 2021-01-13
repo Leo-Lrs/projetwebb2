@@ -2,7 +2,6 @@
 
 use Illuminate\Routing\RouteUri;
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\PDFController;
 
 /*
 |--------------------------------------------------------------------------
@@ -61,3 +60,7 @@ Route::post('/modifierproduit', 'ProductController@modifierproduit');
 Route::get('/supprimerproduit/{id}', 'ProductController@supprimerproduit');
 Route::get('/activer_produit/{id}', 'ProductController@activer_produit');
 Route::get('/desactiver_produit/{id}', 'ProductController@desactiver_produit');
+
+Auth::routes();
+
+Route::get('/admin', 'HomeController@index');
