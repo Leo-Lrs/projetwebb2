@@ -113,10 +113,7 @@
                             <td class="title">
                                 <h2>MegaGaming</h2>
                             </td>
-                            <td>
-                                Invoice #: 123<br>
-                                Créée le : {{$order->created_at}}
-                            </td>
+                            <td>Facture créée le : {{$order->created_at}}</td>
                         </tr>
                     </table>
                 </td>
@@ -135,20 +132,13 @@
                 </td>
             </tr>
             @endforeach
-            <tr class="heading">
-                <td>Payment Method</td>
-                <td>Check #</td>
-            </tr>
-            <tr class="details">
-                <td>Credit cards</td>
-                <td>1000</td>
-            </tr>
             <table>
                 <tr class="heading">
-                    <td>Item</td>
-                    <td>Quantity</td>
-                    <td>Unit cost</td>
-                    <td>Price</td>
+                    <td>Jeux</td>
+                    <td>Quantité</td>
+                    <td>Cout unitaire</td>
+                    <td>Code d'activation</td>
+                    <td>Prix</td>
                 </tr>
                 @foreach ($orders as $order)
                 @foreach ($order->panier->items as $item)
@@ -156,10 +146,13 @@
                     <td>{{$item['product_name']}}</td>
                     <td>{{$item['qty']}}</td>
                     <td>{{$item['product_price']}}</td>
+                    <td>{{$item['product_code']}}</td>
                     <td>{{$item['product_price']*$item['qty']}} €</td>
                 </tr>
                 @endforeach
                 <tr class="total">
+                    <td></td>
+                    <td></td>
                     <td></td>
                     <td></td>
                     <td></td>

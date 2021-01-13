@@ -124,17 +124,10 @@ Paiement
 						</div>
 						<div class="col-md-12">
 							<div class="form-group">
-								<input type="submit" class="btn btn-primary" value="Payer">
+								<input type="submit" class="btn btn-primary py-3 px-4" value="Payer maintenant">
 							</div>
 						</div>
 						<div class="w-100"></div>
-						<div class="col-md-12">
-							<div class="form-group mt-4">
-								<div class="radio">
-									<label class="mr-3"><input type="radio" name="optradio"> Create an Account?</label>
-								</div>
-							</div>
-						</div>
 					</div>
 				</form><!-- END -->
 			</div>
@@ -189,7 +182,6 @@ Paiement
 									</div>
 								</div>
 							</div>
-							<p><a href="#" class="btn btn-primary py-3 px-4">Payer</a></p>
 						</div>
 					</div>
 				</div>

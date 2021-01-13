@@ -25,7 +25,7 @@
                     <ul class="list-unstyled">
                         <li><a href="#" class="py-2 d-block">Shop</a></li>
                         <li><a href="#" class="py-2 d-block">About</a></li>
-                        <li><a href="#" class="py-2 d-block">Journal</a></li>
+                        <li><a href="{{ URL::to('/admin') }}" class="py-2 d-block">Administration</a></li>
                         <li><a href="#" class="py-2 d-block">Contact Us</a></li>
                     </ul>
                 </div>

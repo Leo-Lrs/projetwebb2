@@ -16,10 +16,10 @@
                     </li>
                     @if(Session::has('client'))
                     <li class="nav-item active"><a href="{{ URL::to('/logout') }}" class="nav-link"><span
-                                class="fa fa-user"></span>Logout</a></li>
+                                class="fa fa-user"></span>Se déconnecter</a></li>
                     @else
                     <li class="nav-item active"><a href="{{ URL::to('/client_login') }}" class="nav-link"><span
-                                class="fa fa-user"></span>Login</a></li>
+                                class="fa fa-user"></span>Se connecter</a></li>
                     @endif
                 </ul>
             </div>

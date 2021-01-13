@@ -24,9 +24,9 @@ Panier
 							<tr class="text-center">
 								<th>&nbsp;</th>
 								<th>&nbsp;</th>
-								<th>Product name</th>
-								<th>Price</th>
-								<th>Quantity</th>
+								<th>Nom du produit</th>
+								<th>Prix</th>
+								<th>Quantité</th>
 								<th>Total</th>
 							</tr>
 						</thead>

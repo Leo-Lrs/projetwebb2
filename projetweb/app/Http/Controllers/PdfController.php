@@ -61,6 +61,7 @@ class PdfController extends Controller
                                     <th>Image</th>
                                     <th>Product name</th>
                                     <th>Price</th>
+                                    <th>Code</th>
                                     <th>Quantity</th>
                                     <th>Total</th>
                                 </tr>
@@ -77,6 +78,7 @@ class PdfController extends Controller
                                     <h3>'.$item['product_name'].'</h3>
                                 </td>
                                 <td class="price">$ '.$item['product_price'].'</td>
+                                <td class="code">'.$item['product_code'].'</td>
                                 <td class="qty">'.$item['qty'].'</td>
                                 <td class="total">$ '.$item['product_price']*$item['qty'].'</td>
                             </tr><!-- END TR-->

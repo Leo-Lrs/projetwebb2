@@ -15,6 +15,7 @@ use Stripe\Charge;
 use Stripe\Stripe;
 use App\Client;
 use App\Mail\SendMail;
+use PDF;
 
 class ClientController extends Controller
 {
@@ -149,6 +150,8 @@ class ClientController extends Controller
             });
 
             $email = Session::get('client')->email;
+
+            //$email = PDF::loadView('mail.facture', $data);
 
             Mail::to($email)->send(new SendMail($orders));
 
