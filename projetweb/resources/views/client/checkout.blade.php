@@ -1,4 +1,7 @@
 @extends('layouts.app1')
+@section('title')
+Paiement
+@endsection
 @section('contenu')
 <div class="hero-wrap hero-bread" style="background-image: url('frontend/images/bg_4.jpg');">
 	<div class="container">
@@ -18,7 +21,7 @@
 			<div class="col-xl-7 ftco-animate">
 				<form action="{{url('/payer')}}" class="billing-form" method="POST" id="checkout-form">
 					{{ csrf_field() }}
-					<h3 class="mb-4 billing-heading">Billing Details</h3>
+					<h3 class="mb-4 billing-heading">Details de facturation</h3>
 					@if(Session::has('error'))
 					<div class="alert alert-danger">
 						{{Session::get('error')}}
@@ -86,12 +89,6 @@
 						<div class="col-md-6">
 							<div class="form-group">
 								<label for="phone">Téléphone</label>
-								<input type="text" class="form-control" placeholder="">
-							</div>
-						</div>
-						<div class="col-md-6">
-							<div class="form-group">
-								<label for="emailaddress">Email Address</label>
 								<input type="text" class="form-control" placeholder="">
 							</div>
 						</div>
