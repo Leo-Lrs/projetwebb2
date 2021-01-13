@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Order;
 use Illuminate\Support\Facades\Session;
+use PDF;
+use Mail;
 
 class PdfController extends Controller
 {
