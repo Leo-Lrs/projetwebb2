@@ -28,7 +28,7 @@ MegaGaming
 			<div class="col-md-6 col-lg-3 ftco-animate">
 				<div class="product">
 					<a href="{{URL::to('/show_product/'.$produit->id)}}" class="img-prod"><img class="img-fluid"
-							src="/storage/product_images/{{$produit->product_image}}" alt="Colorlib Template">
+							src="/storage/product_images/{{$produit->product_image}}">
 						<div class="overlay"></div>
 					</a>
 					<div class="text py-3 pb-4 px-3 text-center">
@@ -40,7 +40,7 @@ MegaGaming
 						</div>
 						<div class="bottom-area d-flex px-3">
 							<div class="m-auto d-flex">
-								<a href="#"
+								<a href="{{URL::to('/show_product/'.$produit->id)}}"
 									class="add-to-cart d-flex justify-content-center align-items-center text-center">
 									<span><i class="ion-ios-menu"></i></span>
 								</a>
@@ -54,7 +54,6 @@ MegaGaming
 				</div>
 			</div>
 			@endforeach
-
 			<div class="row mt-5">
 				<div class="col text-center">
 					<div class="block-27">
@@ -72,5 +71,4 @@ MegaGaming
 			</div>
 		</div>
 </section>
-
 @endsection

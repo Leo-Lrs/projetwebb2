@@ -216,6 +216,7 @@ class ClientController extends Controller
     public function show_product($id)
     {
         $product = Product::find($id);
-        return view('client.show_product')->with('product', $product);
+        $categories = Category::all();
+        return view('client.show_product')->with('product', $product)->with('categories', $categories);
     }
 }

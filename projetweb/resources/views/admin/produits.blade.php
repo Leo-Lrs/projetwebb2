@@ -18,10 +18,10 @@ Jeux
                     <table id="order-listing" class="table">
                         <thead>
                             <tr>
-                                <th>Ordre #</th>
+                                <th>Ordre</th>
                                 <th>Image</th>
                                 <th>Nom du jeu</th>
-                                <th>Plateforme du jeu</th>
+                                <th>Plateforme</th>
                                 <th>Description</th>
                                 <th>Prix</th>
                                 <th>Code d'activation</th>

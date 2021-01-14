@@ -107,19 +107,19 @@ Paiement
 						<div class="col-md-4">
 							<div class="form-group">
 								<label for="emailaddress">Mois d'expiration</label>
-								<input type="text" class="form-control" id="card-expiry-month">
+								<input type="text" class="form-control" id="card-expiry-month" maxlength="2">
 							</div>
 						</div>
 						<div class="col-md-4">
 							<div class="form-group">
 								<label for="emailaddress">Année d'expiration</label>
-								<input type="text" class="form-control" id="card-expiry-year">
+								<input type="text" class="form-control" id="card-expiry-year" maxlength="2">
 							</div>
 						</div>
 						<div class="col-md-4">
 							<div class="form-group">
 								<label for="emailaddress">Cryptogramme</label>
-								<input type="text" class="form-control" id="card-cvc">
+								<input type="text" class="form-control" id="card-cvc" maxlength="3">
 							</div>
 						</div>
 						<div class="col-md-12">
