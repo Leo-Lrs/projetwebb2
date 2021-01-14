@@ -45,7 +45,7 @@ Panier
 
 								<td class="product-name">
 									<h3>{{$product['product_name']}}</h3>
-									<p>Far far away, behind the word mountains, far from the countries</p>
+									<p></p>
 								</td>
 
 								<td class="price">{{$product['product_price']}} €</td>

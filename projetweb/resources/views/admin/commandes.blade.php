@@ -23,7 +23,7 @@ Commandes
                                 <th>Nom du client</th>
                                 <th>Adresse du client</th>
                                 <th>Panier</th>
-                                <th>Paiement ID</th>
+                                <th>Prix</th>
                                 <th>Actions</th>
                             </tr>
                         </thead>
@@ -38,7 +38,7 @@ Commandes
                                     {{$item['product_name'].". "}}
                                     @endforeach
                                 </td>
-                                <td>{{$order->payment_id}}</td>
+                                <td>{{$order->panier->totalPrice}}</td>
                                 <td>
                                     <button class="btn btn-outline-primary"
                                         onclick="window.location ='{{url('/voir_pdf/'.$order->id)}}'">View</button>

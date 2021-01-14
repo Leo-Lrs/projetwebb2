@@ -33,8 +33,6 @@
                     <!-- CONTENU -->
                     @yield('contenu')
                 </div>
-                <!-- FOOTER -->
-                @include('include.adminfooter')
             </div>
         </div>
         <!-- page-body-wrapper ends -->

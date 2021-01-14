@@ -153,7 +153,7 @@ class ProductSeeder extends Seeder
 
         DB::table('products')->insert([
             'id' => 5,
-            'product_name' => 'yberpunk 2077',
+            'product_name' => 'Cyberpunk 2077',
             'product_description' => 'Cyberpunk 2077 est un jeu vidéo d action-RPG en vue à la première personne développé par CD Projekt RED, fondé sur la série de jeu de rôle sur table Cyberpunk 2020 conçue par Mike Pondsmith.',
             'product_price' => 80,
             'product_code' => 'YUTH2-TYUE3-87RTY-TPF4Y-WUYZA',

@@ -11,7 +11,7 @@ class AdminController extends Controller
     {
         $this->middleware('auth');
     }
-    
+
     public function dashboard()
     {
         return view('admin.dashboard');
@@ -21,8 +21,7 @@ class AdminController extends Controller
     {
         $orders = Order::get();
 
-        $orders->transform(function($order, $key)
-        {
+        $orders->transform(function ($order, $key) {
             $order->panier = unserialize($order->panier);
 
             return $order;

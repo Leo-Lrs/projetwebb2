@@ -84,7 +84,7 @@ class PdfController extends Controller
                             </tr><!-- END TR-->
                             </tbody>';
             }
-            $totalPrice = $order->panier->totalPrice; 
+            $totalPrice = $order->panier->totalPrice;
         }
 
         $output .='</table>';

@@ -18,6 +18,18 @@ class ClientSeeder extends Seeder
             'password' => '$2y$10$AsoSr3BDWYWkuDP8uLkpxOuAfBbQ8brP7LRC3TXHATKxamWmiOThK',
         ]);
 
+        DB::table('clients')->insert([
+            'id' => 2,
+            'email' => 'pierre-du-12@hotmail.fr',
+            'password' => '$2y$10$AsoSr3BDWYWkuDP8uLkpxOuAfBbQ8brP7LRC3TXHATKxamWmiOThK',
+        ]);
+
+        DB::table('clients')->insert([
+            'id' => 3,
+            'email' => 'laravel@laravel.fr',
+            'password' => '$2y$10$AsoSr3BDWYWkuDP8uLkpxOuAfBbQ8brP7LRC3TXHATKxamWmiOThK',
+        ]);
+
         DB::table('users')->insert([
             'id' => 1,
             'name' => 'Pierre Da Silva',

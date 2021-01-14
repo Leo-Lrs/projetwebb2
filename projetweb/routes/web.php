@@ -54,7 +54,7 @@ Route::get('/edit_categorie/{id}', 'CategoryController@edit_categorie');
 Route::post('/modifiercategorie', 'CategoryController@modifiercategorie');
 Route::get('/supprimercategorie/{id}', 'CategoryController@supprimercategorie');
 
-// Porduits / Jeux
+// Produits / Jeux
 Route::get('/ajouterproduit', 'ProductController@ajouterproduit');
 Route::post('/sauverproduit', 'ProductController@sauverproduit');
 Route::get('/produits', 'ProductController@produits');

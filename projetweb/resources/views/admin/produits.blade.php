@@ -43,9 +43,12 @@ Jeux
                                     nothing
                                     @endforelse
                                 </td>
-                                <td>{{$produit->product_description}}</td>
+                                <td
+                                    style="max-width: 650px!important; min-width: 100px!important; overflow: hidden; white-space: normal;">
+                                    {{$produit->product_description}}</td>
                                 <td>{{$produit->product_price}}</td>
-                                <td>{{$produit->product_code}}</td>
+                                <td style="max-width: 650px!important; overflow: hidden; white-space: normal;">
+                                    {{$produit->product_code}}</td>
                                 <td>{{$produit->product_quantite}}</td>
                                 <td>
                                     @if ($produit->status == 1)

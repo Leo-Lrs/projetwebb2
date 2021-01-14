@@ -3,9 +3,6 @@
         <a style="color: white" class="navbar-brand brand-logo mr-5" href="{{ URL::to('/') }}">MegaGaming</a>
     </div>
     <div class="navbar-menu-wrapper d-flex align-items-center justify-content-end">
-        <button class="navbar-toggler navbar-toggler align-self-center" type="button" data-toggle="minimize">
-            <span class="ti-layout-grid2"></span>
-        </button>
         <ul class="navbar-nav mr-lg-2">
             <li class="nav-item nav-search d-none d-lg-block">
                 <div class="input-group">
@@ -16,17 +13,10 @@
             @guest
             @else
             <li class="nav-item nav-profile dropdown">
-                <a class="nav-link" href="#" data-toggle="dropdown" id="profileDropdown">
-                    <img src="{{asset('backend/images/logo_2H_tech.png')}}" alt="profile" />
-                </a>
+                <a class="nav-link" href="#" data-toggle="dropdown" id="profileDropdown">{{ Auth::user()->name }}</a>
                 <div class="dropdown-menu dropdown-menu-right navbar-dropdown" aria-labelledby="profileDropdown">
-                    <a class="dropdown-item">
-                        <i class="ti-power-off text-primary"></i>
-                        {{ Auth::user()->name }}
-                    </a>
                     <a class="dropdown-item" href="{{ route('logout') }}" onclick="event.preventDefault();
-                    document.getElementById('logout-form').submit();">
-                        <i class="ti-power-off text-primary"></i>{{ __('Logout') }}
+                    document.getElementById('logout-form').submit();">{{ __('Logout') }}
                     </a>
                     <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
                         @csrf

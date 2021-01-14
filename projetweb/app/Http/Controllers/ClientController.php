@@ -161,7 +161,6 @@ class ClientController extends Controller
         }
 
         Session::forget('cart');
-        //Session::put('success', 'Purchase accomplished successfully !');
         return redirect('/panier')->with('status', 'Achat accompli avec succès');
     }
 

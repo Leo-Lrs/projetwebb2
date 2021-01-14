@@ -33,6 +33,6 @@ class SendMail extends Mailable
     public function build()
     {
         //return $this->view('view.name');
-        return $this->from('pierredasilva.ynov@gmail.com')->subject('Merci pour votre achat sur MegaGaming !')->view('mail.facture')->with('orders', $this->orders);
+        return $this->from('contact@megagaming.com')->subject('Merci pour votre achat sur MegaGaming !')->view('mail.facture')->with('orders', $this->orders);
     }
 }
