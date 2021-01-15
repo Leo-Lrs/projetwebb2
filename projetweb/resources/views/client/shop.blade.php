@@ -12,6 +12,11 @@ MegaGaming
 <section class="ftco-section">
 	<div class="container">
 		<div class="row justify-content-center">
+			<form class="form-inline my-2 my-lg-0" method="get">
+				<input class="form-control mr-sm-2" name="search" type="search" placeholder="Recherche"
+					aria-label="Search">
+				<button class="btn btn-outline-success my-2 my-sm-0" type="submit">Rechercher</button>
+			</form><br><br><br><br><br>
 			<div class="col-md-10 mb-5 text-center">
 				<ul class="product-category">
 					<li><a href="{{URL::to('/shop')}}"
@@ -56,21 +61,22 @@ MegaGaming
 				</div>
 			</div>
 			@endforeach
-			<div class="row mt-5">
-				<div class="col text-center">
-					<div class="block-27">
-						<ul>
-							<li><a href="#">&lt;</a></li>
-							<li class="active"><span>1</span></li>
-							<li><a href="#">2</a></li>
-							<li><a href="#">3</a></li>
-							<li><a href="#">4</a></li>
-							<li><a href="#">5</a></li>
-							<li><a href="#">&gt;</a></li>
-						</ul>
-					</div>
+		</div>
+		<div class="row mt-5">
+			<div class="col text-center">
+				<div class="block-27">
+					<ul>
+						<li><a href="#">&lt;</a></li>
+						<li class="active"><span>1</span></li>
+						<li><a href="#">2</a></li>
+						<li><a href="#">3</a></li>
+						<li><a href="#">4</a></li>
+						<li><a href="#">5</a></li>
+						<li><a href="#">&gt;</a></li>
+					</ul>
 				</div>
 			</div>
 		</div>
+	</div>
 </section>
 @endsection

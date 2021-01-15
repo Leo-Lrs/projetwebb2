@@ -10,6 +10,7 @@ use Illuminate\Support\Facades\Session;
 $clients = Client::count();
 $commandes = Order::count();
 
+
 $orders = Order::where('id',Session::get('id'))->get();
 
 $orders->transform(function ($order, $key)
@@ -18,11 +19,11 @@ $orders->transform(function ($order, $key)
 
     return $order;
 });
+
 foreach($orders as $order)
-                        <?php
-                        $totalPrice = $order->panier->totalPrice;
-                        ?>
-endforeach
+{
+    $totalPrice = $order->panier->totalPrice;
+}
 ?>
 <div class="row">
     <div class="col-md-3 grid-margin stretch-card">
@@ -54,7 +55,9 @@ endforeach
                 <div
                     class="d-flex flex-wrap justify-content-between justify-content-md-center justify-content-xl-between align-items-center">
                     <h3 class="mb-0 mb-md-2 mb-xl-0 order-md-1 order-xl-0">
+                        @foreach($orders as $order)
                         {{$totalPrice}}
+                        @endforeach
                     </h3>
                 </div>
             </div>

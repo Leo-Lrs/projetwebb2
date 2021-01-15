@@ -26,10 +26,16 @@ class ClientController extends Controller
         return view('client.home')->with('produits', $produits);
     }
 
-    public function shop()
+    public function shop(Request $request)
     {
+        $search = $request->input("search");
+        if ($search) {
+            $produits = Product::where('product_name', 'like', '%' . $search . '%')->where('status', 1)->get();
+        } else {
+            $produits = Product::where('status', 1)->get();
+        }
+
         $categories = Category::get();
-        $produits = Product::where('status', 1)->get();
 
         return view('client.shop')->with('categories', $categories)->with('produits', $produits);
     }
