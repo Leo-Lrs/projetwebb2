@@ -13,7 +13,7 @@
                     <h2 class="ftco-heading-2">Menu</h2>
                     <ul class="list-unstyled">
                         <li><a href="{{ URL::to('/shop') }}" class="py-2 d-block">Accueil</a></li>
-                        <li><a href="#" class="py-2 d-block">About</a></li>
+                        <li><a href="{{ URL::to('/contact') }}" class="py-2 d-block">Contact</a></li>
                         <li><a href="{{ URL::to('/admin') }}" class="py-2 d-block">Administration</a></li>
                     </ul>
                 </div>

@@ -29,6 +29,11 @@
                 <p class="price"><span>{{$product->product_price}} €</span></p>
                 <p>{{$product->product_description}}</p><br>
                 <p><a href="/ajouter_panier/{{$product->id}}" class="btn btn-black py-3 px-5">Ajouter au panier</a></p>
+                <br>
+                @if(Session::has('client'))
+                <a href="{{ url('/ajouter_avis/'.$product->id) }}" class="btn btn-black py-3 px-5">Ajouter un avis</a>
+                <br>
+                @endif
             </div>
         </div>
     </div>
@@ -56,11 +61,11 @@
         });
     });
 </script>
-<script async src="https://www.googletagmanager.com/gtag/js?id=UA-23581568-13"></script>
+<script async src=" https://www.googletagmanager.com/gtag/js?id=UA-23581568-13"> </script>
 <script>
     window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-  gtag('config', 'UA-23581568-13');
+                    function gtag(){dataLayer.push(arguments);}
+                    gtag('js', new Date());
+                    gtag('config', 'UA-23581568-13');
 </script>
 @endsection

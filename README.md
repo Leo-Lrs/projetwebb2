@@ -164,18 +164,18 @@ Un espace administration permet de gérer les jeux en vente et les informations 
 
 Le site se composera obligatoirement des pages suivantes :
 
-- page d'accueil (catalogue des jeux vidéo)
-- page produit (description et avis)
-- page du panier d’achat
-- page d’espace membre
-- page d’inscription / connexion
+- [X] page d'accueil (catalogue des jeux vidéo)
+- [ ] page produit (description et avis)
+- [X] page du panier d’achat
+- [ ] page d’espace membre
+- [X] page d’inscription / connexion
 
 L'administration se composera obligatoirement des pages suivantes :
 
-- page tableau de bord
-- page des membres
-- page des jeux
-- page de connexion
+- [ ] page tableau de bord
+- [ ] page des membres
+- [X] page des jeux
+- [X] page de connexion
 
 **Fonctionnalités**
 
@@ -183,29 +183,29 @@ L'administration se composera obligatoirement des pages suivantes :
 Partie membres
 ```
 - la page d’accueil :
-    - liste de tous les jeux disponibles avec un système de pagination _difficulté :_ 3
-    - un système de recherche par le nom du jeu _difficulté :_ 2
+    - [ ] liste de tous les jeux disponibles avec un système de pagination _difficulté :_ 3
+    - [X] un système de recherche par le nom du jeu _difficulté :_ 2
 - les utilisateurs peuvent se créer un compte et se connecter. Ils pourront compléter et
     modifier leur profil _difficulté :_ 5
        - chaque profil utilisateur possède :
-          - un prénom
-          - un nom
-          - une adresse email
-          - une date de naissance
-          - un solde (factice)
+          - [ ] un prénom
+          - [ ] un nom
+          - [X] une adresse email
+          - [ ] une date de naissance
+          - [ ] un solde (factice)
 
 - la page produit contient : _difficulté :_ 7
-    - l'image du jeu
-    - le nom du jeu
-    - le prix du jeu
-    - la note moyenne
-    - les avis des acheteurs
-    - un bouton d’achat
-    - un formulaire pour ajouter/modifier son avis (si le membre a déjà acheté le
+    - [X] l'image du jeu
+    - [X] le nom du jeu
+    - [X] le prix du jeu
+    - [ ] la note moyenne
+    - [ ] les avis des acheteurs
+    - [X] un bouton d’achat
+    - [ ] un formulaire pour ajouter/modifier son avis (si le membre a déjà acheté le
        jeu)
 - un email automatique est envoyé à l’acheteur après la vente avec : _difficulté :_ 5
-    - le code d’activation
-    - la facture en PDF
+    - [X] le code d’activation
+    - [ ] la facture en PDF
 
 ```
 Partie administrateur
@@ -213,31 +213,31 @@ Partie administrateur
 - un espace administrateur est mis en place avec une authentification _difficulté :_ 3
 - un tableau de bord est présent dans l’espace administrateur avec des informations
     tels que : _difficulté :_ 2
-       - nombre de membres
-       - nombre de ventes
-       - nombre de nouvelles ventes sur les 7 derniers jours
-       - les revenus du site totaux
-       - les revenus du site sur les 7 derniers jours
+       - [X] nombre de membres
+       - [X] nombre de ventes
+       - [ ] nombre de nouvelles ventes sur les 7 derniers jours
+       - [ ] les revenus du site totaux
+       - [ ] les revenus du site sur les 7 derniers jours
 - les administrateurs peuvent gérer les jeux avec un CRUD : _difficulté :_ 5
     - le CRUD permet d'ajouter/modifier/supprimer un jeu avec :
-       - un nom
-       - une description
-       - une photo
-       - une quantité
-       - un prix
-       - un code d’activation
+       - [X] un nom
+       - [X] une description
+       - [X] une photo
+       - [X] une quantité
+       - [X] un prix
+       - [X] un code d’activation
     - les administrateurs peuvent consulter :
-       - la note moyenne des notes
-       - les avis laissés par les acheteurs
+       - [ ] la note moyenne des notes
+       - [ ] les avis laissés par les acheteurs
 - les administrateurs peuvent gérer les membres avec un CRUD : _difficulté :_ 4
     - le CRUD permet de modifier :
-       - un prénom
-       - un nom
-       - une adresse email
-       - une date de naissance
+       - [ ] un prénom
+       - [ ] un nom
+       - [ ] une adresse email
+       - [ ] une date de naissance
     - les administrateurs peuvent consulter :
-       - les achats de jeux
-       - les factures en PDF
+       - [X] les achats de jeux
+       - [X] les factures en PDF
 
 _Degré de difficulté total : 36 points_
 

@@ -134,7 +134,7 @@ class ClientController extends Controller
             $charge = Charge::create(array(
                 "amount" => $cart->totalPrice * 100,
                 "currency" => "eur",
-                "source" => $request->input('stripeToken'), // obtainded with Stripe.js
+                "source" => $request->input('stripeToken'),
                 "description" => "Test Charge"
             ));
 

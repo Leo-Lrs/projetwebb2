@@ -38,7 +38,6 @@ Route::post('/acceder_compte', 'ClientController@acceder_compte');
 Route::get('/logout', 'ClientController@logout');
 Route::get('/show_product/{id}', 'ClientController@show_product');
 
-
 // Pdf
 Route::get('/voir_pdf/{id}', 'PdfController@voir_pdf');
 
@@ -63,6 +62,11 @@ Route::post('/modifierproduit', 'ProductController@modifierproduit');
 Route::get('/supprimerproduit/{id}', 'ProductController@supprimerproduit');
 Route::get('/activer_produit/{id}', 'ProductController@activer_produit');
 Route::get('/desactiver_produit/{id}', 'ProductController@desactiver_produit');
+
+// Avis
+Route::get('/ajouter_avis/{id}', 'AvisController@ajouter_avis');
+Route::post('/sauver_avis', 'AvisController@sauver_avis');
+
 
 Auth::routes();
 
