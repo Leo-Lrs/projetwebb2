@@ -3,17 +3,7 @@
 Paiement
 @endsection
 @section('contenu')
-<div class="hero-wrap hero-bread" style="background-image: url('frontend/images/bg_4.jpg');">
-	<div class="container">
-		<div class="row no-gutters slider-text align-items-center justify-content-center">
-			<div class="col-md-9 ftco-animate text-center">
-				<p class="breadcrumbs"><span class="mr-2"><a href="index.html">Home</a></span> <span>Checkout</span>
-				</p>
-				<h1 class="mb-0 bread">Checkout</h1>
-			</div>
-		</div>
-	</div>
-</div>
+<div class="hero-wrap hero-bread" style="background-image: url('frontend/images/bg_4.jpg');"></div>
 @if(Session::has('cart'))
 <section class="ftco-section">
 	<div class="container">
@@ -31,20 +21,20 @@ Paiement
 					<div class="row align-items-end">
 						<div class="col-md-6">
 							<div class="form-group">
-								<label for="firstname">Firt Name</label>
+								<label for="firstname">Prénom</label>
 								<input type="text" name="firstname" class="form-control" placeholder="">
 							</div>
 						</div>
 						<div class="col-md-6">
 							<div class="form-group">
-								<label for="lastname">Last Name</label>
+								<label for="lastname">Nom</label>
 								<input type="text" name="lastname" class="form-control" placeholder="">
 							</div>
 						</div>
 						<div class="w-100"></div>
 						<div class="col-md-12">
 							<div class="form-group">
-								<label for="country">State / Country</label>
+								<label for="country">Pays</label>
 								<div class="select-wrap">
 									<div class="icon"><span class="ion-ios-arrow-down"></span></div>
 									<select name="" id="" class="form-control">
@@ -94,31 +84,31 @@ Paiement
 						</div>
 						<div class="col-md-12">
 							<div class="form-group">
-								<label for="emailaddress">Nom de la carte</label>
+								<label for="cardname">Nom de la carte</label>
 								<input type="text" class="form-control" id="card-name" name="card_name">
 							</div>
 						</div>
 						<div class="col-md-12">
 							<div class="form-group">
-								<label for="emailaddress">Numéro de carte</label>
+								<label for="cardnumber">Numéro de carte</label>
 								<input type="text" class="form-control" id="card-number">
 							</div>
 						</div>
 						<div class="col-md-4">
 							<div class="form-group">
-								<label for="emailaddress">Mois d'expiration</label>
+								<label for="cardmonth">Mois d'expiration</label>
 								<input type="text" class="form-control" id="card-expiry-month" maxlength="2">
 							</div>
 						</div>
 						<div class="col-md-4">
 							<div class="form-group">
-								<label for="emailaddress">Année d'expiration</label>
+								<label for="cardyear">Année d'expiration</label>
 								<input type="text" class="form-control" id="card-expiry-year" maxlength="2">
 							</div>
 						</div>
 						<div class="col-md-4">
 							<div class="form-group">
-								<label for="emailaddress">Cryptogramme</label>
+								<label for="cardcvc">Cryptogramme</label>
 								<input type="text" class="form-control" id="card-cvc" maxlength="3">
 							</div>
 						</div>
