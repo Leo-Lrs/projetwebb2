@@ -186,13 +186,12 @@ Partie membres
     - [ ] liste de tous les jeux disponibles avec un système de pagination _difficulté :_ 3
     - [X] un système de recherche par le nom du jeu _difficulté :_ 2
 - les utilisateurs peuvent se créer un compte et se connecter. Ils pourront compléter et modifier leur profil _difficulté :_ 5
-<br>
-Chaque profil utilisateur possède :
-          - [ ] un prénom
-          - [ ] un nom
-          - [X] une adresse email
-          - [ ] une date de naissance
-          - [ ] un solde (factice)
+    - Chaque profil utilisateur possède :
+        - [ ] un prénom
+        - [ ] un nom
+        - [X] une adresse email
+        - [ ] une date de naissance
+        - [ ] un solde (factice)
 
 - la page produit contient : _difficulté :_ 7
     - [X] l'image du jeu
@@ -219,7 +218,7 @@ Partie administrateur
        - [ ] les revenus du site totaux
        - [ ] les revenus du site sur les 7 derniers jours
 - les administrateurs peuvent gérer les jeux avec un CRUD : _difficulté :_ 5
-    - le CRUD permet d'ajouter/modifier/supprimer un jeu avec :
+    - le CRUD permet d'ajouter/modifier/supprimer un jeu avec :<br>
        - [X] un nom
        - [X] une description
        - [X] une photo
