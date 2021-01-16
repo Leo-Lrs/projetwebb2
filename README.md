@@ -186,7 +186,8 @@ Partie membres
     - [ ] liste de tous les jeux disponibles avec un système de pagination _difficulté :_ 3
     - [X] un système de recherche par le nom du jeu _difficulté :_ 2
 - les utilisateurs peuvent se créer un compte et se connecter. Ils pourront compléter et modifier leur profil _difficulté :_ 5
-       Chaque profil utilisateur possède :
+<br>
+Chaque profil utilisateur possède :
           - [ ] un prénom
           - [ ] un nom
           - [X] une adresse email
