@@ -16,9 +16,18 @@ class User extends Authenticatable
      * @var array
      */
     protected $fillable = [
-        'name', 'email', 'password',
+        'name', 'firstname', 'email', 'password', 'newsletter', 'last_seen',
     ];
 
+    /**
+     * The attributes that should be mutated to dates.
+     *
+     * @var array
+     */
+    protected $dates = [
+        'last_seen',
+    ];
+    
     /**
      * The attributes that should be hidden for arrays.
      *
