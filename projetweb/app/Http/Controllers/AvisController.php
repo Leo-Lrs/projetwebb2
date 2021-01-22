@@ -33,7 +33,17 @@ class AvisController extends Controller
      */
     public function sauver_avis(Request $request)
     {
+
+        $this->validate($request, ['firstname' => 'required|unique:avis', 'comment' => 'required']);
+
         $avis = new Avis();
+
+        $avis->firstname=$request->input('firstname');
+        $avis->comment=$request->input('comment');
+
+        $avis->save();
+
+        return redirect('/shop')->with('status', "L'avis a été ajouté avec succès");
     }
 
     /**

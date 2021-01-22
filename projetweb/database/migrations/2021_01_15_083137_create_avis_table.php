@@ -15,6 +15,8 @@ class CreateAvisTable extends Migration
     {
         Schema::create('avis', function (Blueprint $table) {
             $table->id();
+            $table->string('firstname')->unique();
+            $table->mediumText('comment');
             $table->timestamps();
         });
     }

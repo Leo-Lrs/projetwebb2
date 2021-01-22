@@ -11,6 +11,18 @@ MegaGaming
 </section>
 <section class="ftco-section">
 	<div class="container">
+		@if(Session::has('status'))
+		<div class="alert alert-success">
+			{{Session::get('status')}}
+		</div>
+		@endif
+		@if (count($errors)> 0)
+		<div class="alert alert-danger">
+			@foreach ($errors->all() as $error)
+			{{$error}}
+			@endforeach
+		</div>
+		@endif
 		<div class="row justify-content-center">
 			<form class="form-inline my-2 my-lg-0" method="get">
 				<input class="form-control mr-sm-2" name="search" type="search" placeholder="Recherche"

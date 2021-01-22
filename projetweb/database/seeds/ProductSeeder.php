@@ -14,12 +14,12 @@ class ProductSeeder extends Seeder
     {
         DB::table('products')->insert([
             'id' => 1,
-            'product_name' => 'GTA',
-            'product_description' => 'Grand theft auto',
+            'product_name' => 'Grand theft auto 5',
+            'product_description' => 'Grand theft auto 5',
             'product_price' => 60,
             'product_code' => 'ABCDE-TYUE3-17V8Y-TPF4Y-GPT9Y',
             'product_quantite' => 30,
-            'product_image' => 'noimage.jpg',
+            'product_image' => 'gta5.jpg',
             'status' => 1,
         ]);
 
@@ -42,7 +42,7 @@ class ProductSeeder extends Seeder
             'product_price' => 50,
             'product_code' => 'QYU5A-TYUE3-17V8Y-TPF4Y-547YT',
             'product_quantite' => 100,
-            'product_image' => 'noimage.jpg',
+            'product_image' => 'halo_reach.jpg',
             'status' => 1,
         ]);
 
@@ -77,7 +77,7 @@ class ProductSeeder extends Seeder
             'product_price' => 20,
             'product_code' => 'YUTH2-TYUE3-87RTY-TPF4Y-WUYZA',
             'product_quantite' => 10,
-            'product_image' => 'noimage.jpg',
+            'product_image' => 'cs_go.png',
             'status' => 1,
         ]);
 
@@ -112,7 +112,7 @@ class ProductSeeder extends Seeder
             'product_price' => 10,
             'product_code' => 'YUTH2-TYUE3-87RTY-TPF4Y-WUYZA',
             'product_quantite' => 5,
-            'product_image' => 'noimage.jpg',
+            'product_image' => 'euro-truck-simulator-2-complete-edition-cover.jpg',
             'status' => 1,
         ]);
 
@@ -135,7 +135,7 @@ class ProductSeeder extends Seeder
             'product_price' => 45,
             'product_code' => 'YUTH2-TYUE3-87RTY-TPF4Y-WUYZA',
             'product_quantite' => 147,
-            'product_image' => 'noimage.jpg',
+            'product_image' => 'fs19.jpg',
             'status' => 1,
         ]);
 
@@ -158,7 +158,7 @@ class ProductSeeder extends Seeder
             'product_price' => 80,
             'product_code' => 'YUTH2-TYUE3-87RTY-TPF4Y-WUYZA',
             'product_quantite' => 37,
-            'product_image' => 'noimage.jpg',
+            'product_image' => 'cyberpunk2077.jpg',
             'status' => 1,
         ]);
 
