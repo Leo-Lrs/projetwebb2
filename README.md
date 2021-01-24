@@ -240,9 +240,6 @@ Partie administrateur
 
 _Degré de difficulté total : 36 points_
 
-
-VERSION 0.4 MISE A JOUR LE 01/07/19 BORDEAUX YNOV CAMPUS
-
 ### 7. RESSOURCES COMPLEMENTAIRES
 
 Environnement de dev : https://laravel.com/docs/5.8/homestead
@@ -280,3 +277,100 @@ Tuto Laravel : https://morioh.com/p/9b8c8ef67bd5/laravel- 5 - 8 - tutorial-from-
 - un serveur de production (Serveur Ynov)
 - un langage de développement web
 - GIT
+
+
+
+
+
+### PROJET : ECOMMERCE
+
+**Présentation**
+
+Il s’agit d’un site e-Commerce de vente de jeux vidéo. Les utilisateurs peuvent acheter des jeux
+vidéo. Lorsqu’un utilisateur en achète un, il recevra un email avec le code pour activer son jeu
+sur sa plateforme (PC, Xbox, PlayStation, ...) ainsi qu’une facture en PDF. Cette facture se
+retrouvera également dans son espace membre sur le site. Un membre ne peut acheter un
+jeu que s’il dispose d’un solde suffisant. Également, les jeux ont une quantité définie, il faudra
+vérifier le stock avant d’autoriser un achat.
+
+Un espace administration permet de gérer les jeux en vente et les informations des membres.
+
+**Pages**
+
+Le site se composera obligatoirement des pages suivantes :
+
+- [X] page d'accueil (catalogue des jeux vidéo)
+- [ ] page produit (description et avis)
+- [X] page du panier d’achat
+- [ ] page d’espace membre
+- [X] page d’inscription / connexion
+
+L'administration se composera obligatoirement des pages suivantes :
+
+- [ ] page tableau de bord
+- [ ] page des membres
+- [X] page des jeux
+- [X] page de connexion
+
+**Fonctionnalités**
+
+```
+Partie membres
+```
+- la page d’accueil :
+    - [ ] liste de tous les jeux disponibles avec un système de pagination _difficulté :_ 3
+    - [X] un système de recherche par le nom du jeu _difficulté :_ 2
+- les utilisateurs peuvent se créer un compte et se connecter. Ils pourront compléter et modifier leur profil _difficulté :_ 5
+    - Chaque profil utilisateur possède :
+        - [ ] un prénom
+        - [ ] un nom
+        - [X] une adresse email
+        - [ ] une date de naissance
+        - [ ] un solde (factice)
+
+- la page produit contient : _difficulté :_ 7
+    - [X] l'image du jeu
+    - [X] le nom du jeu
+    - [X] le prix du jeu
+    - [ ] la note moyenne
+    - [ ] les avis des acheteurs
+    - [X] un bouton d’achat
+    - [ ] un formulaire pour ajouter/modifier son avis (si le membre a déjà acheté le
+       jeu)
+- un email automatique est envoyé à l’acheteur après la vente avec : _difficulté :_ 5
+    - [X] le code d’activation
+    - [ ] la facture en PDF
+
+```
+Partie administrateur
+```
+- un espace administrateur est mis en place avec une authentification _difficulté :_ 3
+- un tableau de bord est présent dans l’espace administrateur avec des informations
+    tels que : _difficulté :_ 2
+       - [X] nombre de membres
+       - [X] nombre de ventes
+       - [ ] nombre de nouvelles ventes sur les 7 derniers jours
+       - [ ] les revenus du site totaux
+       - [ ] les revenus du site sur les 7 derniers jours
+- les administrateurs peuvent gérer les jeux avec un CRUD : _difficulté :_ 5
+    - le CRUD permet d'ajouter/modifier/supprimer un jeu avec :<br>
+       - [X] un nom
+       - [X] une description
+       - [X] une photo
+       - [X] une quantité
+       - [X] un prix
+       - [X] un code d’activation
+    - les administrateurs peuvent consulter :
+       - [ ] la note moyenne des notes
+       - [ ] les avis laissés par les acheteurs
+- les administrateurs peuvent gérer les membres avec un CRUD : _difficulté :_ 4
+    - le CRUD permet de modifier :
+       - [ ] un prénom
+       - [ ] un nom
+       - [ ] une adresse email
+       - [ ] une date de naissance
+    - les administrateurs peuvent consulter :
+       - [X] les achats de jeux
+       - [X] les factures en PDF
+
+_Degré de difficulté total : 36 points_
