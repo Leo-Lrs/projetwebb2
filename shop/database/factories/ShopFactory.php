@@ -20,5 +20,6 @@ $factory->define(Shop::class, function (Faker $faker) {
         'facebook' => $faker->url,
         'home' => $faker->sentence(3),
         'home_infos' => $faker->text,
+        'home_shipping' => $faker->text,
     ];
 });

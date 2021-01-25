@@ -3,6 +3,14 @@
 namespace App\Providers;
 
 use Illuminate\Support\ServiceProvider;
+use Illuminate\Support\Facades\View;
+use Illuminate\Support\Facades\Route;
+use Cart;
+use App\Models\{ Shop, Page };
+use ConsoleTVs\Charts\Registrar as Charts;
+use App\Charts\OrdersChart;
+use App\Charts\UsersChart;
+use DB;
 
 class AppServiceProvider extends ServiceProvider
 {
@@ -13,7 +21,10 @@ class AppServiceProvider extends ServiceProvider
      */
     public function register()
     {
-        //
+        // Run Dusk only on testing and local environment
+        // if ($this->app->environment('local', 'testing')) {
+        //     $this->app->register(DuskServiceProvider::class);
+        // }   
     }
 
     /**
@@ -21,8 +32,38 @@ class AppServiceProvider extends ServiceProvider
      *
      * @return void
      */
-    public function boot()
+    public function boot(Charts $charts)
     {
-        //
+        if(app()->runningInConsole()) {
+            return;
+            }
+            
+        DB::statement("SET lc_time_names = 'fr_FR'");
+
+        View::share('shop', Shop::firstOrFail());
+        View::share('pages', Page::all());
+
+        View::composer(['layouts.app', 'products.show'], function ($view) {
+            $view->with([
+                'cartCount' => Cart::getTotalQuantity(), 
+                'cartTotal' => Cart::getTotal(),
+            ]);
+        });
+
+        View::composer('back.layout', function ($view) {
+            $title = config('titles.' . Route::currentRouteName());
+            $view->with(compact('title'));
+        });
+
+        Route::resourceVerbs([
+            'edit' => 'modification',
+            'create' => 'creation',
+        ]);
+
+        DB::statement("SET lc_time_names = 'fr_FR'");
+        $charts->register([
+            OrdersChart::class,
+            UsersChart::class
+        ]);
     }
 }

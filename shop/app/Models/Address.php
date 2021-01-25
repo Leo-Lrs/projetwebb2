@@ -6,23 +6,22 @@ use Illuminate\Database\Eloquent\Model;
 
 class Address extends Model
 {
-  protected $fillable = [
-    'name',
-    'firstname',
-    'professionnal',
-    'civility',
-    'company',
-    'address',
-    'addressbis',
-    'bp',
-    'postal',
-    'city',
-    'phone',
-    'country_id',
-  ];
+    /**
+     * The attributes that are mass assignable.
+     *
+     * @var array
+     */
+    protected $fillable = [
+        'name', 'firstname', 'professionnal', 'civility', 'company', 'address', 'addressbis', 'bp', 'postal', 'city', 'phone', 'country_id',
+    ];
 
-  public function country()
-  {
-    return $this->belongsTo(Country::class);
-  }
+    public function country()
+    {
+        return $this->belongsTo(Country::class);
+    }
+
+    public function users()
+    {
+        return $this->belongsTo(User::class);
+    }
 }

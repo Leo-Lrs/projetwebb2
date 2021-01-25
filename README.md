@@ -340,7 +340,7 @@ Partie membres
     - [ ] un formulaire pour ajouter/modifier son avis (si le membre a déjà acheté le
        jeu)
 - un email automatique est envoyé à l’acheteur après la vente avec : _difficulté :_ 5
-    - [ ] le code d’activation
+    - [X] le code d’activation
     - [ ] la facture en PDF
 
 ```
@@ -361,7 +361,7 @@ Partie administrateur
        - [X] une photo
        - [X] une quantité
        - [X] un prix
-       - [ ] un code d’activation
+       - [X] un code d’activation
     - les administrateurs peuvent consulter :
        - [ ] la note moyenne des notes
        - [ ] les avis laissés par les acheteurs

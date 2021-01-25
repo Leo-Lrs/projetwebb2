@@ -4,10 +4,14 @@ namespace App\Http\Controllers\Auth;
 
 use App\Http\Controllers\Controller;
 use App\Providers\RouteServiceProvider;
-use App\User;
+use App\Models\{ User, Shop };
 use Illuminate\Foundation\Auth\RegistersUsers;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
+use Illuminate\Support\Facades\Mail;
+use App\Mail\Registered;
+use Illuminate\Http\Request;
+use App\Notifications\NewUser;
 
 class RegisterController extends Controller
 {
@@ -49,13 +53,16 @@ class RegisterController extends Controller
      */
     protected function validator(array $data)
     {
+        // dd($data);
         return Validator::make($data, [
             'name' => ['required', 'string', 'max:255'],
+            'firstname' => ['required', 'string', 'max:255'],
             'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
             'password' => ['required', 'string', 'min:8', 'confirmed'],
+            'rgpd' => ['required'],
         ]);
     }
-
+    
     /**
      * Create a new user instance after a valid registration.
      *
@@ -66,8 +73,21 @@ class RegisterController extends Controller
     {
         return User::create([
             'name' => $data['name'],
+            'firstname' => $data['firstname'],
             'email' => $data['email'],
             'password' => Hash::make($data['password']),
+            'newsletter' => array_key_exists('newsletter', $data),
         ]);
+    }
+
+    protected function registered(Request $request, $user)
+    {
+        $shop = Shop::firstOrFail();
+        Mail::to($user)->send(new Registered($shop));
+        $admins = User::whereAdmin(true)->get();
+        foreach($admins as $admin) {
+            $admin->notify(new NewUser());
+        }        
+        return redirect(route('adresses.create'))->with('message', config('messages.registered'));
     }
 }
