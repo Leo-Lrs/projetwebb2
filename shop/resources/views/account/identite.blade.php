@@ -25,6 +25,8 @@
             <x-input name="name" type="text" icon="person" label="Nom" required="true" :value="$user->name"></x-input>
             <x-input name="email" type="email" icon="mail" label="Adresse mail" required="true" :value="$user->email">
             </x-input>
+            <x-input name="date" type="date" icon="" label="Date de naissance" required="true" :value="$user->date">
+            </x-input>
             <div class="row col s12">
               <label>
                 <input type="checkbox" name="rgpd" id="rgpd" {{ old('rgpd') ? 'checked' : '' }}>

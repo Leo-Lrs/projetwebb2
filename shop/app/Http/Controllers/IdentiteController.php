@@ -20,6 +20,7 @@ class IdentiteController extends Controller
         $request->validate([
             'name' => 'required|string|max:255',
             'firstname' => 'required|string|max:255',
+            'date' => 'required|date',
             'email' => 'required|string|max:255|unique:users,email,' . $user->id,
         ]);
         $request->merge(['newsletter' => $request->has('newsletter')]);

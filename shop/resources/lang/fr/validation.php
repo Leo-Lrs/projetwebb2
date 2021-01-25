@@ -161,6 +161,7 @@ return [
         'lastname'             => 'nom',
         'password'              => 'mot de passe',
         'password_confirmation' => 'confirmation du mot de passe',
+        'date'                  => 'date',
         'city'                  => 'ville',
         'country'               => 'pays',
         'address'               => 'adresse',

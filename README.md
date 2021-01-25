@@ -327,7 +327,7 @@ Partie membres
         - [X] un prénom
         - [X] un nom
         - [X] une adresse email
-        - [ ] une date de naissance
+        - [X] une date de naissance
         - [ ] un solde (factice)
 
 - la page produit contient : _difficulté :_ 7

@@ -19,6 +19,8 @@
 
             <x-input name="email" type="email" icon="mail" label="Adresse mail" required="true"></x-input>
 
+            <x-input name="date" type="date" label="Date de naissance" icon="" required="true"></x-input>
+
             <x-input name="password" type="password" icon="lock" label="Mot de passe" required="true"></x-input>
 
             <div class="row">

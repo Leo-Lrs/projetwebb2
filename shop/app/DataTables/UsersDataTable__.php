@@ -86,6 +86,7 @@ class UsersDataTable extends DataTable
             Column::make('name')->title('Nom'),
             Column::make('firstname')->title('Prénom'),
             Column::make('email'),
+            Column::make('date'),
             Column::make('newsletter')->title('Lettre d\'information')->addClass('text-center'),
             Column::make('created_at')->title('Inscription'),
             Column::make('principale')->title('Adresse principale'),

@@ -10,6 +10,8 @@
       <dd class="col-sm-9">{{ $user->firstname }}</dd>
       <dt class="col-sm-3">Email</dt>
       <dd class="col-sm-9"><a href="mailto:{{ $user->email }}">{{ $user->email }}</a></dd>
+      <dt class="col-sm-3">Date de naissance</dt>
+      <dd class="col-sm-9">{{ $user->date }}</dd>
       <dt class="col-sm-3 text-truncate">Date d'inscription</dt>
       <dd class="col-sm-9">{{ $user->created_at->format('d/m/Y') }}</dd>
       <dt class="col-sm-3 text-truncate">Dernière mise à jour</dt>
