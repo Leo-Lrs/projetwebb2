@@ -67,7 +67,6 @@ class CountriesDataTable extends DataTable
         return [
             Column::make('id'),
             Column::make('name')->title('Nom'),
-            Column::make('tax')->title('Taxe'),
             Column::computed('edit')
               ->title('')
               ->width(60)

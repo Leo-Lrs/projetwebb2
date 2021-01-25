@@ -32,15 +32,6 @@
 </style>
 @endsection
 
-{{-- @section('head-scripts')
-  @if($order->state->slug === 'paypal')
-      <script
-          src="https://www.paypal.com/sdk/js?client-id=AdNaGDzrh-dwvQtxN_0L_XtmoPR7T1Vdt2wn2ersfqu_bbqzJpVF2t6BhMt6p7zN0eMiNXC2EFYCkZvK&currency=EUR&locale=fr_FR"> // Required. Replace SB_CLIENT_ID with your sandbox client ID.
-      </script>
-  @endif
-@endsection --}}
-
-
 @section('content')
 <div class="container">
   <ul class="collection with-header">
@@ -52,7 +43,6 @@
 
     <li id="detail" class="collection-item">
       @include('command.partials.detail', [
-      'tax' => $order->tax,
       'shipping' => $order->shipping,
       'total' => $order->total,
       'content' => $order->products,
@@ -95,7 +85,7 @@
       <p>Veuillez nous envoyer un chèque avec :</p>
       <ul>
         <li>- montant du règlement :
-          <strong>{{ number_format($order->total * (1 + $order->tax) + $order->shipping, 2, ',', ' ') }} €</strong></li>
+          <strong>{{ number_format($order->total, 2, ',', ' ') }} €</strong></li>
         <li>- payable à l'ordre de <strong>{{ $shop->name }}</strong></li>
         <li>- à envoyer à <strong>{{ $shop->address }}</strong></li>
         <li>- n'oubliez pas d'indiquer votre référence de commande <strong>{{ $order->reference }}</strong></li>
@@ -123,7 +113,7 @@
       <p>Veuillez effectuer un virement sur notre compte :</p>
       <ul>
         <li>- montant du virement :
-          <strong>{{ number_format($order->total * (1 + $order->tax) + $order->shipping, 2, ',', ' ') }} €</strong></li>
+          <strong>{{ number_format($order->total, 2, ',', ' ') }} €</strong></li>
         <li>- titulaire : <strong>{{ $shop->holder }}</strong></li>
         <li>- BIC : <strong>{{ $shop->bic }}</strong></li>
         <li>- IBAN : <strong>{{ $shop->iban }}</strong></li>
@@ -136,9 +126,6 @@
       @else
       <p><strong>Votre commande vous sera envoyée dès réception du virement.</strong>.</p>
       @endif
-
-      @elseif($order->state->slug === 'paypal')
-      @include('command.partials.paypal')
 
       @elseif($order->state->slug === 'carte' || $order->state->slug === 'erreur')
       @include('command.partials.stripe')

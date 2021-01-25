@@ -106,17 +106,6 @@
           </div>
         </div>
         <br>
-        @if($order->tax > 0)
-        <div class="row" style="background-color: lightgrey">
-          <div class="col s6">
-            TVA à {{ $order->tax * 100 }} %
-          </div>
-          <div class="col s6">
-            <b>{{ number_format($order->tva, 2, ',', ' ') }} €</b>
-          </div>
-        </div>
-        <br>
-        @endif
         <div class="row" style="background-color: lightgrey">
           <div class="col s6">
             Total TTC

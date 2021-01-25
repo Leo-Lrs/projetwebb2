@@ -20,7 +20,6 @@ class ShopController extends Controller
         $request->merge([
             'invoice' => $request->has('invoice'),
             'card' => $request->has('card'),
-            'paypal' => $request->has('paypal'),
             'transfer' => $request->has('transfer'),
             'check' => $request->has('check'),
             'mandat' => $request->has('mandat'),

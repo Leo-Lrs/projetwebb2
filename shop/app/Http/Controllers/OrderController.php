@@ -9,6 +9,7 @@ use Illuminate\Support\Facades\Mail;
 use App\Services\Shipping;
 use Illuminate\Support\Str;
 use App\Notifications\NewOrder as NewOrderNotification;
+use Barryvdh\DomPDF\PDF;
 use Swift_TransportException;
 use Cart;
 
@@ -33,9 +34,8 @@ class OrderController extends Controller
         $shipping = $ship->compute($country_id);
         $content = Cart::getContent();
         $total = Cart::getTotal();
-        $tax = Country::findOrFail($country_id)->tax;
         
-        return view('command.index', compact('user', 'addresses', 'shipping', 'content', 'total', 'tax'));
+        return view('command.index', compact('user', 'addresses', 'shipping', 'content', 'total'));
     }
 
     /**
@@ -67,16 +67,11 @@ class OrderController extends Controller
         $address_livraison = $request->different ? Address::with('country')->findOrFail($request->livraison) : $address_facturation;
         $shipping = $request->expedition === 'colissimo' ? $ship->compute($address_livraison->country->id) : 0;
 
-        // TVA
-        $tvaBase = Country::whereName('France')->first()->tax;
-        $tax = $request->expedition === 'colissimo' ? $address_livraison->country->tax : $tvaBase;
-
         // Enregistrement commande
         $order = $user->orders()->create([
             'reference' => strtoupper(Str::random(8)),
             'shipping' => $shipping,
-            'tax' => $tax,
-            'total' => $tax > 0 ? Cart::getTotal() : Cart::getTotal() / (1 + $tvaBase),
+            'total' => Cart::getTotal(),
             'payment' => $request->payment,
             'pick' => $request->expedition === 'retrait',
             'state_id' => State::whereSlug($request->payment)->first()->id,
@@ -97,7 +92,7 @@ class OrderController extends Controller
             $order->products()->create(
                 [
                     'name' => $row->name,
-                    'total_price_gross' => ($tax > 0 ? $row->price : $row->price / (1 + $tvaBase)) * $row->quantity,
+                    'total_price_gross' => ($row->price * $row->quantity),
                     'quantity' => $row->quantity,
                     'code' => $row->code,
                 ]

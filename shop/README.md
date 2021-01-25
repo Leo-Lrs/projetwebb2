@@ -19,14 +19,14 @@ pwd: password
 **Front-end** :
 
 * display of products by categories
-* Integrated purchasing system with payment possible by credit card (via STRIPE) or by paypal (Paypal Checkout)
+* Integrated purchasing system with payment possible by credit card (via STRIPE)
 * RGPD included
 
 **Back-end** :
 
 * User and address management
 * Purchase order and order status management (with automatic invoice output)
-* Management of different countries with different taxes
+* Management of different countries
 * Mailing system
 * Statistics and maintenance systems
 

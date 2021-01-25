@@ -93,16 +93,14 @@
 </head>
 
 <body>
-
   @yield('head-scripts')
-
   <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
     @csrf
   </form>
-
   <nav>
     <div class="nav-wrapper">
-      <a href="{{ route('home') }}" class="brand-logo mt-1 ml-3" style="left: 10px">MegaGaming</a>
+      <a href="{{ route('home') }}" class="brand-logo mt-1 ml-3"><img src="/images/megagaming_baniere.jpg" height="65px"
+          alt="Logo"></a>
       <a href="{{ route('home') }}" data-target="mobile" class="sidenav-trigger fade-in"><i
           class="material-icons">menu</i></a>
       <ul class="right hide-on-med-and-down">
@@ -135,39 +133,9 @@
           </a>
         </li>
         @endguest
-
       </ul>
     </div>
   </nav>
-
-
-  <!-- Dropdown Structure -->
-  <ul id="homme" class="dropdown-content">
-    <li><a href="{{ route('home.category', ($id = 2)) }}">Veste</a></li>
-    <li class="divider"></li>
-    <li><a href="{{ route('home.category', ($id = 1)) }}">Pantalon</a></li>
-    <li><a href="{{ route('home.category', ($id = 6)) }}">Pull</a></li>
-  </ul>
-  <ul id="femme" class="dropdown-content">
-    <li><a href="{{ route('home.category', ($id = 5)) }}">Veste</a></li>
-    <li class="divider"></li>
-    <li><a href="{{ route('home.category', ($id = 4)) }}">Pantalon</a></li>
-    <li><a href="{{ route('home.category', ($id = 7)) }}">Pull</a></li>
-  </ul>
-  <nav class="height-30 left z-depth-0 transparent">
-    <div class="nav-wrapper height-30">
-      <ul class="hide-on-med-and-down left m-t-0-5 m-l-2">
-        <!-- Dropdown Trigger -->
-        <li><a class="dropdown-trigger height-30 grey darken-4" href="#!" data-target="femme">FEMME<i
-              class="material-icons height-30 right">arrow_drop_down</i></a></li>
-        <li><a class="dropdown-trigger height-30 grey darken-4" href="#!" data-target="homme">HOMME<i
-              class="material-icons height-30 right">arrow_drop_down</i></a></li>
-        <li><a class=" height-30 grey darken-4" href="{{ route('home.category', ($id = 3)) }}">DIVERS</a></li>
-        <li><a class=" height-30 grey darken-4" href="{{ route('home') }}">TOUT</a></li>
-      </ul>
-    </div>
-  </nav>
-
   <ul class="sidenav" id="mobile">
     @guest
     <li style="background-color: #c7e2e2"><a class="right-align" href="{{ route('login') }}"><span
@@ -181,54 +149,6 @@
         data-tooltip="Voir mon panier">Panier&nbsp;({{ $cartCount }})</a>
     </li>
     @endif
-    <ul class="collapsible expandable">
-      <li>
-        <div class="right-align p-r-2 font-rum" style="background-color: #c7e2e2;">Le shop</div>
-        <div class="body">
-          <ul class="collapsible expandable">
-            <li>
-              <div id="femme-mobile" class="collapsible-header femme">FEMME<i
-                  class="material-icons right">arrow_drop_down</i></div>
-              <div class="collapsible-body">
-                <ul style="background-color: #f2f9f9" class="p-b-1">
-                  <li class="height-35"><a href="{{ route('home.category', ($id = 5)) }}">Veste</a></li>
-                  <li class="divider" style="background-color: #e3f0f0"></li>
-                  <li class="height-35"><a href="{{ route('home.category', ($id = 4)) }}">Pantalon</a></li>
-                  <li class="divider" style="background-color: #e3f0f0"></li>
-                  <li class="height-35"><a href="{{ route('home.category', ($id = 7)) }}">Pull</a></li>
-                </ul>
-              </div>
-            </li>
-
-            <li>
-              {{-- <div id="homme-mobile" class="collapsible-header" onclick="changeColor(this)">HOMME<i class="material-icons right">arrow_drop_down</i></div> --}}
-              <div id="homme-mobile" class="collapsible-header homme">HOMME<i
-                  class="material-icons right">arrow_drop_down</i></div>
-              <div class="collapsible-body">
-                <ul style="background-color: #f2f9f9" class=" p-b-1">
-                  <li class="height-35"><a href="{{ route('home.category', ($id = 2)) }}">Veste</a></li>
-                  <li class="divider" style="background-color: #e3f0f0"></li>
-                  <li class="height-35"><a href="{{ route('home.category', ($id = 1)) }}">Pantalon</a></li>
-                  <li class="divider" style="background-color: #e3f0f0"></li>
-                  <li class="height-35"><a href="{{ route('home.category', ($id = 6)) }}">Pull</a></li>
-                </ul>
-              </div>
-            </li>
-
-            <li>
-              <a class="pad16px" href="{{ route('home.category', ($id = 3)) }}">DIVERS</a>
-            </li>
-
-            <li>
-              <a class="pad16px" href="{{ route('home') }}">TOUT</a>
-            </li>
-
-          </ul>
-        </div>
-      </li>
-    </ul>
-
-
     {{-- <li class="divider"></li> --}}
     @auth
     <li>
@@ -250,13 +170,9 @@
     </li>
     @endauth
   </ul>
-
-
-
   <main>
     @yield('content')
   </main>
-
   <footer class="page-footer">
     <div class="container center-on-small-only">
       <div class="row">
@@ -292,43 +208,7 @@
       <div class="container">© 2020 {{ $shop->name }} ©</div>
     </div>
   </footer>
-  <script>
-    var largeur = window.innerWidth;
-
-    var elem = document.querySelector('.collapsible.expandable');
-    var bodyel = document.querySelectorAll('.collapsible-body');
-    var elFemme = document.querySelector('.femme');
-    var elHomme = document.querySelector('.homme');
-    var instance = M.Collapsible.init(elem, {
-      accordion: false,
-    });
-
-    if(elFemme){
-      elFemme.addEventListener("click", function() {
-        if(bodyel[0].style.display !== 'block'){
-          elFemme.classList.add("bg-collap");
-          elHomme.classList.remove("bg-collap");
-        } else {
-          elFemme.classList.remove("bg-collap");
-        }
-      });
-    }
-
-    if(elHomme){
-      elHomme.addEventListener("click", function() {
-        if(bodyel[1].style.display !== 'block'){
-          elHomme.classList.add("bg-collap");
-          elFemme.classList.remove("bg-collap");
-        } else {
-          elHomme.classList.remove("bg-collap");
-        }
-      });
-    }
-
-  </script>
-
   @yield('javascript')
-
 </body>
 
 </html>

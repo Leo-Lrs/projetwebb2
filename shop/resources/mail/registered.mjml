@@ -9,7 +9,7 @@
   <mj-body background-color="#FFF">
     <mj-section padding-bottom="20px" padding-top="20px">
       <mj-column width="100%">
-        <mj-image src="{{ asset('images/logo_kopatik_mail.png') }}" href="http://127.0.0.1:8000/" target="_blank" alt="" align="center" border="none" width="300px" padding-left="0px" padding-right="0px" padding-bottom="10px" padding-top="10px"></mj-image>
+        <mj-image src="{{ asset('images/megagaming_logo.png') }}" href="http://127.0.0.1:8000/" target="_blank" alt="" align="center" border="none" width="300px" padding-left="0px" padding-right="0px" padding-bottom="10px" padding-top="10px"></mj-image>
       </mj-column>
     </mj-section>
     <mj-section background-color="#6E7783" padding-bottom="0px" padding-top="0">

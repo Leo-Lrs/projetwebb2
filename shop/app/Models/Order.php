@@ -12,7 +12,7 @@ class Order extends Model
      * @var array
      */
     protected $fillable = [
-        'reference', 'shipping', 'payment', 'state_id', 'user_id', 'purchase_order', 'pick', 'total', 'tax', 'invoice_id', 'invoice_number', 'created_at'
+        'reference', 'shipping', 'payment', 'state_id', 'user_id', 'purchase_order', 'pick', 'total', 'invoice_id', 'invoice_number', 'created_at'
     ];
 
     public function adresses()
@@ -43,7 +43,6 @@ class Order extends Model
         'virement' => 'Virement',
         'cheque' => 'Chèque',
         'mandat' => 'Mandat administratif',
-        'paypal' => 'Paypal',
         ];
         return $texts[$this->payment];
     }
@@ -53,10 +52,10 @@ class Order extends Model
     }
     public function getTvaAttribute()
     {
-        return $this->tax > 0 ? $this->total / (1 + $this->tax) * $this->tax : 0;
+        return $this->total;
     }
     public function getHtAttribute()
     {
-        return $this->total / (1 + $this->tax);
+        return $this->total;
     }
 }

@@ -109,7 +109,7 @@
     </tr>
     @endforeach
     <tr>
-      <td>Total TTC (TVA à {{ $item->tax * 100 }} %)</td>
+      <td>Total TTC</td>
       <td>{{ number_format($order->total, 2, ',', ' ') }} €</td>
     </tr>
   </table>

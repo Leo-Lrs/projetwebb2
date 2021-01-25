@@ -16,7 +16,7 @@ class OrdersController extends Controller
     public function confirmation(Request $request, $id)
     {
         $order = Order::with('products', 'adresses', 'state')->findOrFail($id);
-        if(in_array($order->state->slug, ['cheque', 'paypal', 'mandat', 'virement', 'carte', 'erreur'])) {
+        if(in_array($order->state->slug, ['cheque', 'mandat', 'virement', 'carte', 'erreur'])) {
             $this->authorize('manage', $order);          
             $data = $this->data($request, $order);
             return view('command.confirmation', $data);

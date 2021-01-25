@@ -9,7 +9,7 @@
   <mj-body background-color="#FFF">
     <mj-section padding-bottom="20px" padding-top="20px">
       <mj-column width="100%">
-        <mj-image src="{{ asset('images/logo_kopatik_mail.png') }}" href="http://127.0.0.1:8000/" target="_blank" alt="" align="center" border="none" width="300px" padding-left="0px" padding-right="0px" padding-bottom="10px" padding-top="10px"></mj-image>
+        <mj-image src="{{ asset('images/megagaming_logo.png') }}" href="http://127.0.0.1:8000/" target="_blank" alt="" align="center" border="none" width="300px" padding-left="0px" padding-right="0px" padding-bottom="10px" padding-top="10px"></mj-image>
       </mj-column>
     </mj-section>
     
@@ -45,12 +45,6 @@
             <td style="padding: 15px;"></td>
             <td style="padding: 15px;"></td>
           </tr>
-          @if($order->tax > 0)
-          <tr style="background-color: #3e4647">
-            <td style="padding: 10px;">TVA à {{ $order->tax * 100 }}%</td>
-            <td style="padding: 0 10px 0 10px; white-space: nowrap;">{{ number_format($order->tva, 2, ',', ' ') }} €</td>
-          </tr>
-          @endif
           <tr style="background-color: #3e4647">
             <td style="padding: 10px;">Total TTC</td>
             <td style="padding: 0 10px 0 10px; white-space: nowrap;">{{ number_format($order->totalOrder, 2, ',', ' ') }} €</td>

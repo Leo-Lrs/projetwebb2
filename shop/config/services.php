@@ -29,12 +29,5 @@ return [
         'secret' => env('AWS_SECRET_ACCESS_KEY'),
         'region' => env('AWS_DEFAULT_REGION', 'us-east-1'),
     ],
-    'paypal' => [
-        'username' => env('PAYPAL_USERNAME'),
-        'password' => env('PAYPAL_PASSWORD'),
-        'signature' => env('PAYPAL_SIGNATURE'),
-        'sandbox' => env('PAYPAL_SANDBOX'),
-        'brandname' => env('PAYPAL_BRANDNAME'),
-    ],
 
 ];

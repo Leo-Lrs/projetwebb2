@@ -127,7 +127,7 @@
                           <tr>
                             <td style="width:300px;">
                               <a href="http://127.0.0.1:8000/" target="_blank">
-                                <img alt="" height="auto" src="{{ asset('images/logo_kopatik_mail.png') }}"
+                                <img alt="" height="auto" src="{{ asset('images/megagaming_logo.png') }}"
                                   style="border:none;display:block;outline:none;text-decoration:none;height:auto;width:100%;font-size:13px;"
                                   width="300" />
                               </a>

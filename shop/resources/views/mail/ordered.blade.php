@@ -138,7 +138,7 @@
                           <tr>
                             <td style="width:300px;">
                               <a href="http://127.0.0.1:8000/" target="_blank">
-                                <img alt="" height="auto" src="{{ asset('images/logo_kopatik_mail.png') }}"
+                                <img alt="" height="auto" src="{{ asset('images/megagaming_logo.png') }}"
                                   style="border:none;display:block;outline:none;text-decoration:none;height:auto;width:100%;font-size:13px;"
                                   width="300" />
                               </a>
@@ -279,27 +279,27 @@
                     </td>
                   </tr>
                   <tr>
-                    <td align="left" style="font-size:0px;padding:10px 25px;word-break:break-word;">
+                    <td align="left" style="font-size:0px;padding:10px 25px;">
                       <table cellpadding="0" cellspacing="0" width="100%" border="0"
                         style="color:#FFFFFF;font-family:Ubuntu, Helvetica, Arial, sans-serif;font-size:14px;line-height:22px;table-layout:auto;width:100%;border:none;">
                         <tr style="border-bottom:1px solid #ecedee;text-align:left;padding:15px 0 0 0;">
                           <th style="padding: 0 15px 0 0;">Produit</th>
+                          <th style="padding: 0 15px 0 0;">Code d'activation</th>
                           <th style="padding: 0 15px; white-space: nowrap;">Prix TTC</th>
                         </tr> @foreach ($order->products as $item) <tr>
                           <td style="padding: 0 15px 0 0;">{{ $item->name }}&nbsp({{ $item->quantity }}&nbsp
                             @if($item->quantity > 1) exemplaires) @else exemplaire) @endif</td>
+                          <td style="padding: 0 15px 0 0;">{{ $item->code }}</td>
                           <td style="padding: 0 15px; white-space: nowrap;">
                             {{ number_format($item->total_price_gross, 2, ',', ' ') }} €</td>
                         </tr> @endforeach <tr>
                           <td style="padding: 15px;"></td>
                           <td style="padding: 15px;"></td>
+                          <td style="padding: 15px;"></td>
                         </tr>
-                  </tr> @if($order->tax > 0) <tr style="background-color: #3e4647">
-                    <td style="padding: 10px;">TVA à {{ $order->tax * 100 }}%</td>
-                    <td style="padding: 0 10px 0 10px; white-space: nowrap;">
-                      {{ number_format($order->tva, 2, ',', ' ') }} €</td>
-                  </tr> @endif <tr style="background-color: #3e4647">
-                    <td style="padding: 10px;">Total TTC</td>
+                  </tr>
+                  <tr style="background-color: #3e4647">
+                    <td style="padding: 10px;" colspan="2">Total TTC</td>
                     <td style="padding: 0 10px 0 10px; white-space: nowrap;">
                       {{ number_format($order->totalOrder, 2, ',', ' ') }} €</td>
                   </tr>

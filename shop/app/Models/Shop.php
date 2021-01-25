@@ -25,7 +25,6 @@ class Shop extends Model
         'transfer',
         'check',
         'mandat',
-        'paypal',
     ];
     public $timestamps = false;
 }

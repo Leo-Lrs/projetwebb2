@@ -23,15 +23,12 @@ class DetailsController extends Controller
         // Livraison
         $country_livraison = $request->different ? Address::findOrFail($request->livraison)->country : $country_facturation;
         $shipping = $request->pick ? 0 : $ship->compute($country_livraison->id);
-        // TVA
-        $tvaBase = Country::whereName('France')->first()->tax;
-        $tax = $request->pick ? $tvaBase : $country_livraison->tax; 
         
         // Panier
         $content = Cart::getContent();
-        $total = $tax > 0 ? Cart::getTotal() : Cart::getTotal() / (1 + $tvaBase);              
+        $total = Cart::getTotal();              
         return response()->json([ 
-            'view' => view('command.partials.detail', compact('shipping', 'content', 'total', 'tax'))->render(), 
+            'view' => view('command.partials.detail', compact('shipping', 'content', 'total'))->render(), 
         ]);
     }
 }

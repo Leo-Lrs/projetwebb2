@@ -14,10 +14,10 @@ class DatabaseSeeder extends Seeder
     public function run()
     {
         Country::insert([
-            ['name' => 'France', 'tax' => 0.2],
-            ['name' => 'Belgique', 'tax' => 0.2],
-            ['name' => 'Suisse', 'tax' => 0],
-            ['name' => 'Canada', 'tax' => 0],
+            ['name' => 'France'],
+            ['name' => 'Belgique'],
+            ['name' => 'Suisse'],
+            ['name' => 'Canada'],
         ]);
         Range::insert([
             ['max' => 1],
@@ -48,7 +48,6 @@ class DatabaseSeeder extends Seeder
             ['name' => 'Attente mandat administratif', 'slug' => 'mandat', 'color' => 'blue', 'indice' => 1],
             ['name' => 'Attente virement', 'slug' => 'virement', 'color' => 'blue', 'indice' => 1],
             ['name' => 'Attente paiement par carte', 'slug' => 'carte', 'color' => 'blue', 'indice' => 1],
-            ['name' => 'Attente paiement paypal', 'slug' => 'paypal', 'color' => 'blue', 'indice' => 1],
             ['name' => 'Erreur de paiement', 'slug' => 'erreur', 'color' => 'red', 'indice' => 0],
             ['name' => 'Annulé', 'slug' => 'annule', 'color' => 'red', 'indice' => 2],
             ['name' => 'Mandat administratif reçu', 'slug' => 'mandat_ok', 'color' => 'green', 'indice' => 3],
@@ -107,7 +106,6 @@ class DatabaseSeeder extends Seeder
         });
 
         $items = [
-            ['livraisons', 'Livraisons'],
             ['mentions-legales', 'Mentions légales'],
             ['conditions-generales-de-vente', 'Conditons générales de vente'],
             ['politique-de-confidentialite', 'Politique de confidentialité'],
@@ -163,7 +161,6 @@ class DatabaseSeeder extends Seeder
               if($order->payment === 'carte' && $order->state_id === 8) {
                   $order->payment_infos()->create(['payment_id' => (string) Str::uuid()]);
               }
-              $order->tax = $countryId > 2 ? 0 : .2;
               $order->total = $total;
               $order->save();
         });

@@ -19,13 +19,11 @@ class CreateOrdersTable extends Migration
             $table->string('reference', 8);
             $table->decimal('shipping');
             $table->decimal('total');
-            $table->decimal('tax');
             $table->enum('payment', [
                 'carte',
                 'mandat',
                 'virement',
-                'cheque',
-                'paypal'
+                'cheque'
             ]);
             $table->string('purchase_order', 100)->nullable();
             $table->boolean('pick')->default(false);

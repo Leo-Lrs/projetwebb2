@@ -73,7 +73,6 @@
           @include('command.partials.detail', [
           'content' => $order->products,
           'shipping' => $order->shipping,
-          'tax' => $order->tax,
           'total' => $order->total,
           ])
         </div>

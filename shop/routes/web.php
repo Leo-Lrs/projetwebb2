@@ -67,34 +67,6 @@ Route::middleware('auth')->group(function () {
         ])->only(['create', 'store']);
         Route::name('commandes.payment')->post('paiement/{order}', 'PaymentController');
     });
-
-    // **************** Test Paypal ***************************
-    Route::get('commandes/confirm-paypal-ok/{order?}', [
-        'name' => 'PayPal Express Checkout',
-        'as' => 'order.paypal',
-        'uses' => 'Back\PayPalController@form',
-    ]);
-    
-    Route::post('/checkout/payment/{order}/paypal', [
-        'name' => 'PayPal Express Checkout',
-        'as' => 'checkout.payment.paypal',
-        'uses' => 'Back\PayPalController@checkout',
-    ]);
-    
-    Route::get('commandes/confirm-paypal-ok/{order}', [
-        'name' => 'PayPal Express Checkout',
-        'as' => 'paypal.checkout.completed',
-        'uses' => 'Back\PayPalController@completed',
-    ]);
-    
-    Route::name('paiement-ok.paypal')->get('commandes/confirm-paypal-ok/{order}/paypal', 'Back\PaypalController@completed');
-    Route::name('paiement-cancel.paypal')->get('commandes/cancel-paypal/{order}/paypal', 'Back\PaypalController@cancelled');
-    
-    Route::get('/paypal/checkout/{order}/cancelled', [
-        'name' => 'PayPal Express Checkout',
-        'as' => 'paypal.checkout.cancelled',
-        'uses' => 'Back\PayPalController@cancelled',
-    ]);
  });
 
 // Administration
@@ -147,9 +119,4 @@ Route::prefix('admin')->middleware('admin')->namespace('Back')->group(function (
     Route::name('maintenance.edit')->get('maintenance/modification', 'MaintenanceController@edit');
     Route::name('maintenance.update')->put('maintenance', 'MaintenanceController@update');
     Route::name('cache.update')->put('cache', 'MaintenanceController@cache');
-});
-
-Route::get('/clear-cache', function() {
-    Artisan::call('cache:clear');
-    return "Cache is cleared";
 });

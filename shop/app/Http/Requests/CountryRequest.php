@@ -21,7 +21,6 @@ class CountryRequest extends FormRequest
     {
         return [
             'name' => 'required|string|max:100',
-            'tax' => 'required|numeric|regex:/^(\d+(?:[\.\,]\d{1,2})?)$/',
         ];
     }
 }

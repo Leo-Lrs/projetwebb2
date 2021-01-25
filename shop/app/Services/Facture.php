@@ -84,36 +84,15 @@ class Facture
             $text .= $addressdelivery->phone;
             $invoice['delivery_address'] = $text;
         }
-        
-        // Taxe
-        if($order->pick) {
-            $tax = .2;
-        } else {
-            if(isset($addressdelivery)) {
-                $tax = $addressdelivery->country->tax;
-            } else {
-                $tax = $addressOrder->country->tax;
-            }
-        }
         // Produits
         $positions = [];
         foreach($order->products as $product) {
             array_push($positions, [
                 'name' => $product->name,
                 'quantity' => $product->quantity,
-                'tax' => $tax * 100,
                 'total_price_gross' => $product->total_price_gross,
                 'code' => $product->code,
             ]);
-        }
-        // Frais d'expédition
-        if($order->shipping > 0) {
-          array_push($positions, [
-              'name' => 'Frais d\'expédition',
-              'quantity' => 1,
-              'tax' => 0,
-              'total_price_gross' => $order->shipping,
-          ]);
         }
         $invoice['positions'] = $positions;
         // Envoi

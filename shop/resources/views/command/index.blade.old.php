@@ -71,17 +71,6 @@
             Vous devrez renseigner un formulaire de paiement sur la page de confirmation de cette commande.
           </p>
         @endif
-        @if($shop->paypal)
-          <p>
-            <label>
-              <input class="payment" name="payment" type="radio" value="paypal">
-              <span>Paiement Paypal</span>
-            </label>
-          </p>
-          <p style="margin-left: 40px" class="hide">
-            Vous serez redirigé vers la plateforme Paypal pour effectuer le paiement.
-          </p>
-        @endif
         @if($shop->mandat)
           <p>
             <label>

@@ -90,7 +90,6 @@
 
     <li id="detail" class="collection-item">
       @include('command.partials.detail', [
-      'tax' => $order->tax,
       'shipping' => $order->shipping,
       'total' => $order->total,
       'content' => $order->products,

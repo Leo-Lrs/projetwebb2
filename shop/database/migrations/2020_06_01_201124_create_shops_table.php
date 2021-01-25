@@ -33,7 +33,6 @@ class CreateShopsTable extends Migration
             $table->boolean('transfer')->default(true);
             $table->boolean('check')->default(true);
             $table->boolean('mandat')->default(true);
-            $table->boolean('paypal')->default(true);
         });
     }
 
