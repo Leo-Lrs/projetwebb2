@@ -5,7 +5,7 @@
 
 ## Demo
 
-127.0.0.1:8000
+127.0.0.1:8000/
 
 Use these access codes to test the backend part of the shop (only read bdd axx) :
 
@@ -13,7 +13,6 @@ Use these access codes to test the backend part of the shop (only read bdd axx) 
 log: admintest@fgainza.fr
 pwd: password
 ```
-
 
 ## Features
 
@@ -42,10 +41,6 @@ Like any laravel project
 ```php
 composer install;
 ```
-
-## Author
-
-* **Frédéric Gainza** _alias_ [@FredGainza](https://github.com/FredGainza)
 
 ## Credit
 
