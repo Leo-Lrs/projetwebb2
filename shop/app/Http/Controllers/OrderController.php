@@ -82,6 +82,7 @@ class OrderController extends Controller
             'state_id' => State::whereSlug($request->payment)->first()->id,
         ]);
 
+
         // Enregistrement adresse de facturation
         $order->adresses()->create($address_facturation->toArray());
 

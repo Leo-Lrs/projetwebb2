@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\{ Product, Page, Category };
+use Illuminate\Http\Request;
 
 class HomeController extends Controller
 {
@@ -11,11 +12,18 @@ class HomeController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Request $request)
     {
-        $products = Product::whereActive(true)->get();
+        $search = $request->input("search");
+        if ($search) {
+            $products = Product::where('name', 'like', '%' . $search . '%')
+            ->get();
+        } else {
+            $products = Product::whereActive(true)->get();
+        }
+
         $categories = Category::all(); 
-        return view('home', compact('products', 'categories'));
+        return view('home', compact('products', 'categories'))->with('products', $products);
     }
 
     public function category($id)

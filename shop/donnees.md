@@ -3,7 +3,7 @@ APP_ENV=local
 APP_KEY=base64:3H049qmaTKHgt4j1HAtHV++TQ1sif+2oyptBK2YuFYc=
 APP_DEBUG=false
 APP_URL=http://localhost
-APP_EMAIL=kopachic@fgainza.fr
+APP_EMAIL=contact@megagaming.fr
 
 LOG_CHANNEL=stack
 

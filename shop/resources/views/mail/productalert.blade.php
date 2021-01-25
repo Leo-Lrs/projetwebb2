@@ -1,5 +1,6 @@
 <!doctype html>
-<html xmlns="http://www.w3.org/1999/xhtml" xmlns:v="urn:schemas-microsoft-com:vml" xmlns:o="urn:schemas-microsoft-com:office:office">
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:v="urn:schemas-microsoft-com:vml"
+  xmlns:o="urn:schemas-microsoft-com:office:office">
 
 <head>
   <title>
@@ -102,7 +103,8 @@
       <table align="center" border="0" cellpadding="0" cellspacing="0" role="presentation" style="width:100%;">
         <tbody>
           <tr>
-            <td style="direction:ltr;font-size:0px;padding:20px 0;padding-bottom:20px;padding-top:20px;text-align:center;">
+            <td
+              style="direction:ltr;font-size:0px;padding:20px 0;padding-bottom:20px;padding-top:20px;text-align:center;">
               <!--[if mso | IE]>
                   <table role="presentation" border="0" cellpadding="0" cellspacing="0">
                 
@@ -112,16 +114,22 @@
                class="" style="vertical-align:top;width:600px;"
             >
           <![endif]-->
-              <div class="mj-column-per-100 mj-outlook-group-fix" style="font-size:0px;text-align:left;direction:ltr;display:inline-block;vertical-align:top;width:100%;">
-                <table border="0" cellpadding="0" cellspacing="0" role="presentation" style="vertical-align:top;" width="100%">
+              <div class="mj-column-per-100 mj-outlook-group-fix"
+                style="font-size:0px;text-align:left;direction:ltr;display:inline-block;vertical-align:top;width:100%;">
+                <table border="0" cellpadding="0" cellspacing="0" role="presentation" style="vertical-align:top;"
+                  width="100%">
                   <tr>
-                    <td align="center" style="font-size:0px;padding:10px 25px;padding-top:10px;padding-right:0px;padding-bottom:10px;padding-left:0px;word-break:break-word;">
-                      <table border="0" cellpadding="0" cellspacing="0" role="presentation" style="border-collapse:collapse;border-spacing:0px;">
+                    <td align="center"
+                      style="font-size:0px;padding:10px 25px;padding-top:10px;padding-right:0px;padding-bottom:10px;padding-left:0px;word-break:break-word;">
+                      <table border="0" cellpadding="0" cellspacing="0" role="presentation"
+                        style="border-collapse:collapse;border-spacing:0px;">
                         <tbody>
                           <tr>
                             <td style="width:300px;">
-                              <a href="https://shopping.fgainza.fr" target="_blank">
-                                <img alt="" height="auto" src="{{ asset('images/logo_kopatik_mail.png') }}" style="border:none;display:block;outline:none;text-decoration:none;height:auto;width:100%;font-size:13px;" width="300" />
+                              <a href="http://127.0.0.1:8000/" target="_blank">
+                                <img alt="" height="auto" src="{{ asset('images/logo_kopatik_mail.png') }}"
+                                  style="border:none;display:block;outline:none;text-decoration:none;height:auto;width:100%;font-size:13px;"
+                                  width="300" />
                               </a>
                             </td>
                           </tr>
@@ -155,7 +163,8 @@
           <td style="line-height:0px;font-size:0px;mso-line-height-rule:exactly;">
       <![endif]-->
     <div style="background:#6E7783;background-color:#6E7783;margin:0px auto;max-width:600px;">
-      <table align="center" border="0" cellpadding="0" cellspacing="0" role="presentation" style="background:#6E7783;background-color:#6E7783;width:100%;">
+      <table align="center" border="0" cellpadding="0" cellspacing="0" role="presentation"
+        style="background:#6E7783;background-color:#6E7783;width:100%;">
         <tbody>
           <tr>
             <td style="direction:ltr;font-size:0px;padding:20px 0;padding-bottom:5px;padding-top:0;text-align:center;">
@@ -168,16 +177,24 @@
                class="" style="vertical-align:top;width:600px;"
             >
           <![endif]-->
-              <div class="mj-column-per-100 mj-outlook-group-fix" style="font-size:0px;text-align:left;direction:ltr;display:inline-block;vertical-align:top;width:100%;">
-                <table border="0" cellpadding="0" cellspacing="0" role="presentation" style="vertical-align:top;" width="100%">
+              <div class="mj-column-per-100 mj-outlook-group-fix"
+                style="font-size:0px;text-align:left;direction:ltr;display:inline-block;vertical-align:top;width:100%;">
+                <table border="0" cellpadding="0" cellspacing="0" role="presentation" style="vertical-align:top;"
+                  width="100%">
                   <tr>
-                    <td align="center" style="font-size:0px;padding:10px 25px;padding-top:28px;padding-right:25px;padding-left:25px;word-break:break-word;">
-                      <div style="font-family:Helvetica;font-size:20px;line-height:20px;text-align:center;color:#FFFFFF;">Alerte stock</div>
+                    <td align="center"
+                      style="font-size:0px;padding:10px 25px;padding-top:28px;padding-right:25px;padding-left:25px;word-break:break-word;">
+                      <div
+                        style="font-family:Helvetica;font-size:20px;line-height:20px;text-align:center;color:#FFFFFF;">
+                        Alerte stock</div>
                     </td>
                   </tr>
                   <tr>
-                    <td align="center" style="font-size:0px;padding:10px 25px;padding-top:10px;padding-right:25px;padding-bottom:28px;padding-left:25px;word-break:break-word;">
-                      <div style="font-family:Helvetica;font-size:20px;line-height:20px;text-align:center;color:#FFFFFF;">du produit {{ $product->name }}</div>
+                    <td align="center"
+                      style="font-size:0px;padding:10px 25px;padding-top:10px;padding-right:25px;padding-bottom:28px;padding-left:25px;word-break:break-word;">
+                      <div
+                        style="font-family:Helvetica;font-size:20px;line-height:20px;text-align:center;color:#FFFFFF;">
+                        du produit {{ $product->name }}</div>
                     </td>
                   </tr>
                 </table>
@@ -206,7 +223,8 @@
           <td style="line-height:0px;font-size:0px;mso-line-height-rule:exactly;">
       <![endif]-->
     <div style="background:#6E7783;background-color:#6E7783;margin:0px auto;max-width:600px;">
-      <table align="center" border="0" cellpadding="0" cellspacing="0" role="presentation" style="background:#6E7783;background-color:#6E7783;width:100%;">
+      <table align="center" border="0" cellpadding="0" cellspacing="0" role="presentation"
+        style="background:#6E7783;background-color:#6E7783;width:100%;">
         <tbody>
           <tr>
             <td style="direction:ltr;font-size:0px;padding:20px 0;padding-bottom:5px;padding-top:0;text-align:center;">
@@ -219,10 +237,13 @@
                class="" style="vertical-align:top;width:600px;"
             >
           <![endif]-->
-              <div class="mj-column-per-100 mj-outlook-group-fix" style="font-size:0px;text-align:left;direction:ltr;display:inline-block;vertical-align:top;width:100%;">
-                <table border="0" cellpadding="0" cellspacing="0" role="presentation" style="vertical-align:top;" width="100%">
+              <div class="mj-column-per-100 mj-outlook-group-fix"
+                style="font-size:0px;text-align:left;direction:ltr;display:inline-block;vertical-align:top;width:100%;">
+                <table border="0" cellpadding="0" cellspacing="0" role="presentation" style="vertical-align:top;"
+                  width="100%">
                   <tr>
-                    <td style="font-size:0px;padding:10px 25px;padding-top:0;padding-right:20px;padding-bottom:0px;padding-left:20px;word-break:break-word;">
+                    <td
+                      style="font-size:0px;padding:10px 25px;padding-top:0;padding-right:20px;padding-bottom:0px;padding-left:20px;word-break:break-word;">
                       <p style="border-top:solid 2px #FFFFFF;font-size:1px;margin:0px auto;width:100%;">
                       </p>
                       <!--[if mso | IE]>
@@ -239,8 +260,11 @@
                     </td>
                   </tr>
                   <tr>
-                    <td align="center" style="font-size:0px;padding:10px 25px;padding-top:28px;padding-right:25px;padding-bottom:20px;padding-left:25px;word-break:break-word;">
-                      <div style="font-family:Helvetica;font-size:20px;line-height:20px;text-align:center;color:#FFFFFF;">Quantité restante : {{ $product->quantity }}</div>
+                    <td align="center"
+                      style="font-size:0px;padding:10px 25px;padding-top:28px;padding-right:25px;padding-bottom:20px;padding-left:25px;word-break:break-word;">
+                      <div
+                        style="font-family:Helvetica;font-size:20px;line-height:20px;text-align:center;color:#FFFFFF;">
+                        Quantité restante : {{ $product->quantity }}</div>
                     </td>
                   </tr>
                 </table>
@@ -269,7 +293,8 @@
           <td style="line-height:0px;font-size:0px;mso-line-height-rule:exactly;">
       <![endif]-->
     <div style="background:#6E7783;background-color:#6E7783;margin:0px auto;max-width:600px;">
-      <table align="center" border="0" cellpadding="0" cellspacing="0" role="presentation" style="background:#6E7783;background-color:#6E7783;width:100%;">
+      <table align="center" border="0" cellpadding="0" cellspacing="0" role="presentation"
+        style="background:#6E7783;background-color:#6E7783;width:100%;">
         <tbody>
           <tr>
             <td style="direction:ltr;font-size:0px;padding:20px 0;padding-bottom:0px;padding-top:0;text-align:center;">
@@ -282,10 +307,13 @@
                class="" style="vertical-align:top;width:600px;"
             >
           <![endif]-->
-              <div class="mj-column-per-100 mj-outlook-group-fix" style="font-size:0px;text-align:left;direction:ltr;display:inline-block;vertical-align:top;width:100%;">
-                <table border="0" cellpadding="0" cellspacing="0" role="presentation" style="vertical-align:top;" width="100%">
+              <div class="mj-column-per-100 mj-outlook-group-fix"
+                style="font-size:0px;text-align:left;direction:ltr;display:inline-block;vertical-align:top;width:100%;">
+                <table border="0" cellpadding="0" cellspacing="0" role="presentation" style="vertical-align:top;"
+                  width="100%">
                   <tr>
-                    <td style="font-size:0px;padding:10px 25px;padding-top:0;padding-right:20px;padding-bottom:0px;padding-left:20px;word-break:break-word;">
+                    <td
+                      style="font-size:0px;padding:10px 25px;padding-top:0;padding-right:20px;padding-bottom:0px;padding-left:20px;word-break:break-word;">
                       <p style="border-top:solid 2px #FFFFFF;font-size:1px;margin:0px auto;width:100%;">
                       </p>
                       <!--[if mso | IE]>
@@ -302,8 +330,11 @@
                     </td>
                   </tr>
                   <tr>
-                    <td align="center" style="font-size:0px;padding:10px 25px;padding-top:20px;padding-right:25px;padding-bottom:20px;padding-left:25px;word-break:break-word;">
-                      <div style="font-family:Helvetica;font-size:15px;line-height:20px;text-align:center;color:#FFFFFF;"><a href="https://shopping.fgainza.fr" target="_blank">KoPaTiK</a></div>
+                    <td align="center"
+                      style="font-size:0px;padding:10px 25px;padding-top:20px;padding-right:25px;padding-bottom:20px;padding-left:25px;word-break:break-word;">
+                      <div
+                        style="font-family:Helvetica;font-size:15px;line-height:20px;text-align:center;color:#FFFFFF;">
+                        <a href="http://127.0.0.1:8000/" target="_blank">MegaGaming</a></div>
                     </td>
                   </tr>
                 </table>

@@ -45,6 +45,7 @@ Route::resource('panier', 'CartController')->only(['index', 'store', 'update', '
 
 // Utilisateur authentifié
 Route::middleware('auth')->group(function () {
+    Route::resource('avis', 'AvisController');
     // Gestion du compte
     Route::prefix('compte')->group(function () {
         Route::name('account')->get('/', 'AccountController');

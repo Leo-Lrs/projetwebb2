@@ -9,7 +9,7 @@
   <mj-body background-color="#FFF">
     <mj-section padding-bottom="20px" padding-top="20px">
       <mj-column width="100%">
-        <mj-image src="{{ asset('images/logo_kopatik_mail.png') }}" href="https://shopping.fgainza.fr" target="_blank" alt="" align="center" border="none" width="300px" padding-left="0px" padding-right="0px" padding-bottom="10px" padding-top="10px"></mj-image>
+        <mj-image src="{{ asset('images/logo_kopatik_mail.png') }}" href="http://127.0.0.1:8000/" target="_blank" alt="" align="center" border="none" width="300px" padding-left="0px" padding-right="0px" padding-bottom="10px" padding-top="10px"></mj-image>
       </mj-column>
     </mj-section>
     <mj-section background-color="#6E7783" padding-bottom="0px" padding-top="0">
@@ -54,7 +54,7 @@
     </mj-section>
     <mj-section background-color="#6E7783" padding-bottom="0px" padding-top="0">
       <mj-column width="100%">
-        <mj-text line-height="20px" align="center" color="#FFF" font-size="15px" font-family="Helvetica" padding-left="25px" padding-right="25px" padding-bottom="20px" padding-top="20px" line-height="20px">Vous pouvez dès à présent passer commande sur notre boutique <a href="https://shopping.fgainza.fr" target="_blank">KoPaTiK</a>.
+        <mj-text line-height="20px" align="center" color="#FFF" font-size="15px" font-family="Helvetica" padding-left="25px" padding-right="25px" padding-bottom="20px" padding-top="20px" line-height="20px">Vous pouvez dès à présent passer commande sur notre boutique <a href="http://127.0.0.1:8000/" target="_blank">MegaGaming</a>.
         </mj-text>
       </mj-column>
     </mj-section>
