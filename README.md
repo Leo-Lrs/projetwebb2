@@ -1,5 +1,3 @@
-VERSION 0. 4 MISE A JOUR LE 01 /0 7 /19 BORDEAUX YNOV CAMPUS
-
 # E-SHOP
 
 #### Type :  PROJET
@@ -281,6 +279,10 @@ Tuto Laravel : https://morioh.com/p/9b8c8ef67bd5/laravel- 5 - 8 - tutorial-from-
 
 
 
+<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+
+
+
 
 ### PROJET : ECOMMERCE
 
@@ -300,15 +302,15 @@ Un espace administration permet de gérer les jeux en vente et les informations 
 Le site se composera obligatoirement des pages suivantes :
 
 - [X] page d'accueil (catalogue des jeux vidéo)
-- [ ] page produit (description et avis)
+- [ ] page produit (description et avis)    Description faite, manque avis
 - [X] page du panier d’achat
-- [ ] page d’espace membre
+- [X] page d’espace membre
 - [X] page d’inscription / connexion
 
 L'administration se composera obligatoirement des pages suivantes :
 
-- [ ] page tableau de bord
-- [ ] page des membres
+- [X] page tableau de bord
+- [X] page des membres
 - [X] page des jeux
 - [X] page de connexion
 
@@ -319,11 +321,11 @@ Partie membres
 ```
 - la page d’accueil :
     - [ ] liste de tous les jeux disponibles avec un système de pagination _difficulté :_ 3
-    - [X] un système de recherche par le nom du jeu _difficulté :_ 2
+    - [ ] un système de recherche par le nom du jeu _difficulté :_ 2
 - les utilisateurs peuvent se créer un compte et se connecter. Ils pourront compléter et modifier leur profil _difficulté :_ 5
     - Chaque profil utilisateur possède :
-        - [ ] un prénom
-        - [ ] un nom
+        - [X] un prénom
+        - [X] un nom
         - [X] une adresse email
         - [ ] une date de naissance
         - [ ] un solde (factice)
@@ -338,7 +340,7 @@ Partie membres
     - [ ] un formulaire pour ajouter/modifier son avis (si le membre a déjà acheté le
        jeu)
 - un email automatique est envoyé à l’acheteur après la vente avec : _difficulté :_ 5
-    - [X] le code d’activation
+    - [ ] le code d’activation
     - [ ] la facture en PDF
 
 ```
@@ -359,7 +361,7 @@ Partie administrateur
        - [X] une photo
        - [X] une quantité
        - [X] un prix
-       - [X] un code d’activation
+       - [ ] un code d’activation
     - les administrateurs peuvent consulter :
        - [ ] la note moyenne des notes
        - [ ] les avis laissés par les acheteurs
