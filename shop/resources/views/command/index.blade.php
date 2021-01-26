@@ -33,13 +33,15 @@
               @else
               <label>
                 <input id="different" name="different" type="checkbox">
-                <span style="display: none">
-                  Mon adresse de livraison est différente de mon adresse de facturation
-                </span>
               </label>
               @endif
             </div>
           </div>
+        </li>
+        <li style="display: none" id="liLivraison" class="collection-item hide"></li>
+        <li style="display: none" class="collection-item">
+          <input name="expedition" type="radio" value="colissimo" checked>
+          <input name="expedition" type="radio" value="retrait">
         </li>
         <li class="collection-item">
           <h5>Paiement</h5>
@@ -147,6 +149,14 @@
       });
     };
 
+    const inputsLiv = document.querySelectorAll('input[type=radio][name=livraison]');
+    for (var i = 0; i < inputsLiv.length; i++) {
+      if(inputsLiv[i].value == principale){
+        const test2 = inputsLiv[i];
+        test2.checked = true;
+        test2.parentNode.parentNode.parentNode.style.backgroundColor = '#f7fffe';
+      }
+    }
     
     for (var i = 0; i < inputsLiv.length; i++) {
       inputsLiv[i].addEventListener('input', function () {
