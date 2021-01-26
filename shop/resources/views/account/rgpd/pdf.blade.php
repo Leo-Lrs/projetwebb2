@@ -66,10 +66,6 @@
         <td>{{ "$address->postal $address->city" }}</td>
       </tr>
       <tr>
-        <td><strong>Pays</strong></td>
-        <td>{{ $address->country->name }}</td>
-      </tr>
-      <tr>
         <td><strong>Téléphone</strong></td>
         <td>{{ $address->phone }}</td>
       </tr>
@@ -92,7 +88,7 @@
       <tr>
         <td>{{ $order->reference }}</td>
         <td>{{ $order->created_at->calendar() }}</td>
-        <td>{{ number_format($order->total + $order->shipping, 2, ',', ' ') }} €</td>
+        <td>{{ number_format($order->total, 2, ',', ' ') }} €</td>
         <td>{{ $order->payment_text }}</td>
         <td>{{ $order->state->name }}</td>
       </tr>

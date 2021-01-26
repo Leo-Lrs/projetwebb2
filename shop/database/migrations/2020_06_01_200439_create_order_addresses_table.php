@@ -29,7 +29,6 @@ class CreateOrderAddressesTable extends Migration
             $table->string('phone', 25);
             $table->timestamps();
             $table->foreignId('order_id')->constrained()->onDelete('cascade');
-            $table->foreignId('country_id')->constrained()->onDelete('cascade');
         });
     }
 

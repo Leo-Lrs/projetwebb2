@@ -77,7 +77,7 @@ class OrdersController extends Controller
 
     public function show(Request $request, $id)
     {
-        $order = Order::with('products', 'state', 'adresses', 'adresses.country')->findOrFail($id);
+        $order = Order::with('products', 'state', 'adresses')->findOrFail($id);
         $this->authorize('manage', $order);
         $data = $this->data($request, $order);
         return view('account.orders.show', $data);

@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Models\ { Address, Country, User };
+use App\Models\ { Address, User };
 use App\Http\Requests\StoreAddress;
 use Illuminate\Support\Facades\Auth;
 
@@ -17,7 +17,7 @@ class AddressController extends Controller
     public function index(Request $request)
     {
         $user = $request->user();
-        $addresses = $request->user()->addresses()->with('country')->get();
+        $addresses = $request->user()->addresses()->get();
         if($addresses->isEmpty()) {
             return redirect(route('adresses.create'))->with('message', config('messages.oneaddress'));
         }
@@ -32,10 +32,9 @@ class AddressController extends Controller
      */
     public function create(Request $request)
     {
-        $countries = Country::all();
         $user = $request->user();
         $addresses = $request->user()->addresses()->get();
-        return view('account.addresses.create', compact('user', 'addresses', 'countries')); 
+        return view('account.addresses.create', compact('user', 'addresses')); 
     }
 
     /**
@@ -50,7 +49,7 @@ class AddressController extends Controller
 
         $user = $storeAddress->user();
         $storeAdd = $storeAddress->user()->addresses()->create($storeAddress->all());
-        $addresses = $user->addresses()->with('country')->get();
+        $addresses = $user->addresses()->get();
         // dd($storeAdd->id);
         if($storeAddress->principale == "1" || $addresses->count() == 1){
             $user = $storeAddress->user();
@@ -80,10 +79,9 @@ class AddressController extends Controller
     public function edit(Address $adress, Request $request)
     {
         $user = $request->user();
-        $addresses = $request->user()->addresses()->with('country')->get();
+        $addresses = $request->user()->addresses()->get();
         $this->authorize('manage', $adress);
-        $countries = Country::all();
-        return view('account.addresses.edit', compact('user', 'adress', 'addresses', 'countries'));
+        return view('account.addresses.edit', compact('user', 'adress', 'addresses'));
     }
 
     /**

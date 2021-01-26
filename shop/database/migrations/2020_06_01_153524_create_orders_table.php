@@ -17,7 +17,6 @@ class CreateOrdersTable extends Migration
             $table->id();
             $table->timestamps();
             $table->string('reference', 8);
-            $table->decimal('shipping');
             $table->decimal('total');
             $table->enum('payment', [
                 'carte',

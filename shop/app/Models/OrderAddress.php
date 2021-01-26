@@ -7,12 +7,6 @@ use Illuminate\Database\Eloquent\Model;
 class OrderAddress extends Model
 {
     protected $fillable = [
-        'name', 'firstname', 'professionnal', 'civility', 'company', 'address', 'addressbis', 'bp', 'postal', 'city', 'phone', 'country_id', 'facturation',
+        'name', 'firstname', 'professionnal', 'civility', 'company', 'address', 'addressbis', 'bp', 'postal', 'city', 'phone', 'facturation',
     ];
-
-
-    public function country()
-    {
-        return $this->belongsTo(Country::class);
-    }
 }

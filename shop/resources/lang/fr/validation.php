@@ -160,7 +160,6 @@ return [
         'password_confirmation' => 'confirmation du mot de passe',
         'date'                  => 'date',
         'city'                  => 'ville',
-        'country'               => 'pays',
         'address'               => 'adresse',
         'phone'                 => 'téléphone',
         'mobile'                => 'portable',

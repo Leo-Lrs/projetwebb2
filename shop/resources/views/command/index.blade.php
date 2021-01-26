@@ -41,25 +41,6 @@
             </div>
           </div>
         </li>
-        <li style="display: none" id="liLivraison" class="collection-item hide">
-          <h5>Adresse de livraison</h5>
-          @include('command.partials.addresses', ['name' => 'livraison'])
-        </li>
-        <li style="display: none" class="collection-item">
-          <h5>Mode de livraison</h5>
-          <p>
-            <label>
-              <input name="expedition" type="radio" value="colissimo" checked>
-              <span>Colissimo</span>
-            </label>
-          </p>
-          <p>
-            <label>
-              <input name="expedition" type="radio" value="retrait">
-              <span>Retrait sur place</span>
-            </label>
-          </p>
-        </li>
         <li class="collection-item">
           <h5>Paiement</h5>
           @if($shop->card)
@@ -166,16 +147,6 @@
       });
     };
 
-
-    const inputsLiv = document.querySelectorAll('input[type=radio][name=livraison]');
-    for (var i = 0; i < inputsLiv.length; i++) {
-      if(inputsLiv[i].value == principale){
-        const test2 = inputsLiv[i];
-        test2.checked = true;
-        test2.parentNode.parentNode.parentNode.style.backgroundColor = '#f7fffe';
-      }
-    }
-
     
     for (var i = 0; i < inputsLiv.length; i++) {
       inputsLiv[i].addEventListener('input', function () {
@@ -209,7 +180,6 @@
         },
         body: JSON.stringify({ 
           facturation: document.querySelector('input[type=radio][name=facturation]:checked').value, 
-          livraison: document.querySelector('input[type=radio][name=livraison]:checked').value,
           different: document.querySelector('#different').checked,
           pick: document.querySelector('input[type=radio][name=expedition]:checked').value == 'retrait'
         })
@@ -222,7 +192,6 @@
 
 
     // const factChecked = document.querySelector('input[type=radio][name=facturation]:checked');
-    // const livChecked = document.querySelector('input[type=radio][name=livraison]:checked');
 
     // factChecked.parentNode.parentNode.parentNode.style.backgroundColor = '#f7fffe';
     // livChecked.parentNode.parentNode.parentNode.style.backgroundColor = '#f7fffe';
@@ -254,7 +223,6 @@
       document.querySelector('#ok').checked = false;
       
       document.querySelector('#different').addEventListener('change', () => {
-        document.querySelector('#liLivraison').classList.toggle('hide');
         document.querySelector('#solo').classList.toggle('hide');
         getDetails();
       });
@@ -267,26 +235,14 @@
       document.querySelectorAll('input[type=radio][name=facturation]').forEach(input => {
         input.addEventListener('change', () => getDetails());
       });
-      document.querySelectorAll('input[type=radio][name=livraison]').forEach(input => {
-        input.addEventListener('change', () => getDetails());
-      });
       document.querySelectorAll('input[type=radio][name=expedition]').forEach(input => {
         input.addEventListener('change', () => {
           if(document.querySelector('input[type=radio][name=expedition][value=retrait]').checked) {            
             if(document.querySelector('#different').checked) {
-              document.querySelector('#different').checked = false;              
-              document.querySelector('#liLivraison').classList.toggle('hide');
+              document.querySelector('#different').checked = false;
             }
             document.querySelector('#different').disabled = true;  
             document.querySelector('#solo').classList.add('hide');          
-          }
-          if(document.querySelector('input[type=radio][name=expedition][value=colissimo]').checked) {            
-            document.querySelector('#different').disabled = false;
-            if(document.querySelector('#different').checked) {
-              document.querySelector('#solo').classList.add('hide');
-            } else {
-              document.querySelector('#solo').classList.remove('hide');
-            }          
           } 
           getDetails()
         });

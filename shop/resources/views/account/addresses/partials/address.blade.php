@@ -20,6 +20,5 @@
         <li>{{ $address->bp }}</li>
         @endif
         <li>{{ "$address->postal $address->city" }}</li>
-        <li>{{ $address->country->name }}</li>
         <li>{{ $address->phone }}</li>
     </ul>

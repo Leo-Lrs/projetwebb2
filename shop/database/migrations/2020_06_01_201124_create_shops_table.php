@@ -27,7 +27,6 @@ class CreateShopsTable extends Migration
             $table->string('facebook');
             $table->string('home');
             $table->text('home_infos')->nullable();
-            $table->text('home_shipping')->nullable();
             $table->boolean('invoice')->default(true);
             $table->boolean('card')->default(true);
             $table->boolean('transfer')->default(true);

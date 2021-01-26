@@ -1,16 +1,16 @@
 APP_NAME=shopping
 APP_ENV=local
-APP_KEY=base64:3H049qmaTKHgt4j1HAtHV++TQ1sif+2oyptBK2YuFYc=
-APP_DEBUG=false
+APP_KEY=base64:wqxvkUZnKVdGOYRi4npNIoK3TjxuSdstCrABHtx/Aaw=
+APP_DEBUG=true
 APP_URL=http://localhost
-APP_EMAIL=contact@megagaming.fr
+APP_EMAIL=pierredasilva.ynov@gmail.com
 
 LOG_CHANNEL=stack
 
 DB_CONNECTION=mysql
 DB_HOST=127.0.0.1
 DB_PORT=3306
-DB_DATABASE=laravel
+DB_DATABASE=shopping23
 DB_USERNAME=root
 DB_PASSWORD=
 
@@ -31,7 +31,7 @@ MAIL_PORT=2525
 MAIL_USERNAME=e668ec3ab9742c
 MAIL_PASSWORD=6667db27cf1479
 MAIL_FROM_ADDRESS=pierredasilva.ynov@gmail.com
-MAIL_FROM_NAME=pierredasilva
+MAIL_FROM_NAME=MegaGaming
 MAIL_ENCRYPTION=tls
 
 AWS_ACCESS_KEY_ID=

@@ -34,39 +34,23 @@
         :value="isset($adress) ? $adress->postal : ''" required="true"></x-input>
     <x-input name="city" type="text" icon="location_on" label="Ville" :value="isset($adress) ? $adress->city : ''"
         required="true"></x-input>
-    <div class="row">
-        <div class="input-field col s12">
-            <i class="material-icons prefix">location_on</i>
-            <select name="country_id"">
-          @foreach($countries as $country)
-            <option 
-              value=" {{ $country->id }}" @if(old('country_id', isset($adress) ? $adress->country_id : '') ==
-                $country->id) selected @endif>{{ $country->name }}
-                </option>
-                @endforeach
-            </select>
-            <label>Pays</label>
-        </div>
-    </div>
     <x-input name="phone" type="text" icon="phone" label="N° de téléphone" :value="isset($adress) ? $adress->phone : ''"
         required="true"></x-input>
     <p>
         @if($addresses->count() >= 1)
-            <div class="row col s12">
-                <span>Adresse principale : </span>
-                <label>
-                    <input name="principale" type="radio" value="1"
-                    @if(isset($adress))
-                        {{ old('principale', ($user->principale == $adress->id)) ? 'checked' : '' }} @endif />
-                    <span>Oui</span>
-                </label>
-                <label>
-                    <input name="principale" type="radio" value="0"
-                    @if(isset($adress))
-                        {{ old('principale', ($user->principale != $adress->id)) ? 'checked' : '' }} @endif />                   
-                    <span>Non</span>
-                </label>
-            </div>
+        <div class="row col s12">
+            <span>Adresse principale : </span>
+            <label>
+                <input name="principale" type="radio" value="1" @if(isset($adress))
+                    {{ old('principale', ($user->principale == $adress->id)) ? 'checked' : '' }} @endif />
+                <span>Oui</span>
+            </label>
+            <label>
+                <input name="principale" type="radio" value="0" @if(isset($adress))
+                    {{ old('principale', ($user->principale != $adress->id)) ? 'checked' : '' }} @endif />
+                <span>Non</span>
+            </label>
+        </div>
         @endif
         <button class="btn waves-effect waves-light" style="width: 100%" type="submit">
             Enregistrer

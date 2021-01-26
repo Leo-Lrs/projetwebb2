@@ -442,7 +442,6 @@
                       {{ $order->adresses->first()->addressbis }}<br /> @endif @if($order->adresses->first()->bp)
                       {{ $order->adresses->first()->bp }}<br /> @endif
                       {{ $order->adresses->first()->postal . ' ' . $order->adresses->first()->city }}<br />
-                      {{ $order->adresses->first()->country->name }}<br />
                       {{ $order->adresses->first()->phone }}<br /></div>
                   </td>
                 </tr>
@@ -455,28 +454,6 @@
                class="" style="vertical-align:top;width:300px;"
             >
           <![endif]-->
-            <div class="mj-column-per-50 mj-outlook-group-fix"
-              style="font-size:0px;text-align:left;direction:ltr;display:inline-block;vertical-align:top;width:100%;">
-              <table border="0" cellpadding="0" cellspacing="0" role="presentation" style="vertical-align:top;"
-                width="100%">
-                <tr>
-                  <td align="left"
-                    style="font-size:0px;padding:10px 25px;padding-right:25px;padding-bottom:20px;padding-left:25px;word-break:break-word;">
-                    <div style="font-family:Helvetica;font-size:16px;line-height:20px;text-align:left;color:#FFFFFF;">
-                      @if($order->adresses->count() > 1) <strong>Adresse de livraison</strong><br /><br />
-                      @isset($order->adresses->first()->name)
-                      {{ $order->adresses->last()->civility . ' ' . $order->adresses->last()->name . ' ' . $order->adresses->last()->firstname }}<br />
-                      @endisset @if($order->adresses->last()->company) {{ $order->adresses->last()->company }}<br />
-                      @endif {{ $order->adresses->last()->address }}<br /> @if($order->adresses->last()->addressbis)
-                      {{ $order->adresses->last()->addressbis }}<br /> @endif @if($order->adresses->last()->bp)
-                      {{ $order->adresses->last()->bp }}<br /> @endif
-                      {{ $order->adresses->last()->postal . ' ' . $order->adresses->last()->city }}<br />
-                      {{ $order->adresses->last()->country->name }}<br />
-                      {{ $order->adresses->last()->phone }}<br /> @endif</div>
-                  </td>
-                </tr>
-              </table>
-            </div>
             <!--[if mso | IE]>
             </td>
           

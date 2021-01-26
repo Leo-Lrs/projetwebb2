@@ -27,11 +27,10 @@ class UsersDataTable extends DataTable
                     $addPrincipale = '------  Non Renseignée  -----';
                 } else {
                     $adress = DB::table('addresses')->find($user->principale);
-                    $pays = DB::table('countries')->find($adress->country_id);
                     if($adress->professionnal == 0){
-                        $addPrincipale = $adress->civility. ' ' . $adress->firstname. ' ' .strtoupper($adress->name) . ' ' .$adress->address. ($adress->addressbis ? ' '.$adress->addressbis. ' ' : ''). ' - ' .strtoupper($adress->city). ' (' .$pays->name. ')';
+                        $addPrincipale = $adress->civility. ' ' . $adress->firstname. ' ' .strtoupper($adress->name) . ' ' .$adress->address. ($adress->addressbis ? ' '.$adress->addressbis. ' ' : ''). ' - ' .strtoupper($adress->city);
                     }else{
-                        $addPrincipale = strtoupper($adress->company). ' ' .$adress->address. ($adress->addressbis ? ' '.$adress->addressbis. ' ' : ''). ' - ' .strtoupper($adress->city). ' (' .$pays->name. ')';
+                        $addPrincipale = strtoupper($adress->company). ' ' .$adress->address. ($adress->addressbis ? ' '.$adress->addressbis. ' ' : ''). ' - ' .strtoupper($adress->city);
                     }
                 }
                 return $addPrincipale; 

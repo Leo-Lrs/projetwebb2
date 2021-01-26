@@ -29,18 +29,8 @@ return [
         'edit' => 'Gestion de la boutique',
     ],
 
-    'pays' => [
-        'index' => 'Gestion des Pays',
-        'edit' => 'Modification d\'un Pays',
-        'create' => 'Création d\'un Pays',
-    ],
-
     'plages' => [
         'edit' => 'Gestion des plages de poids',
-    ],
-
-    'colissimos' => [
-        'edit' => 'Gestion des tarifs postaux',
     ],
 
     'etats' => [

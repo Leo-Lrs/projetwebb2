@@ -1,7 +1,7 @@
 <?php
 
 use Illuminate\Database\Seeder;
-use App\Models\ { User, Address, Category, Country, Product, Colissimo, Range, Shop, State, Page, Order };
+use App\Models\ { User, Address, Category, Product, Shop, State, Page, Order };
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Str;
 class DatabaseSeeder extends Seeder
@@ -13,36 +13,6 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
-        Country::insert([
-            ['name' => 'France'],
-            ['name' => 'Belgique'],
-            ['name' => 'Suisse'],
-            ['name' => 'Canada'],
-        ]);
-        Range::insert([
-            ['max' => 1],
-            ['max' => 2],
-            ['max' => 3],
-            ['max' => 100],
-        ]);
-        Colissimo::insert([
-            ['country_id' => 1, 'range_id' => 1, 'price' => 7.25],
-            ['country_id' => 1, 'range_id' => 2, 'price' => 8.95],
-            ['country_id' => 1, 'range_id' => 3, 'price' => 13.75],
-            ['country_id' => 1, 'range_id' => 4, 'price' => 0],
-            ['country_id' => 2, 'range_id' => 1, 'price' => 15.5],
-            ['country_id' => 2, 'range_id' => 2, 'price' => 17.55],
-            ['country_id' => 2, 'range_id' => 3, 'price' => 22.45],
-            ['country_id' => 2, 'range_id' => 4, 'price' => 0],
-            ['country_id' => 3, 'range_id' => 1, 'price' => 15.5],
-            ['country_id' => 3, 'range_id' => 2, 'price' => 17.55],
-            ['country_id' => 3, 'range_id' => 3, 'price' => 22.45],
-            ['country_id' => 3, 'range_id' => 4, 'price' => 0],
-            ['country_id' => 4, 'range_id' => 1, 'price' => 27.65],
-            ['country_id' => 4, 'range_id' => 2, 'price' => 38],
-            ['country_id' => 4, 'range_id' => 3, 'price' => 55.65],
-            ['country_id' => 4, 'range_id' => 4, 'price' => 0],
-        ]);
         State::insert([
             ['name' => 'Attente chèque', 'slug' => 'cheque', 'color' => 'blue', 'indice' => 1],
             ['name' => 'Attente mandat administratif', 'slug' => 'mandat', 'color' => 'blue', 'indice' => 1],
@@ -128,7 +98,6 @@ class DatabaseSeeder extends Seeder
                   $address[0]['facturation'] = false;
                   $order->adresses()->create($address[0]);
               }
-              $countryId = $address[0]['country_id'];
               $total = 0;
               $product = Product::find(mt_rand(1, 3));
               $quantity = mt_rand(1, 3);

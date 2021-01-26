@@ -6,7 +6,7 @@ class Facture
 {
     public function create(Order $order, $paid = false)
     {
-        $order->load('adresses', 'products', 'adresses.country', 'user');
+        $order->load('adresses', 'products', 'user');
         // Adresse de facturation
         $addressOrder = $order->adresses->first();
         $text = $addressOrder->address;
@@ -18,7 +18,6 @@ class Facture
             'test' => config('invoice.test') ? 'true' : 'false',
             'title' => 'Commande référence ' . $order->reference,
             'buyer_street' => $text,
-            'buyer_country' => $addressOrder->country->name,
             'buyer_post_code' => $addressOrder->postal,
             'buyer_city' => $addressOrder->city,
             'buyer_company' => $addressOrder->professionnal ? '1' : '0',
@@ -61,29 +60,6 @@ class Facture
             $text .= " " . $addressOrder->bp;
         }
         $invoice['buyer_street'] = $text;
-        // S'il y a une adresse de livraison
-        if($order->adresses->count() === 2) {
-            $invoice['use_delivery_address'] = true;
-            $addressdelivery = $order->adresses->get(1);
-            $text = '';
-            if(isset($addressdelivery->name)) {
-                $text .= "$addressdelivery->civility $addressdelivery->name $addressdelivery->firstname \n";
-            }
-            if($addressdelivery->company) {
-                $text .= $addressdelivery->company . "\n";
-            }
-            $text .= $addressdelivery->address . "\n";
-            if($addressdelivery->addressbis) {
-                $text .= $addressdelivery->addressbis . "\n";
-            }
-            if($addressdelivery->bp) {
-                $text .= 'BP ' . $addressdelivery->bp . "\n";
-            }
-            $text .= "$addressdelivery->postal $addressdelivery->city" . "\n";
-            $text .= $addressdelivery->country->name . "\n";
-            $text .= $addressdelivery->phone;
-            $invoice['delivery_address'] = $text;
-        }
         // Produits
         $positions = [];
         foreach($order->products as $product) {

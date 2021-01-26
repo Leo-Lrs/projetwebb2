@@ -48,8 +48,6 @@
                 <x-inputbs4 name="home" type="text" label="Titre" :value="$shop->home"></x-inputbs4>
                 <x-textareabs4 name="home_infos" label="Informations importantes" :value="$shop->home_infos">
                 </x-textareabs4>
-                <x-textareabs4 name="home_shipping" label="Frais d'expédition" :value="$shop->home_shipping">
-                </x-textareabs4>
               </div>
             </div>
             <div class="card">

@@ -18,9 +18,6 @@ class AddressesDataTable extends DataTable
             ->addColumn('show', function ($adresse) {
                 return '<a href="' . route('back.adresses.show', $adresse->id) . '" class="btn btn-xs btn-warning btn-block">Voir</a>';
             })
-            ->editColumn('country_id', function ($adresse) {
-                return $adresse->country->name; 
-            })
             ->rawColumns(['show']);
     }
     /**
@@ -31,7 +28,7 @@ class AddressesDataTable extends DataTable
      */
     public function query(Address $model)
     {
-        return $model->with('country')->newQuery();
+        return $model->newQuery();
     }
     /**
      * Optional method if you want to use html builder.
@@ -66,7 +63,6 @@ class AddressesDataTable extends DataTable
             Column::make('address')->title('Adresse'),            
             Column::make('postal')->title('Code postal'),
             Column::make('city')->title('Ville'),
-            Column::make('country_id')->title('Pays'),
             Column::computed('show')
               ->title('')
               ->width(60)

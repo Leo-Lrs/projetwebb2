@@ -28,7 +28,6 @@ class CreateAddressesTable extends Migration
             $table->string('phone', 25);
             $table->timestamps();
             $table->foreignId('user_id')->constrained()->onDelete('cascade');
-            $table->foreignId('country_id')->constrained()->onDelete('cascade');
         });
     }
 

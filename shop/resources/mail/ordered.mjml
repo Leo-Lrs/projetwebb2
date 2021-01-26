@@ -63,14 +63,14 @@
     <mj-section background-color="#6e7783" padding-bottom="0" padding-top="0">
       <mj-column width="100%">
         <mj-text line-height="20px" color="#FFF" font-size="14px" font-family="Helvetica" padding-left="25px" padding-right="25px" padding-bottom="0">
-          <strong>Adresse de facturation @if($order->adresses->count() === 1 && !$order->pick) et de livraison @endif</strong><br /><br /> 
+          <strong>Adresse de facturation @if($order->adresses->count() === 1 && !$order->pick)@endif</strong><br /><br /> 
         </mj-text>
       </mj-column>
     </mj-section>
     <mj-section background-color="#6e7783" padding-bottom="5px" padding-top="0">
       <mj-column>
         <mj-text line-height="20px" color="#FFF" font-size="16px" font-family="Helvetica" padding-left="25px" padding-bottom="20px" padding-right="25px">
-          <strong>Adresse de facturation @if($order->adresses->count() === 1 && !$order->pick) et de livraison @endif</strong><br /><br /> 
+          <strong>Adresse de facturation @if($order->adresses->count() === 1 && !$order->pick)@endif</strong><br /><br /> 
           @isset($order->adresses->first()->name)
           {{ $order->adresses->first()->civility . ' ' . $order->adresses->first()->name . ' ' . $order->adresses->first()->firstname }}<br />
           @endisset 
@@ -85,35 +85,8 @@
           {{ $order->adresses->first()->bp }}<br />
           @endif
           {{ $order->adresses->first()->postal . ' ' . $order->adresses->first()->city }}<br />
-          {{ $order->adresses->first()->country->name }}<br />
           {{ $order->adresses->first()->phone }}<br />
         </mj-text>
-      </mj-column>
-      
-      
-      <mj-column>
-        
-        <mj-text line-height="20px" color="#FFF" font-size="16px" font-family="Helvetica" padding-left="25px" padding-bottom="20px" padding-right="25px">
-          @if($order->adresses->count() > 1)
-            <strong>Adresse de livraison</strong><br /><br /> 
-            @isset($order->adresses->first()->name)
-            {{ $order->adresses->last()->civility . ' ' . $order->adresses->last()->name . ' ' . $order->adresses->last()->firstname }}<br />
-            @endisset 
-            @if($order->adresses->last()->company)
-            {{ $order->adresses->last()->company }}<br />
-            @endif
-            {{ $order->adresses->last()->address }}<br />
-            @if($order->adresses->last()->addressbis)
-            {{ $order->adresses->last()->addressbis }}<br />
-            @endif @if($order->adresses->last()->bp)
-            {{ $order->adresses->last()->bp }}<br />
-            @endif
-            {{ $order->adresses->last()->postal . ' ' . $order->adresses->last()->city }}<br />
-            {{ $order->adresses->last()->country->name }}<br />
-            {{ $order->adresses->last()->phone }}<br />
-          @endif
-        </mj-text>
-        
       </mj-column>
       
     </mj-section>

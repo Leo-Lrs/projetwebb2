@@ -6,7 +6,6 @@ use App\Mail\PaymentOk;
 use Illuminate\Http\Request;
 use App\Models\{ Order, State, Shop, Payment };
 use Illuminate\Support\Facades\Mail;
-use App\Services\Shipping;
 use App\Services\Facture;
 class PaymentController extends Controller
 {

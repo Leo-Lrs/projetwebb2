@@ -19,7 +19,6 @@ class Shop extends Model
         'facebook',
         'home',
         'home_infos',
-        'home_shipping',
         'invoice',
         'card',
         'transfer',

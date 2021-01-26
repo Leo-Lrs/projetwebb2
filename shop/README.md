@@ -26,7 +26,6 @@ pwd: password
 
 * User and address management
 * Purchase order and order status management (with automatic invoice output)
-* Management of different countries
 * Mailing system
 * Statistics and maintenance systems
 

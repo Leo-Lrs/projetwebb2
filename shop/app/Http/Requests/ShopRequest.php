@@ -35,7 +35,6 @@ class ShopRequest extends FormRequest
             'facebook' => 'required|url|max:255',
             'home' => 'required|string|max:255',
             'home_infos' => 'nullable|string',
-            'home_shipping' => 'nullable|string',
         ];
     }
 }

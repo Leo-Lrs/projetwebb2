@@ -72,7 +72,6 @@
         <div class="card-content">
           @include('command.partials.detail', [
           'content' => $order->products,
-          'shipping' => $order->shipping,
           'total' => $order->total,
           ])
         </div>

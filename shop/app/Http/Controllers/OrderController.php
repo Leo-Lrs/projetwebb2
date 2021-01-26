@@ -3,10 +3,9 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Models\ { Address, Country, Shop, State, Product, User, Page };
+use App\Models\ { Address, Shop, State, Product, User, Page };
 use App\Mail\{ NewOrder, Ordered, ProductAlert };
 use Illuminate\Support\Facades\Mail;
-use App\Services\Shipping;
 use Illuminate\Support\Str;
 use App\Notifications\NewOrder as NewOrderNotification;
 use Barryvdh\DomPDF\PDF;
@@ -19,10 +18,9 @@ class OrderController extends Controller
      * Show the form for creating a new resource.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Services\Shipping  $ship
      * @return \Illuminate\Http\Response
      */
-    public function create(Request $request, Shipping $ship)
+    public function create(Request $request)
     {        
         $addresses = $request->user()->addresses()->get();
         if($addresses->isEmpty()) {
@@ -30,22 +28,19 @@ class OrderController extends Controller
         }
 
         $user = $request->user();
-        $country_id = $addresses->first()->country_id;
-        $shipping = $ship->compute($country_id);
         $content = Cart::getContent();
         $total = Cart::getTotal();
         
-        return view('command.index', compact('user', 'addresses', 'shipping', 'content', 'total'));
+        return view('command.index', compact('user', 'addresses', 'content', 'total'));
     }
 
     /**
      * Store a newly created resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Services\Shipping  $ship
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request, Shipping $ship)
+    public function store(Request $request)
     {
         // Vérification du stock
         $items = Cart::getContent();
@@ -61,16 +56,11 @@ class OrderController extends Controller
         $user = $request->user();
 
         // Facturation
-        $address_facturation = Address::with('country')->findOrFail($request->facturation);
-
-        // Livraison
-        $address_livraison = $request->different ? Address::with('country')->findOrFail($request->livraison) : $address_facturation;
-        $shipping = $request->expedition === 'colissimo' ? $ship->compute($address_livraison->country->id) : 0;
+        $address_facturation = Address::findOrFail($request->facturation);
 
         // Enregistrement commande
         $order = $user->orders()->create([
             'reference' => strtoupper(Str::random(8)),
-            'shipping' => $shipping,
             'total' => Cart::getTotal(),
             'payment' => $request->payment,
             'pick' => $request->expedition === 'retrait',
@@ -80,12 +70,6 @@ class OrderController extends Controller
 
         // Enregistrement adresse de facturation
         $order->adresses()->create($address_facturation->toArray());
-
-        // Enregistrement éventuel adresse de livraison
-        if($request->different) {
-            $address_livraison->facturation = false;
-            $order->adresses()->create($address_livraison->toArray());
-        }
 
         // Enregistrement des produits
         foreach($items as $row) {

@@ -25,7 +25,6 @@ $factory->define(Address::class, function (Faker $faker) {
         'bp' => $faker->boolean() ? $faker->numberBetween(100, 900) : null,
         'postal' => $faker->numberBetween(10000, 90000),
         'city' => $faker->city,
-        'country_id' => mt_rand(1, 4),
         'phone' => $faker->numberBetween(1000000000, 9000000000),
     ];
 });

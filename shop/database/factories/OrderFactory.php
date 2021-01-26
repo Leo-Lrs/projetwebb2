@@ -32,7 +32,6 @@ $factory->define(Order::class, function (Faker $faker) {
 
     return [
         'reference' => strtoupper(Str::random(8)),
-        'shipping' => $pick ? 0 : mt_rand (500, 1500) / 100,
         'payment' => $payment,
         'state_id' => $state_id,
         'user_id' => mt_rand(1, 20),

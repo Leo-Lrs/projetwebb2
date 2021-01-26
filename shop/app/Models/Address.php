@@ -12,13 +12,8 @@ class Address extends Model
      * @var array
      */
     protected $fillable = [
-        'name', 'firstname', 'professionnal', 'civility', 'company', 'address', 'addressbis', 'bp', 'postal', 'city', 'phone', 'country_id',
+        'name', 'firstname', 'professionnal', 'civility', 'company', 'address', 'addressbis', 'bp', 'postal', 'city', 'phone',
     ];
-
-    public function country()
-    {
-        return $this->belongsTo(Country::class);
-    }
 
     public function users()
     {
