@@ -17,12 +17,12 @@ class HomeController extends Controller
         $search = $request->input("search");
         if ($search) {
             $products = Product::where('name', 'like', '%' . $search . '%')
-            ->get();
+            ->paginate(10);
         } else {
-            $products = Product::whereActive(true)->get();
+            $products = Product::whereActive(true)->paginate(10);
         }
 
-        $categories = Category::all(); 
+        $categories = Category::all();
         return view('home', compact('products', 'categories'))->with('products', $products);
     }
 

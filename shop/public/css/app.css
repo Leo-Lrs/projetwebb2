@@ -19175,3 +19175,22 @@ a.link-perso:hover {
   }
 }
 
+div > nav > ul > li.active > span {
+  padding: 10px;
+  color: white;
+  font-size: xx-large;
+}
+
+div > nav > ul > li > span {
+  padding: 10px;
+  color: white;
+}
+
+div > nav > ul > li > a.page-link {
+  padding: 10px;
+  color: white;
+}
+
+main > div > form > input::placeholder {
+  color: black;
+}

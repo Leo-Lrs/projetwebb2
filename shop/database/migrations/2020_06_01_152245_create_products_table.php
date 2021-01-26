@@ -22,7 +22,7 @@ class CreateProductsTable extends Migration
             $table->mediumText('code');
             $table->integer('quantity_alert')->default(10);
             $table->string('image')->nullable();
-            $table->text('description');
+            $table->mediumText('description');
             $table->foreignId('category_id')->constrained()->onDelete('cascade');
             $table->timestamps();
         });

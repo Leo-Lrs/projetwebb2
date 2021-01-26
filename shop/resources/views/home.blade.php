@@ -33,9 +33,9 @@
       <div class="card blue-grey darken-1 z-depth-3">
         <div class="card-content white-text">
           <span class="card-title center-align">Bienvenue !!</span>
-          <p>Touvez votre bonheur sur <span class="bold">MegaGaming</span>, la boutique chic mais pas classe.<br>
+          <p>Touvez votre bonheur sur <span class="bold">MegaGaming</span>, ici tous vos jeux préférés à prix bas !<br>
             L'inscription est nécessaire pour passer une commande.</p>
-          <p>Bonne visite ^^</p>
+          <p>Bonne visite</p>
         </div>
         <div class="card-action right-align">
           <a id="close" class="" href="#">Fermez la fenêtre</a>
@@ -48,9 +48,11 @@
 @endguest
 
 <div class="container">
-  <form class="form-inline my-2 my-lg-0" method="get">
+  <form style="width: 40%; margin-right: auto; margin-left:auto; margin-top: 20px; margin-bottom: 20px;"
+    class="form-inline my-2 my-lg-0" method="get">
     <input class="form-control mr-sm-2" name="search" type="search" placeholder="Recherche" aria-label="Search">
     <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Rechercher</button>
+    <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Afficher tous les produits</button>
   </form>
   <div class="row">
     <div class="col s12 cards-container">
@@ -63,7 +65,7 @@
             <img src="/images/thumbs/{{ $product->image }}">
             @if($product->quantity) </a> @endif
         </div>
-        <div class="right card-category">Catégorie :
+        <div class="right card-category">Editeur :
           {{ $product->category->name }}
         </div>
         <div class="card-content center-align">
@@ -77,6 +79,9 @@
       </div>
       @endforeach
     </div>
+  </div>
+  <div style="width: 30%; margin-right: auto; margin-left:auto; ">
+    {{ $products->links() }}
   </div>
 </div>
 @endsection
