@@ -17,7 +17,6 @@ class CreateProductsTable extends Migration
             $table->id();
             $table->string('name');
             $table->decimal('price');
-            $table->decimal('weight');
             $table->boolean('active')->default(false);
             $table->integer('quantity')->default(0);
             $table->mediumText('code');

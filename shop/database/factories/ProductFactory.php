@@ -9,7 +9,6 @@ $factory->define(Product::class, function (Faker $faker) {
     return [
         'name' => $faker->sentence(3),
         'price' => mt_rand(100, 1000) / 10.0,
-        'weight' => mt_rand(1, 4) / 1.8,
         'quantity' => 50,
         'code' => $faker->macAddress(),
         'active' => $faker->boolean(),

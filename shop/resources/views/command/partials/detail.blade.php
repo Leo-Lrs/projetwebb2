@@ -27,7 +27,7 @@
 @else
 <div class="row" style="background-color: lightgrey">
   <div class="col s6">
-    Total TTC
+    Total
   </div>
   <div class="col s6">
     <strong>{{ number_format($total, 2, ',', ' ') }} €</strong>

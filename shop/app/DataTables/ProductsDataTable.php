@@ -74,7 +74,7 @@ class ProductsDataTable extends DataTable
             Column::make('id'),
             Column::make('name')->title('Nom'),
             Column::make('category_id')->title('Catégorie'),
-            Column::make('price')->title('Prix TTC'),
+            Column::make('price')->title('Prix'),
             Column::make('quantity')->title('Quantité'),
             Column::make('code')->title("Code d'activation"),
             Column::make('active')

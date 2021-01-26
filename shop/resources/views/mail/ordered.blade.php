@@ -285,7 +285,7 @@
                         <tr style="border-bottom:1px solid #ecedee;text-align:left;padding:15px 0 0 0;">
                           <th style="padding: 0 15px 0 0;">Produit</th>
                           <th style="padding: 0 15px 0 0;">Code d'activation</th>
-                          <th style="padding: 0 15px; white-space: nowrap;">Prix TTC</th>
+                          <th style="padding: 0 15px; white-space: nowrap;">Prix</th>
                         </tr> @foreach ($order->products as $item) <tr>
                           <td style="padding: 0 15px 0 0;">{{ $item->name }}&nbsp({{ $item->quantity }}&nbsp
                             @if($item->quantity > 1) exemplaires) @else exemplaire) @endif</td>
@@ -299,7 +299,7 @@
                         </tr>
                   </tr>
                   <tr style="background-color: #3e4647">
-                    <td style="padding: 10px;" colspan="2">Total TTC</td>
+                    <td style="padding: 10px;" colspan="2">Total</td>
                     <td style="padding: 0 10px 0 10px; white-space: nowrap;">
                       {{ number_format($order->totalOrder, 2, ',', ' ') }} €</td>
                   </tr>

@@ -67,7 +67,7 @@
             <hr class="hr105"><br class="lh075">
             <div class="row w-100" style="background-color: lightgrey">
               <div class="col s6">
-                Total TTC
+                Total
               </div>
               <div class="col s6">
                 <strong>{{ number_format($total, 2, ',', ' ') }} €</strong>

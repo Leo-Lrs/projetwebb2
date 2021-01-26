@@ -108,7 +108,7 @@
         <br>
         <div class="row" style="background-color: lightgrey">
           <div class="col s6">
-            Total TTC
+            Total
           </div>
           <div class="col s6">
             <b>{{ number_format($order->totalOrder, 2, ',', ' ') }} €</b>

@@ -105,7 +105,7 @@
     </tr>
     @endforeach
     <tr>
-      <td>Total TTC</td>
+      <td>Total</td>
       <td>{{ number_format($order->total, 2, ',', ' ') }} €</td>
     </tr>
   </table>

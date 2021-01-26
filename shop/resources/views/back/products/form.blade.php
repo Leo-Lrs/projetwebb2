@@ -44,9 +44,7 @@
 
             <x-textareabs4 name="description" label="Description"
               :value="isset($product) ? trim($product->description) : ''"></x-textareabs4>
-            <x-inputbs4 name="weight" type="text" label="Poids en kg" :value="isset($product) ? $product->weight : ''"
-              required="true"></x-inputbs4>
-            <x-inputbs4 name="price" type="text" label="Prix TTC" :value="isset($product) ? $product->price : ''"
+            <x-inputbs4 name="price" type="text" label="Prix" :value="isset($product) ? $product->price : ''"
               required="true"></x-inputbs4>
             <x-inputbs4 name="quantity" type="number" label="Quantité disponible"
               :value="isset($product) ? $product->quantity : ''" required="true"></x-inputbs4>

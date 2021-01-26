@@ -44,7 +44,7 @@
       <h5>Produit ajouté au panier avec succès</h5>
       <hr>
       <p>Il y a {{ $cartCount }} @if($cartCount > 1) articles @else article @endif dans votre panier pour un total de
-        <b>{{ number_format($cartTotal, 2, ',', ' ') }}&nbsp;€&nbsp;TTC</b> hors frais de port.</p>
+        <b>{{ number_format($cartTotal, 2, ',', ' ') }}&nbsp;€&nbsp;</b> hors frais de port.</p>
       <p><em>Vous avez la possibilité de venir chercher vos produits sur place, dans ce cas vous cocherez la case
           correspondante lors de la confirmation de votre commande et aucun frais de port ne vous sera facturé.</em></p>
       <div class="modal-footer center-align">
@@ -68,7 +68,7 @@
     <div class="col s12 m6">
       <h4 class="m-b-0">{{ $product->name }}</h4>
       <h6 class="italic">{{ $product->category->name }}</h6>
-      <p><strong>{{ number_format($product->price, 2, ',', ' ') }} € TTC</strong></p>
+      <p><strong>{{ number_format($product->price, 2, ',', ' ') }} €</strong></p>
       <p>{{ $product->description }}</p>
       <form method="POST" action="{{ route('panier.store') }}">
         @csrf
