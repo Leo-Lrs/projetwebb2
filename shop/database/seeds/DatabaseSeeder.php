@@ -14,73 +14,6 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
-        /*
-        DB::table('products')->insert([
-            'id' => 10,
-            'name' => 'Halo reach',
-            'price' => 50,
-            'active' => true,
-            'quantity' => 30,
-            'code' => 'ABCDE-TYUE3-17V8Y-TPF4Y-GPT9Y',
-            'quantity_alert' => 10,
-            'image' => 'halo_reach.jpg',
-            'description' => 'Halo: Reach est un jeu vidéo de tir à la première personne développé par Bungie et édité par Microsoft. Officiellement dévoilé lors de la conférence Microsoft de l E3 2009, le jeu est sorti en septembre 2010 au niveau mondial exclusivement sur Xbox 360.',
-            'category_id' => 10,
-        ]);
-
-        DB::table('categories')->insert([
-            'id' => 10,
-            'name' => 'Bungie',
-            'slug' => 'Bungie',
-        ]);
-
-
-        DB::table('products')->insert([
-            'id' => 11,
-            'name' => 'Counter Strike : Global Offensive',
-            'price' => 20,
-            'active' => true,
-            'quantity' => 150,
-            'code' => 'YUTH2-TYUE3-87RTY-TPF4Y-WUYZA',
-            'quantity_alert' => 50,
-            'image' => 'cs_go.png',
-            'description' => 'Jeu de tir à la première personne.',
-            'category_id' => 11,
-        ]);
-
-        DB::table('categories')->insert([
-            'id' => 11,
-            'name' => 'Valve',
-            'slug' => 'Valve',
-        ]);
-
-        
-        DB::table('products')->insert([
-            'id' => 12,
-            'name' => 'Euro Truck Simulator 2',
-            'price' => 60,
-            'active' => true,
-            'quantity' => 500,
-            'code' => 'YUTH2-TYUE3-87RTY-TPF4Y-WUYZA',
-            'quantity_alert' => 30,
-            'image' => 'fs19.jpg',
-            'description' => 'Euro Truck Simulator 2 est un jeu de simulation de poids lourd et la suite d Euro Truck Simulator développé par SCS Software pour Windows, Linux et Mac OS; sorti le 19 octobre 2012. Il place le joueur dans la peau d un routier devant effectuer des livraisons de diverses marchandises dans plusieurs villes d Europe.',
-            'category_id' => 12,
-        ]);
-
-        DB::table('categories')->insert([
-            'id' => 12,
-            'name' => 'SCS Software',
-            'slug' => 'SCS Software',
-        ]);
-*/
-
-
-
-
-
-        
-
 
         State::insert([
             ['name' => 'Attente chèque', 'slug' => 'cheque', 'color' => 'blue', 'indice' => 1],
@@ -138,7 +71,7 @@ class DatabaseSeeder extends Seeder
 
         // factory(Product::class, 6)->create();
         factory(Category::class, 5)->create()->each(function ($category) {
-            $i = rand(2, 7);
+            $i = rand(5, 10);
             while (--$i) {
                 $category->products()->save(factory(Product::class)->make());
             }
