@@ -52,7 +52,7 @@ class DatabaseSeeder extends Seeder
         $user = User::find(1);
         $user->firstname = 'Admin';
         $user->name = 'Admin';
-        $user->email = 'admintest@fgainza.fr';
+        $user->email = 'admintest@megagaming.fr';
         $user->admin = true;
         $user->save();
 
