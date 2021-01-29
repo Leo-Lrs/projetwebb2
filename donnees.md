@@ -10,14 +10,12 @@
 - MAIL_FROM_ADDRESS=pierredasilva.ynov@gmail.com
 
 # Login
-- email : test@test.fr
-- password : testtest
+- email : admintest@megagaming.fr
+- password : password
 
-# Admin
-- email : pierre@pierre.fr
-- password : testtest
-
-
+# Stripe
+ - STRIPE_PUBLISHABLE_KEY=pk_test_51I8PHdINTTLhKietfH69dMV6iDMw5Sg9Z17TJd2Q1lYM35FvgHtTPLrdtreQUC0z0pCSFxmsdNASXjML70BHZnPU00rHVB9q01
+ - STRIPE_SECRET_KEY=sk_test_51I8PHdINTTLhKietMAjMcQJJOq876CCV3bcYxNQ1CH39mBWSe2DlhMnYOkWMhbouBmEhPtrN2KwM0tlyXV5F42Js00TKnxFCrt
 
 
 

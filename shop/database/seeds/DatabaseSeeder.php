@@ -24,7 +24,7 @@ class DatabaseSeeder extends Seeder
             ['name' => 'Annulé', 'slug' => 'annule', 'color' => 'red', 'indice' => 2],
             ['name' => 'Mandat administratif reçu', 'slug' => 'mandat_ok', 'color' => 'green', 'indice' => 3],
             ['name' => 'Paiement accepté', 'slug' => 'paiement_ok', 'color' => 'green', 'indice' => 4],
-            ['name' => 'Expédié', 'slug' => 'expedie', 'color' => 'green', 'indice' => 5],
+            ['name' => 'Envoyé par mail', 'slug' => 'mailed', 'color' => 'green', 'indice' => 5],
             ['name' => 'Remboursé', 'slug' => 'rembourse', 'color' => 'red', 'indice' => 6],
         ]);
         Shop::insert([
@@ -33,7 +33,7 @@ class DatabaseSeeder extends Seeder
                 'address' => '14 rue de la poupée qui tousse 31000 Toulouse',
                 'email' => 'contact@megagaming.fr',
                 'phone' => '06 10 20 30 40',
-                'holder' => 'STE HAURT',
+                'holder' => 'MegaGaming',
                 'bic' => 'CMCIFRPP',
                 'iban' => 'FR7612548029989876543210917',
                 'bank' => 'CIC',
@@ -53,6 +53,13 @@ class DatabaseSeeder extends Seeder
         $user->firstname = 'Admin';
         $user->name = 'Admin';
         $user->email = 'admintest@megagaming.fr';
+        $user->admin = true;
+        $user->save();
+
+        $user = User::find(2);
+        $user->firstname = 'Pierre';
+        $user->name = 'Da Silva';
+        $user->email = 'pierredasilva19@gmail.com';
         $user->admin = true;
         $user->save();
 
