@@ -44,9 +44,7 @@
       <h5>Produit ajouté au panier avec succès</h5>
       <hr>
       <p>Il y a {{ $cartCount }} @if($cartCount > 1) articles @else article @endif dans votre panier pour un total de
-        <b>{{ number_format($cartTotal, 2, ',', ' ') }}&nbsp;€&nbsp;</b> hors frais de port.</p>
-      <p><em>Vous avez la possibilité de venir chercher vos produits sur place, dans ce cas vous cocherez la case
-          correspondante lors de la confirmation de votre commande et aucun frais de port ne vous sera facturé.</em></p>
+        <b>{{ number_format($cartTotal, 2, ',', ' ') }}&nbsp;€&nbsp;</b>.</p>
       <div class="modal-footer center-align">
         <button class="modal-close btn waves-effect waves-light pos-btn-100 left" id="continue">
           Continuer mes achats
@@ -82,6 +80,11 @@
           </button>
         </div>
       </form>
+      <div>
+        <h5>Avis des acheteurs</h5><br>
+        <h6>{{ $product->name_acheteur }}</h6>
+        <p>{{ $product->avis }}</p>
+      </div>
     </div>
   </div>
 </div>

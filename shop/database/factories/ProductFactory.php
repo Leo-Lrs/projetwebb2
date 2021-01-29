@@ -14,5 +14,7 @@ $factory->define(Product::class, function (Faker $faker) {
         'active' => $faker->boolean(),
         'image' => $faker->randomElement(['cs_go.png', 'halo_reach.jpg', 'ets2.jpg', 'mudrunner.jpg', 'borderlands3.jpg', 'cyberpunk2077.jpg', 'hitman3.jpg', 'New-Super-Mario-Bros-U-Deluxe-Nintendo-Switch.jpg', 'acv.jpg', 'FIFA21.jpg', 'call-of-duty-black-ops-cover.jpg', 'WoW.jpg', 'halo_infinite.png', 'smbf.jpg']),
         'description' => $faker->paragraph(),
+        'name_acheteur' => $faker->firstName(),
+        'avis' => $faker->paragraph(),
     ];
 });
