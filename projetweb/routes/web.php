@@ -1,8 +1,9 @@
 <?php
 
-use Illuminate\Routing\RouteUri;
+use App\Http\Controllers\Back\ShopController;
+use App\Http\Controllers\HomeController;
 use Illuminate\Support\Facades\Route;
-use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Artisan;
 
 /*
 |--------------------------------------------------------------------------
@@ -15,59 +16,99 @@ use Illuminate\Support\Facades\Auth;
 |
 */
 
-/*
-Route::get('/', function () {
-    return view('welcome');
+Route::get('/', 'HomeController@index')->name('home');
+Route::name('home.category')->get('/categorie/{category}', 'HomeController@category');
+
+Route::get('page/{page:slug}', 'HomeController@page')->name('page');
+
+Route::post('deconnexion', 'Auth\LoginController@logout')->name('logout');
+Route::middleware('guest')->group(function () {
+    Route::prefix('connexion')->group(function () {
+        Route::get('/', 'Auth\LoginController@showLoginForm')->name('login');
+        Route::post('/', 'Auth\LoginController@login');
+    });
+    Route::prefix('inscription')->group(function () {
+        Route::get('/', 'Auth\RegisterController@showRegistrationForm')->name('register');
+        Route::post('/', 'Auth\RegisterController@register');
+    });
 });
-*/
+Route::prefix('passe')->group(function () {
+    Route::get('renouvellement', 'Auth\ForgotPasswordController@showLinkRequestForm')->name('password.request');
+    Route::post('email', 'Auth\ForgotPasswordController@sendResetLinkEmail')->name('password.email');
+    Route::get('renouvellement/{token}', 'Auth\ResetPasswordController@showResetForm')->name('password.reset');
+    Route::post('renouvellement', 'Auth\ResetPasswordController@reset')->name('password.update');
+});
+Route::get('/home', 'HomeController@index')->name('home');
+Route::name('produits.show')->get('produits/{product}', 'ProductController');
 
-// Client
-Route::get('/', 'ClientController@shop');
-Route::get('/shop', 'ClientController@shop');
-Route::get('/panier', 'ClientController@panier');
-Route::get('/client_login', 'ClientController@client_login');
-Route::get('/signup', 'ClientController@signup');
-Route::get('/paiement', 'ClientController@paiement');
-Route::get('/select_par_cat/{id}', 'ClientController@select_par_cat');
-Route::get('/ajouter_panier/{id}', 'ClientController@ajouter_panier');
-Route::post('/modifier_qty/{id}', 'ClientController@modifier_panier');
-Route::get('/retirer_produit/{id}', 'ClientController@retirer_produit');
-Route::post('/payer', 'ClientController@payer');
-Route::post('/creer_compte', 'ClientController@creer_compte');
-Route::post('/acceder_compte', 'ClientController@acceder_compte');
-Route::get('/logout', 'ClientController@logout');
-Route::get('/show_product/{id}', 'ClientController@show_product');
+Route::resource('panier', 'CartController')->only(['index', 'store', 'update', 'destroy']);
 
-// Pdf
-Route::get('/voir_pdf/{id}', 'PdfController@voir_pdf');
+// Utilisateur authentifié
+Route::middleware('auth')->group(function () {
+    Route::resource('avis', 'AvisController');
+    // Gestion du compte
+    Route::prefix('compte')->group(function () {
+        Route::name('account')->get('/', 'AccountController');
+        Route::name('identite.edit')->get('identite', 'IdentiteController@edit');
+        Route::name('identite.update')->put('identite', 'IdentiteController@update');
+        Route::name('identite.rgpd')->get('rgpd', 'IdentiteController@rgpd');
+        Route::name('identite.pdf')->get('rgpd/pdf', 'IdentiteController@pdf');
+        Route::resource('adresses', 'AddressController')->except('show');
+        Route::resource('commandes', 'OrdersController')->only(['index', 'show'])->parameters(['commandes' => 'order']);
+        Route::name('invoice')->get('commandes/{order}/invoice', 'InvoiceController');
+    });
+    // Commandes
+    Route::prefix('commandes')->group(function () {
+        Route::name('commandes.details')->post('details', 'DetailsController');
+        Route::name('commandes.confirmation')->get('confirmation/{order}', 'OrdersController@confirmation');
+        Route::resource('/', 'OrderController')->names([
+            'create' => 'commandes.create',
+            'store' => 'commandes.store',
+        ])->only(['create', 'store']);
+        Route::name('commandes.payment')->post('paiement/{order}', 'PaymentController');
+    });
+ });
 
-// Admin
-Route::get('/admin', 'AdminController@dashboard');
-Route::get('/commandes', 'AdminController@commandes');
+// Administration
+Route::prefix('admin')->middleware('admin')->namespace('Back')->group(function () {
+    Route::name('admin')->get('/', 'AdminController@index');
+    Route::name('read')->put('read/{type}', 'AdminController@read');
+    Route::name('statistics')->get('statistiques/{year}', 'StatisticsController');
 
-// Catégories / Plateformes
-Route::get('/ajoutercategorie', 'CategoryController@ajoutercategorie');
-Route::post('sauvercategorie', 'CategoryController@sauvercategorie');
-Route::get('/categories', 'CategoryController@categories');
-Route::get('/edit_categorie/{id}', 'CategoryController@edit_categorie');
-Route::post('/modifiercategorie', 'CategoryController@modifiercategorie');
-Route::get('/supprimercategorie/{id}', 'CategoryController@supprimercategorie');
+    Route::name('viewusers')->get('new/users', 'AdminController@viewusers');
+    Route::name('vieworders')->get('new/orders', 'AdminController@vieworders');
+    // Route::name('new')->get('new/{type}', 'AdminController@view');
+    // Route::name('newusers')->get('new/{type}', 'AdminController@view');
+    Route::name('shop.edit')->get('boutique', 'ShopController@edit');
+    Route::name('shop.update')->put('boutique', 'ShopController@update');
+    Route::resource('etats', 'StateController')->except('show');
+    Route::name('etats.destroy.alert')->get('etats/{etat}', 'StateController@alert');
+    Route::resource('pages', 'PageController')->except('show');
+    Route::name('pages.destroy.alert')->get('pages/{page}', 'PageController@alert');
+    Route::resource('categories', 'CategoryController')->except('show');
+    Route::name('categories.destroy.alert')->get('categories/{category}', 'CategoryController@alert');
+    Route::resource('produits', 'ProductController')->except('show');
+    Route::name('produits.destroy.alert')->get('produits/{produit}', 'ProductController@alert');
 
-// Produits / Jeux
-Route::get('/ajouterproduit', 'ProductController@ajouterproduit');
-Route::post('/sauverproduit', 'ProductController@sauverproduit');
-Route::get('/produits', 'ProductController@produits');
-Route::get('/edit_produit/{id}', 'ProductController@edit_produit');
-Route::post('/modifierproduit', 'ProductController@modifierproduit');
-Route::get('/supprimerproduit/{id}', 'ProductController@supprimerproduit');
-Route::get('/activer_produit/{id}', 'ProductController@activer_produit');
-Route::get('/desactiver_produit/{id}', 'ProductController@desactiver_produit');
+    Route::resource('clients', 'UserController')->names([
+        'index' => 'clients.index',
+        'show' => 'clients.show',
+    ])->only(['index', 'show']);
 
-// Avis
-Route::get('/ajouter_avis/{id}', 'AvisController@ajouter_avis');
-Route::post('/sauver_avis', 'AvisController@sauver_avis');
+    Route::resource('adresses', 'AddressController')->names([
+        'index' => 'back.adresses.index',
+        'show' => 'back.adresses.show',
+    ])->only(['index', 'show']);
 
+    Route::resource('commandes', 'OrderController')->names([
+        'index' => 'orders.index',
+        'show' => 'orders.show',
+        'update' => 'orders.update',
+    ])->only(['index', 'show', 'update']);
 
-Auth::routes();
-
-Route::get('/admin', 'HomeController@index');
+    Route::name('orders.invoice')->post('commandes/invoice/{commande}', 'OrderController@invoice');
+    Route::name('orders.updateNumber')->put('commandes/updateNumber/{commande}', 'OrderController@updateNumber');
+    Route::name('maintenance.edit')->get('maintenance/modification', 'MaintenanceController@edit');
+    Route::name('maintenance.update')->put('maintenance', 'MaintenanceController@update');
+    Route::name('cache.update')->put('cache', 'MaintenanceController@cache');
+});

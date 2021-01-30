@@ -62,6 +62,12 @@ return [
             'region' => env('AWS_DEFAULT_REGION'),
             'bucket' => env('AWS_BUCKET'),
             'url' => env('AWS_URL'),
+            'endpoint' => env('AWS_ENDPOINT'),
+        ],
+
+        'invoices' => [
+            'driver' => 'local',
+            'root' => storage_path('app/invoices'),
         ],
 
     ],
