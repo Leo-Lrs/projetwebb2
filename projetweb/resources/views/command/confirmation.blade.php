@@ -142,7 +142,7 @@
           @if($order->pick)
           <p>Vous pouvez venir chercher votre commande</p>
           @else
-          <p>Votre commande va vous être envoyée</p>
+          <p>Votre commande va vous être envoyée par mail</p>
           @endif
         </div>
       </div>

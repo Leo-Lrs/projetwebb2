@@ -67,7 +67,7 @@
           @if($order->pick)
           <span>Vous pouvez venir chercher votre commande</span>
           @else
-          <span>Votre commande va vous être envoyée</span>
+          <span>Votre commande va vous être envoyée par mail</span>
           @endif
           <p>Vous pouvez télécharger votre facture <a class="link-perso2" href="{{ route('invoice', $order->id) }}">en
               cliquant ici</a>.</p>

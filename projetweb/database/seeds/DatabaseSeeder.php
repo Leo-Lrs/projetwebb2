@@ -60,7 +60,7 @@ class DatabaseSeeder extends Seeder
         $user->firstname = 'Pierre';
         $user->name = 'Da Silva';
         $user->email = 'pierredasilva19@gmail.com';
-        $user->admin = true;
+        $user->admin = false;
         $user->save();
 
         $users = User::all();
