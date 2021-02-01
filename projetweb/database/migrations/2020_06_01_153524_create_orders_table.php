@@ -25,7 +25,6 @@ class CreateOrdersTable extends Migration
                 'cheque'
             ]);
             $table->string('purchase_order', 100)->nullable();
-            $table->boolean('pick')->default(false);
             $table->integer('invoice_id')->nullable();
             $table->string('invoice_number', 40)->nullable();
             $table->foreignId('state_id')->constrained()->onDelete('cascade');

@@ -7,8 +7,6 @@ use Faker\Generator as Faker;
 use Illuminate\Support\Str;
 
 $factory->define(Order::class, function (Faker $faker) {
-
-    $pick = $faker->boolean();
     $payment = ['carte', 'mandat', 'virement', 'cheque'][mt_rand(0, 3)];
     if($payment === 'carte') {
         $state_id = [4, 5, 6, 8, 9, 10][mt_rand(0, 5)];
@@ -36,7 +34,6 @@ $factory->define(Order::class, function (Faker $faker) {
         'state_id' => $state_id,
         'user_id' => mt_rand(1, 20),
         'purchase_order' => isset($purchaseOrder) ? $purchaseOrder : null,
-        'pick' => $pick,
         'total' => 0,
         'invoice_id' => $invoice_id,
         'invoice_number' => $invoice_number,

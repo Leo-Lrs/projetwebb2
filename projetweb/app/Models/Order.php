@@ -12,7 +12,7 @@ class Order extends Model
      * @var array
      */
     protected $fillable = [
-        'reference', 'payment', 'state_id', 'user_id', 'purchase_order', 'pick', 'total', 'invoice_id', 'invoice_number', 'created_at'
+        'reference', 'payment', 'state_id', 'user_id', 'purchase_order', 'total', 'invoice_id', 'invoice_number', 'created_at'
     ];
 
     public function adresses()

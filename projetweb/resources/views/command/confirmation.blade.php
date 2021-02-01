@@ -89,11 +89,9 @@
         <li>- à envoyer à <strong>{{ $shop->address }}</strong></li>
         <li>- n'oubliez pas d'indiquer votre référence de commande <strong>{{ $order->reference }}</strong></li>
       </ul>
-      @if($order->pick)
-      Vous pourrez venir chercher votre commande dès réception du paiement.
-      @else
+
       <p><strong>Votre commande vous sera envoyée dès réception du paiement</strong>.</p>
-      @endif
+
 
       @elseif($order->state->slug === 'mandat')
       <p>Vous avez choisi de payer par mandat administratif. Ce type de paiement est réservé aux administrations.</p>
@@ -102,11 +100,8 @@
       <p><strong>{{ $shop->address }}</strong></p>
       <p>Vous pouvez aussi nous le transmettre par e-mail à cette adresse : <strong>{{ $shop->email }}</strong></p>
       <p>N'oubliez pas d'indiquer votre référence de commande <strong>{{ $order->reference }}</strong>.</p>
-      @if($order->pick)
-      <p>Vous pourrez venir chercher votre commande dès réception du mandat.</p>
-      @else
+
       <p><strong>Votre commande vous sera envoyée dès réception de ce mandat.</strong>.</p>
-      @endif
 
       @elseif($order->state->slug === 'virement')
       <p>Veuillez effectuer un virement sur notre compte :</p>
@@ -120,11 +115,7 @@
         <li>- adresse banque : <strong>{{ $shop->bank_address }}</strong></li>
         <li>- n'oubliez pas d'indiquer votre référence de commande <strong>{{ $order->reference }}</strong></li>
       </ul>
-      @if($order->pick)
-      <p>Vous pourrez venir chercher votre commande dès réception du paiement.</p>
-      @else
       <p><strong>Votre commande vous sera envoyée dès réception du virement.</strong>.</p>
-      @endif
 
       @elseif($order->state->slug === 'carte' || $order->state->slug === 'erreur')
       @include('command.partials.stripe')

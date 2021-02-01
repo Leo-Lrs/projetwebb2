@@ -434,8 +434,8 @@
                   <td align="left"
                     style="font-size:0px;padding:10px 25px;padding-right:25px;padding-bottom:20px;padding-left:25px;word-break:break-word;">
                     <div style="font-family:Helvetica;font-size:16px;line-height:20px;text-align:left;color:#FFFFFF;">
-                      <strong>Adresse de facturation @if($order->adresses->count() === 1 &&
-                        !$order->pick)@endif</strong><br /><br /> @isset($order->adresses->first()->name)
+                      <strong>Adresse de facturation @if($order->adresses->count() === 1)@endif</strong><br /><br />
+                      @isset($order->adresses->first()->name)
                       {{ $order->adresses->first()->civility . ' ' . $order->adresses->first()->name . ' ' . $order->adresses->first()->firstname }}<br />
                       @endisset @if($order->adresses->first()->company) {{ $order->adresses->first()->company }}<br />
                       @endif {{ $order->adresses->first()->address }}<br /> @if($order->adresses->first()->addressbis)
@@ -526,9 +526,9 @@
                         <li>à envoyer à <strong>{{ $shop->address }}</strong></li>
                         <li>n'oubliez pas d'indiquer votre référence de commande
                           <strong>{{ $order->reference }}</strong></li>
-                      </ul> @if($order->pick) <p><strong>Vous pourrez venir chercher votre commande dès réception du
-                          paiement.</strong></p> @else <p><strong>Votre commande vous sera envoyée dès réception du
-                          paiement.</strong>.</p> @endif Pour toute question ou information complémentaire merci de
+                      </ul>
+                      <p><strong>Votre commande vous sera envoyée dès réception du
+                          paiement.</strong>.</p> Pour toute question ou information complémentaire merci de
                       contacter notre <a href="mailto:{{ $shop->email }}">support client</a>. @endif @if($order->payment
                       === 'mandat') <p>Vous avez choisi de payer par mandat administratif. Ce type de paiement est
                         réservé aux administrations.</p>
@@ -538,9 +538,9 @@
                       <p>Vous pouvez aussi nous le transmettre par e-mail à cette adresse :
                         <strong>{{ $shop->email }}</strong></p>
                       <p>N'oubliez pas d'indiquer votre référence de commande <strong>{{ $order->reference }}</strong>.
-                      </p> @if($order->pick) <p><strong>Vous pourrez venir chercher votre commande dès réception du
-                          mandat.</strong></p> @else <p><strong>Votre commande vous sera envoyée dès réception du
-                          mandat.</strong>.</p> @endif Pour toute question ou information complémentaire merci de
+                      </p>
+                      <p><strong>Votre commande vous sera envoyée dès réception du
+                          mandat.</strong>.</p> Pour toute question ou information complémentaire merci de
                       contacter notre <a href="mailto:{{ $shop->email }}">support client</a>. @endif @if($order->payment
                       === 'virement') <p>Veuillez effectuer un virement sur notre compte :</p>
                       <ul>
@@ -553,14 +553,14 @@
                         <li>adresse banque : <strong>{{ $shop->bank_address }}</strong></li>
                         <li>n'oubliez pas d'indiquer votre référence de commande
                           <strong>{{ $order->reference }}</strong></li>
-                      </ul> @if($order->pick) <p><strong>Vous pourrez venir chercher votre commande dès réception du
-                          paiement.</strong></p> @else <p><strong>Votre commande vous sera envoyée dès réception du
-                          paiement.</strong>.</p> @endif Pour toute question ou information complémentaire merci de
+                      </ul>
+                      <p><strong>Votre commande vous sera envoyée dès réception du
+                          paiement.</strong>.</p> Pour toute question ou information complémentaire merci de
                       contacter notre <a href="mailto:{{ $shop->email }}">support client</a>. @endif @if($order->payment
                       === 'carte') <p>Vous avez choisi de payer par carte bancaire. Nous vous transmettrons un email de
-                        confirmation dès que votre réglement aura été effectué.</p> @if($order->pick) <p><strong>Vous
-                          pourrez venir chercher votre commande dès réception du paiement.</strong></p> @else <p>
-                        <strong>Votre commande vous sera envoyée dès réception du paiement.</strong>.</p> @endif Pour
+                        confirmation dès que votre réglement aura été effectué.</p>
+                      <p>
+                        <strong>Votre commande vous sera envoyée dès réception du paiement.</strong>.</p> Pour
                       toute question ou information complémentaire merci de contacter notre <a
                         href="mailto:{{ $shop->email }}">support client</a>. @endif
                     </div>

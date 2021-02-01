@@ -63,7 +63,6 @@ class OrderController extends Controller
             'reference' => strtoupper(Str::random(8)),
             'total' => Cart::getTotal(),
             'payment' => $request->payment,
-            'pick' => $request->expedition === 'retrait',
             'state_id' => State::whereSlug($request->payment)->first()->id,
         ]);
 

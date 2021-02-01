@@ -138,8 +138,7 @@
         },
         body: JSON.stringify({ 
           facturation: document.querySelector('input[type=radio][name=facturation]:checked').value, 
-          different: document.querySelector('#different').checked,
-          pick: document.querySelector('input[type=radio][name=expedition]:checked').value == 'retrait'
+          different: document.querySelector('#different').checked
         })
       });
       const data = await response.json();
