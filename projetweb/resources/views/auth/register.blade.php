@@ -34,7 +34,8 @@
             <div class="row col s12">
               <label>
                 <input type="checkbox" name="rgpd" id="rgpd">
-                <span>J'accepte les termes et conditions de la politique de confidentialité.</span>
+                <span>J'accepte les termes et conditions de la politique de
+                  confidentialité</a>.</span>
               </label>
             </div>
 

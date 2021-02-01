@@ -60,7 +60,7 @@
             </label>
           </p>
           <p style="margin-left: 40px" class="hide">
-            Envoyez un bon de commande avec la mention "Bon pour accord". Votre commande vous sera envoyé par mail réception de ce bon de commande. N'oubliez pas de préciser la référence de la commande dans votre bon.
+            Envoyez un bon de commande avec la mention "Bon pour accord". Votre commande sera expédiée dès réception de ce bon de commande. N'oubliez pas de préciser la référence de la commande dans votre bon.
           </p>
         @endif
         @if($shop->transfer)         

@@ -1,4 +1,4 @@
-APP_NAME=shopping
+APP_NAME=megagaming
 APP_ENV=local
 APP_KEY=base64:wqxvkUZnKVdGOYRi4npNIoK3TjxuSdstCrABHtx/Aaw=
 APP_DEBUG=true
@@ -10,7 +10,7 @@ LOG_CHANNEL=stack
 DB_CONNECTION=mysql
 DB_HOST=127.0.0.1
 DB_PORT=3306
-DB_DATABASE=shopping23
+DB_DATABASE=megagaming
 DB_USERNAME=root
 DB_PASSWORD=
 

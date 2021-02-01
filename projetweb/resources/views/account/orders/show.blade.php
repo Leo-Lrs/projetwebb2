@@ -99,11 +99,7 @@
       <div id="payment-ok" class="card center-align white-text green darken-4 hide">
         <div class="card-content">
           <span class="card-title">Votre paiement a été validé</span>
-          @if($order->pick)
-          <p>Vous pouvez venir chercher votre commande</p>
-          @else
           <p>Votre commande va vous être envoyée par mail</p>
-          @endif
         </div>
       </div>
     </div>

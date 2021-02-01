@@ -175,8 +175,6 @@ return [
         'title'                 => 'titre',
         'content'               => 'contenu',
         'description'           => 'description',
-        'avis'                  => 'avis',
-        'name_acheteur'         => 'name_acheteur',
         'excerpt'               => 'extrait',
         'date'                  => 'date',
         'time'                  => 'heure',

@@ -23,8 +23,6 @@ class CreateProductsTable extends Migration
             $table->integer('quantity_alert')->default(10);
             $table->string('image')->nullable();
             $table->mediumText('description');
-            $table->string('name_acheteur');
-            $table->mediumText('avis');
             $table->foreignId('category_id')->constrained()->onDelete('cascade');
             $table->timestamps();
         });

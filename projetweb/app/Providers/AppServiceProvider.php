@@ -11,6 +11,7 @@ use ConsoleTVs\Charts\Registrar as Charts;
 use App\Charts\OrdersChart;
 use App\Charts\UsersChart;
 use DB;
+use Schema;
 
 class AppServiceProvider extends ServiceProvider
 {
@@ -36,7 +37,9 @@ class AppServiceProvider extends ServiceProvider
     {
         if(app()->runningInConsole()) {
             return;
-            }
+        }
+
+        Schema::defaultStringLength(191);
             
         DB::statement("SET lc_time_names = 'fr_FR'");
 

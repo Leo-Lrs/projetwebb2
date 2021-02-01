@@ -80,11 +80,6 @@
           </button>
         </div>
       </form>
-      <div>
-        <h5>Avis des acheteurs</h5><br>
-        <h6>{{ $product->name_acheteur }}</h6>
-        <p>{{ $product->avis }}</p>
-      </div>
     </div>
   </div>
 </div>

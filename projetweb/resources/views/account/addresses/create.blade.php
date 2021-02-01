@@ -15,8 +15,8 @@
     </div>
   </div>
   <div class="row">
-    <a class="waves-effect waves-light btn" href="{{ url('compte') }}"> <i
-        class="material-icons left">chevron_left</i>Retour à mon compte</a>
+    <a class="waves-effect waves-light btn" href="{{ route('compte') }}"> <i
+        class="material-icons left">chevron_left</i>Retour à mes adresses</a>
   </div>
 </div>
 @endsection

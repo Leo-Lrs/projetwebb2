@@ -138,12 +138,6 @@
           @if((session('transacId') !== null))
           <h6 class="m-y-0 p-y-0">(Transaction Id : <strong>{{ session('transacId') }}</strong>)</h6><br>
           @endif
-
-          @if($order->pick)
-          <p>Vous pouvez venir chercher votre commande</p>
-          @else
-          <p>Votre commande va vous être envoyée par mail</p>
-          @endif
         </div>
       </div>
 

@@ -17,6 +17,7 @@ class AdminController extends Controller
     public function index(Request $request) 
     { 
         $notifications = $request->user()->unreadNotifications()->get();
+        // dd($notifications);
         $newUsers = 0;
         $newOrders = 0;
         foreach($notifications as $notification) {
@@ -26,19 +27,23 @@ class AdminController extends Controller
                 ++$newOrders;
             }
         }
+        // dd($newUsers);
         return view('back.index', compact('notifications', 'newUsers', 'newOrders'));
     }
 
     public function viewOrders(Request $request) 
     { 
         $notifications = $request->user()->unreadNotifications()->get();
+        // dd($notifications);
         $ref=[];
         $collec = $notifications->where('type', 'App\Notifications\NewOrder');
         foreach ($collec as $el){
             $ref[] = $el->data;
         }
+        // dd($ref);
         $orders = Order::all();
         $newcom = Order::whereIn('reference', $ref)->get();
+        // dd($newcom);
         return view('back.index', compact('newcom', 'orders'));
     }
 
@@ -50,8 +55,10 @@ class AdminController extends Controller
         foreach ($collec as $el){
             $nom[] = $el->data;
         }
+        // dd($ref);
         $users = User::all();
         $newuser = User::whereIn('name', $nom)->get();
+        // dd($newcom);
         return view('back.index', compact('newuser', 'users'));
     }
 
