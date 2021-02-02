@@ -78,7 +78,6 @@ class RegisterController extends Controller
             'email' => $data['email'],
             'date' => $data['date'],
             'password' => Hash::make($data['password']),
-            'newsletter' => array_key_exists('newsletter', $data),
         ]);
     }
 

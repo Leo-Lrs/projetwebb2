@@ -30,7 +30,6 @@
                 <th title="Prénom">Prénom</th>
                 <th title="Email">Email</th>
                 <th title="Inscription">Inscription</th>
-                <th title="Lettre d'information" class="text-center" max-width="300">Lettre d'information</th>
                 <th title="" min-width="200"></th>
             </tr>
         </thead>

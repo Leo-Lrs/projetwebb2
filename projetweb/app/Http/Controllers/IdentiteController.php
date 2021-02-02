@@ -23,7 +23,6 @@ class IdentiteController extends Controller
             'date' => 'required|date',
             'email' => 'required|string|max:255|unique:users,email,' . $user->id,
         ]);
-        $request->merge(['newsletter' => $request->has('newsletter')]);
         $user->update($request->all());
         $request->session()->flash('message', config('messages.accountupdated'));
         return back();

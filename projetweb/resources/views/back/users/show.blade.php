@@ -16,7 +16,6 @@
       <dd class="col-sm-9">{{ $user->created_at->format('d/m/Y') }}</dd>
       <dt class="col-sm-3 text-truncate">Dernière mise à jour</dt>
       <dd class="col-sm-9">{{ $user->updated_at->format('d/m/Y') }}</dd>
-      <dt class="col-sm-3">Lettre d'information</dt>
     </dl>
   </div>
 </div>

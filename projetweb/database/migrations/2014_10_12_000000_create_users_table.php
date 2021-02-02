@@ -20,7 +20,6 @@ class CreateUsersTable extends Migration
             $table->string('email')->unique();
             $table->date('date')->default('2012-12-12');
             $table->string('password');
-            $table->boolean('newsletter');
             $table->boolean('admin')->default(false);
             $table->timestamp('last_seen')->nullable();
             $table->integer('principale')->default(0);

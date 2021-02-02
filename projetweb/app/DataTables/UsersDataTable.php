@@ -38,16 +38,13 @@ class UsersDataTable extends DataTable
             ->addColumn('action', function ($user) {
                 return '<a href="' . route('clients.show', $user->id) . '" class="btn btn-xs btn-info btn-block">Voir</a>';
             })
-            ->editColumn('newsletter', function ($user) {
-                return $user->newsletter ? '<i class="fas fa-check text-success"></i>' : ''; 
-            })
             ->addColumn('online', function ($user) {
                 return (Cache::has('user-is-online-' . $user->id)) ? '<i class="fas fa-check text-success"></i>' : ''; 
             })
             ->addColumn('last', function ($user) {
                 return $user->last_seen ? $user->last_seen->calendar() : ''; 
             })
-            ->rawColumns(['newsletter', 'online', 'last', 'action']);
+            ->rawColumns(['online', 'last', 'action']);
     }
     /**
      * Get query source of dataTable.
@@ -91,7 +88,6 @@ class UsersDataTable extends DataTable
             Column::make('firstname')->title('Prénom'),
             Column::make('email'),
             Column::make('date'),
-            Column::make('newsletter')->title('Lettre d\'information')->addClass('text-center'),
             Column::make('created_at')->title('Inscription'),
             Column::make('principale')->title('Adresse principale'),
             Column::computed('online')
