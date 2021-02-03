@@ -28,7 +28,7 @@
               <div class="hide">
                 <input id="different" name="different" type="checkbox" disabled="disabled">
               </div>
-              <span>Vous n'avez qu'une adresse enregistrée, si vous voulez une adresse différente pour la livraison <a
+              <span>Vous n'avez qu'une adresse enregistrée, si vous voulez une adresse différente <a
                   href="{{ route('adresses.create') }}">vous pouvez en créer une autre</a>.</span>
               @else
               <label>

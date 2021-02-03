@@ -29,7 +29,7 @@
 
             <x-inputbs4 name="name" type="text" label="Nom" :value="isset($product) ? $product->name : ''"></x-inputbs4>
 
-            <label>Categorie</label>
+            <label>Editeur</label>
             <select id="category_id" name="category_id" class="custom-select custom-select-md mb-3">
               <option value="#" selected>--- Choisir une catégorie ---</option>
               @foreach($categories as $category)
