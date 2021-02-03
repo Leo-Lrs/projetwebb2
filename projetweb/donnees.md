@@ -1,6 +1,6 @@
-APP_NAME=megagaming
+APP_NAME=shopping
 APP_ENV=local
-APP_KEY=base64:wqxvkUZnKVdGOYRi4npNIoK3TjxuSdstCrABHtx/Aaw=
+APP_KEY=base64:gXiBs//xf72rGlQtMU9nRR2F1hZebZAm3aAtDvXqm1w=
 APP_DEBUG=true
 APP_URL=http://localhost
 APP_EMAIL=pierredasilva.ynov@gmail.com
